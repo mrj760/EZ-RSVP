@@ -1,0 +1,16 @@
+$color1: #fdabab;
+$color2: #c8edeb;
+$color3: #cee3f6;
+
+* {
+    color: black;
+    background-color: white;
+}
+
+.navbar {
+    background-color: $color3;
+}
+
+.button {
+    background-color: $color2;
+}
