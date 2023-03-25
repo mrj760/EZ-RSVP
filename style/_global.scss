@@ -1,16 +1,49 @@
-$color1: #fdabab;
-$color2: #c8edeb;
-$color3: #cee3f6;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-* {
+$light-red: #fdabab;
+$light-green: #c8edeb;
+$light-blue: #cee3f6;
+$light-gray: #dbdee1;
+$light-teal: #08e5ff;
+
+$dark-purple: #232331;
+$dark-teal: #232a31;
+$dark-blue: #2d3748;
+
+body {
     color: black;
-    background-color: white;
-}
-
-.navbar {
-    background-color: $color3;
+    font-family: "Roboto", sans-serif;
+    background-color: $dark-purple;
 }
 
 .button {
-    background-color: $color2;
+    background-color: $light-gray;
+    border: 0px;
+    text-align: center;
+
+    font-weight: bold;
+
+    $x: 0.35em;
+    $y: 0.25em;
+    padding: $y $x $y $x;
+
+    $x: 1em;
+    $y: 1em;
+    margin: $y $x $y $x;
+
+    &:hover {
+        background-color: $light-green;
+    }
+}
+
+.textBox {
+    height: 20px;
+
+    $x: 0.35em;
+    $y: 0.25em;
+    padding: $x $y $x $y;
+
+    $x: 1em;
+    $y: 0.5em;
+    margin: $x $y $x $y;
 }
