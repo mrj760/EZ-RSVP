@@ -1,2 +1,48 @@
 <!-- This page is a form that the event creator can customize 
     to collect information that may be important for the event. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>EZ-RSVP Create RSVP Form</title>
+</head>
+
+<body>
+    <div class="form creator">
+        <h1 id="formCreatorHeading">
+            Please Create your RSVP form. This page will help you collect information to serve your event's attendees.
+        </h1>
+
+        <div id="questionCreator">
+            <canvas id="previousQuestions">previous questions</canvas>
+
+            <canvas id="questionNumber">Q1</canvas>
+            <input id="questionBox" type="text" name="question" title="question" value="Enter your question"></input>
+            
+            <select name="questionType" id="questionType">
+                <option value="multiChoice">Multiple Choice</option>
+                <option value="checkBoxes">Check Boxes</option>
+                <option value="textBox">Comment Box</option>
+            </select>
+
+            <div id="questionbuttons">
+                <button id="saveQuestionButton" type="submit">Save</button>
+
+                <button id="cancelQuestionButton" type="submit">Cancel</button>
+            </div>
+
+            <span id="output"></span>
+        </div>
+
+        <div id="formButtons">
+            <button id="addQuestionButton" type="submit">New Question</button>
+
+            <button id="createFormButton" type="submit">Create</button>
+
+            <button id="cancelFormButton" type="submit">Cancel</button>
+        </div>
+    </div>
+</body>
+
+<script src="../script/create_event_rsvp.js"></script>
+</html>
