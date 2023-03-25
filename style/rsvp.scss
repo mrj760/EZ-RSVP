@@ -1,35 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "./_global.scss";
 
-body {
-    background-color: #232331;
-    font-family: "Roboto", sans-serif;
-}
-
-#captchaBackground {
-    height: 220px;
-    width: 250px;
-    background-color: #2d3748;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-#captchaHeading {
-    color: white;
-}
-
-#captcha {
-    height: 80%;
-    width: 80%;
-    font-size: 30px;
-    letter-spacing: 3px;
-    margin: auto;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+* {
+    text-align: center;
 }
 
 .center {
@@ -38,28 +10,41 @@ body {
     align-items: center;
 }
 
-#submitButton {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    background-color: #08e5ff;
-    border: 0px;
-    font-weight: bold;
+.textBox {
+    width: 16vh;
+    font-size: 14px;
 }
 
-#refreshButton {
-    background-color: #08e5ff;
-    border: 0px;
-    font-weight: bold;
+#captcha {
+    margin: 0;
 }
 
-#textBox {
-    height: 25px;
+#captchaBackground {
+    height: 250px;
+    width: 250px;
+    background-color: $dark-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 1em;
 }
 
-.incorrectCaptcha {
+$outputFontSize: 18px;
+
+#incorrect {
     color: #ff0000;
+    font-size: $outputFontSize;
 }
 
-.correctCaptcha {
+#correct {
     color: #7fff00;
+    font-size: $outputFontSize;
+}
+
+#captchaTextBox {
+    height: 25px;
+    width: 18vh;
+    font-size: 18pt;
+    margin: 0;
 }

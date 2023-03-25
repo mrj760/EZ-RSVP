@@ -5,6 +5,16 @@
     with optional further details specified by event organizer -->
 
 <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <link
+        rel="stylesheet"
+        href="../style/_global.css"
+    ></link>
+
     <link
         rel="stylesheet"
         href="../style/rsvp.css"
@@ -13,33 +23,54 @@
 
 <body>
     <div class="center">
-        <h1 id="captchaHeading">
-            Captcha Validator Using HTML, CSS and JavaScript
-        </h1>
+        <input
+            id="nameTextBox"
+            class="textBox"
+            type="text"
+            name="name"
+            title="name"
+            placeholder="John Smith"
+        ></input>
+        <input
+            id="emailTextBox"
+            class="textBox"
+            type="text"
+            name="email"
+            title="email"
+            placeholder="JohnSmith@mail.com"
+        ></input>
+
+        <!-- Add additional details here via JS.
+            These are details laid out by the event creator. -->
+        <div id="additionalDetails"></div>
 
         <div id="captchaBackground">
-            <canvas id="captcha">captcha text</canvas>
+            <canvas id="captcha""></canvas>
 
             <input
-                id="textBox"
+                id="captchaTextBox"
+                class="textBox"
                 type="text"
                 name="text"
                 title="text"
+                placeholder="Enter CAPTCHA"
             ></input>
 
             <div id="buttons">
-                <input
+                <button
                     id="submitButton"
-                    type="submit"
-                ></input>
+                    class="button"
+                    type="button"
+                >Submit</button>
 
                 <button
                     id="refreshButton"
-                    type="submit"
+                    class="button"
+                    type="button"
                 >Refresh</button>
             </div>
 
-            <span id="output"></span>
+            <div id="output"></div>
         </div>
     </div>
 
