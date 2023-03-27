@@ -8,71 +8,48 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    
-    <link
-        rel="stylesheet"
-        href="../style/_global.css"
-    ></link>
 
-    <link
-        rel="stylesheet"
-        href="../style/rsvp.css"
-    ></link>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link rel="stylesheet" href="../style/_global.css">
+    </link>
+    <link rel="stylesheet" href="../style/rsvp.css">
+    </link>
 </head>
 
 <body>
+
     <div class="center">
-        <input
-            id="nameTextBox"
-            class="textBox"
-            type="text"
-            name="name"
-            title="name"
-            placeholder="John Smith"
-        ></input>
-        <input
-            id="emailTextBox"
-            class="textBox"
-            type="text"
-            name="email"
-            title="email"
-            placeholder="JohnSmith@mail.com"
-        ></input>
+
+        <input id="nameTextBox" class="textBox" type="text" name="name" title="name" placeholder="John Smith" />
+
+        <input id="emailTextBox" class="textBox" type="text" name="email" title="email"
+            placeholder="JohnSmith@mail.com" />
 
         <!-- Add additional details here via JS.
             These are details laid out by the event creator. -->
         <div id="additionalDetails"></div>
 
         <div id="captchaBackground">
-            <canvas id="captcha""></canvas>
 
-            <input
-                id="captchaTextBox"
-                class="textBox"
-                type="text"
-                name="text"
-                title="text"
-                placeholder="Enter CAPTCHA"
-            ></input>
+            <canvas id="captcha"></canvas>
+
+            <input id="captchaTextBox" 
+            class="textBox" type="text" name="text" title="text" placeholder="Enter CAPTCHA"></input>
 
             <div id="buttons">
-                <button
-                    id="submitButton"
-                    class="button"
-                    type="button"
-                >Submit</button>
 
-                <button
-                    id="refreshButton"
-                    class="button"
-                    type="button"
-                >Refresh</button>
+                <button id="submitButton" class="button" type="button">Submit</button>
+                <button id="refreshButton" class="button" type="button">Refresh</button>
+
             </div>
 
-            <div id="output"></div>
+            <div id="captchaOutput"></div>
+
         </div>
+
     </div>
 
     <script src="../script/rsvp.js"></script>
+
 </body>

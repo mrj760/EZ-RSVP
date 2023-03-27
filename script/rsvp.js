@@ -9,18 +9,22 @@ context.textAlign = 'center';
 
 let userText = document.querySelector('#captchaTextBox');
 let submitButton = document.querySelector('#submitButton');
-let output = document.querySelector('#output');
+let captchaOutput = document.querySelector('#captchaOutput');
 let refreshButton = document.querySelector('#refreshButton');
 
 
 let alphaNums = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    // 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+    // 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
     'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-    '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '='];
+    // '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    // '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '='
+];
 let captcha = [];
+// const captchaLength = randomNumber(5, 7);
+const captchaLength = 10;
+const captchaSpaceFreq = 4;
 
 refreshCaptcha();
 
@@ -47,25 +51,28 @@ function randomNumber(min, max) {
 function refreshCaptcha() {
     userText.value = "";
     let refreshArr = [];
-    let capcthaLength = randomNumber(5, 7);
-    for (let j = 1; j <= capcthaLength; j++) {
+    for (let j = 1; j <= captchaLength; j++) {
         refreshArr.push(alphaNums[Math.floor(Math.random() * alphaNums.length)]);
+        if (j % captchaSpaceFreq == 0) {
+            refreshArr.push(' ');
+        }
     }
-    context.clearRect(0, 0, captchaText.width, captchaText.height);
     captcha = refreshArr.join('');
+    context.clearRect(0, 0, captchaText.width, captchaText.height);
     let x = captchaText.width / 2;
     let y = captchaText.height / 2;
     context.fillText(captcha, x, y);
-    output.innerHTML = "<span>Waiting...</span>";
+
+    captchaOutput.innerHTML = "<span>Waiting...</span>";
 }
 
 //
 function outputResult(userText) {
     if (userText.value === captcha) {
-        output.classList.add("correctCaptcha");
-        output.innerHTML = "<span id=\"correct\">Correct!</span>";
+        captchaOutput.classList.add("correctCaptcha");
+        captchaOutput.innerHTML = "<span id=\"correct\">Correct!</span>";
     } else {
-        output.classList.add("incorrectCaptcha");
-        output.innerHTML = "<span id=\"incorrect\">Incorrect, please try again</span>";
+        captchaOutput.classList.add("incorrectCaptcha");
+        captchaOutput.innerHTML = "<span id=\"incorrect\">Incorrect, please try again</span>";
     }
 }

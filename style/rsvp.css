@@ -34,40 +34,48 @@ body {
 }
 
 .textBox {
-  width: 16vh;
-  font-size: 14px;
+  width: 240px;
+  font-size: 1rem;
 }
 
-#captcha {
-  margin: 0;
+#nameTextBox {
+  margin-top: 25dvh;
+}
+
+#emailTextBox {
+  margin-top: 20px;
 }
 
 #captchaBackground {
-  height: 250px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
+  margin-top: 5%;
   background-color: #2d3748;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
+}
+
+#captcha {
+  height: 40%;
+}
+
+#captchaTextBox {
+  height: 40%;
+  width: 80%;
+  font-size: 1.2rem;
 }
 
 #incorrect {
   color: #ff0000;
-  font-size: 18px;
+  font-size: 1.2rem;
 }
 
 #correct {
   color: #7fff00;
-  font-size: 18px;
-}
-
-#captchaTextBox {
-  height: 25px;
-  width: 18vh;
-  font-size: 18pt;
-  margin: 0;
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=rsvp.css.map */
