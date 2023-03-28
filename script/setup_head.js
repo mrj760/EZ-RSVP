@@ -1,3 +1,11 @@
+/* 
+    Sets the title of the page.
+    Sets the meta characteristics of the page.
+    Adds the given dependencies (Stylesheets etc.) to the page.
+        - Includes project-global stylesheet and page-specific stylesheet.
+*/
+
+
 var path = window.location.pathname;
 var pagename = path.split("/").pop();
 pagename = pagename.substring(0,pagename.length-5);
@@ -16,6 +24,6 @@ let dependencies =
  '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>\n'
  + '<script src="https://kit.fontawesome.com/ff3950c27f.js" crossorigin="anonymous"></script>\n'
  + '<link href="../style/_global.css" rel="stylesheet">\n'
- + ' <link rel="stylesheet" href="../style/'+ pagename + '.css"/>\n';
+ + ' <link rel="stylesheet" href="../style/'+ pagename + '.css"/>\n'
 
 document.head.innerHTML = title + meta + dependencies + document.head.innerHTML;
