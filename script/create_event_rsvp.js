@@ -10,7 +10,10 @@ let createButton = document.querySelector('#createFormButton');
 //let output = document.querySelector('#output');
 let cancelButton = document.querySelector('#cancelFormButton');
 
-
+var canvas = document.getElementById("previousQuestions");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("After questions are saved there are added to this canvas", 50, 50);
 
 // This event listener is stimulated whenever the user press the "Enter" button
 // refactor to save . . . .
@@ -27,6 +30,15 @@ userText.addEventListener('keyup', function (e) {
     }
 });
 
+window.addEventListener("resize", function(){
+    //var w = window.innerWidth / 3;
+    //var h = window.innerHeight / 3;
+
+    ctx.canvas.width  = window.innerWidth / 3;
+    ctx.canvas.height = window.innerHeight / 3;
+    //var txt = "Window size: width=" + w + ", height=" + h;
+    //document.getElementById("demo").innerHTML = txt;
+  });
 // This event listener is stimulated whenever the user clicks the "Create" button
 // The created form is saved . . .
 createFormButton.addEventListener('click', function () {

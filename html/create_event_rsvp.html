@@ -4,10 +4,11 @@
 <html lang="en">
 
 <head>
-    <title>EZ-RSVP Create RSVP Form</title>
+    <script src="../script/setup_head.js"></script>
 </head>
 
-<body>
+<body onresize="myFunction()">
+
     <div class="form creator">
         <h1 id="formCreatorHeading">
             Please Create your RSVP form. This page will help you collect information to serve your event's attendees.
@@ -17,14 +18,16 @@
             <canvas id="previousQuestions">previous questions</canvas>
 
             <canvas id="questionNumber">Q1</canvas>
+            <br></br>
             <input id="questionBox" type="text" name="question" title="question" value="Enter your question"></input>
-            
-            <select name="questionType" id="questionType">
+
+            <select name="questionType" id="questionType" title="questionType">
                 <option value="multiChoice">Multiple Choice</option>
                 <option value="checkBoxes">Check Boxes</option>
                 <option value="textBox">Comment Box</option>
             </select>
 
+            <br></br>
             <div id="questionbuttons">
                 <button id="saveQuestionButton" type="submit">Save</button>
 
@@ -34,7 +37,9 @@
             <span id="output"></span>
         </div>
 
+
         <div id="formButtons">
+            <br></br>
             <button id="addQuestionButton" type="submit">New Question</button>
 
             <button id="createFormButton" type="submit">Create</button>
@@ -42,7 +47,10 @@
             <button id="cancelFormButton" type="submit">Cancel</button>
         </div>
     </div>
+
+    <script src="../script/navbar.js"></script>
 </body>
 
 <script src="../script/create_event_rsvp.js"></script>
+
 </html>
