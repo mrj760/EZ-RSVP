@@ -1,2 +1,40 @@
 <!-- This page will allow users to log in to their account. 
     Also contains a link to the registration page. -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Login</title>
+    </head>
+    <body>
+        <div>
+            <h2><span>Sign</span>In</h2>
+            <form action-="" method="POST" class="">
+                <!--User Email(ID)-->
+                <div class="">
+                    <label for="user_email" class="">Email Address: </label> 
+                    <input type="email" id="user_email" name="user_email" class="" required autofocus>
+                </div>
+            
+                <!--User Password-->
+                <div class="">
+                    <label for="user_password" class="">Password: </label>
+                    <input type="password" id="user_password" name="user_password" class="" required>
+                </div>
+
+                <!--Remember me box-->
+                <div>
+                    <label class="" for="remember_me">Remember me </label> 
+                    <input type="checkbox" class="" id="remember_me">
+                </div>
+
+                <!--Sign In Button, move to user dashboard-->
+                <div>
+                    <input type="submit" value="Sign In" href="user_dashboard.html">
+                </div>
+            </form>
+        </div>
+    </body>
+    </html>
