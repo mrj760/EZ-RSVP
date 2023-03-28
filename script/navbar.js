@@ -7,7 +7,12 @@ html = "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\
     "            </a>\n" +
     "        </li>\n" +
     "        <li class=\"nav-item\">\n" +
-    "            <a href=\"#\" class=\"nav-link\">About</a>\n" +
+    "            <a href=\"about.html\" class=\"nav-link\">About</a>\n" +
+    "        </li>\n" +
+    "        <li class=\"nav-item\">\n" +
+    "            <a href=\"user_dashboard.html\" class=\"nav-link\">\n" +
+    "                <i class=\"fa-solid fa-user-plus\"></i> Dashboard" +
+    "            </a>\n" +
     "        </li>\n" +
     "    </div>\n" +
     "    <div class=\"navbar-nav ms-auto\">\n" +
