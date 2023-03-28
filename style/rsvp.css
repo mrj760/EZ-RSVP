@@ -37,7 +37,7 @@ body {
 .textBox {
   height: auto;
   width: 240px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 #nameTextBox {
@@ -67,7 +67,7 @@ body {
 #captchaTextBox {
   height: 40%;
   width: 80%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 #incorrect {
