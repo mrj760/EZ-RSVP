@@ -1,45 +1,34 @@
 <!-- This page will allow new users to create an account by providing 
-    their name, email address, and a password. 
-    Also contains a link to the login page. -->
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/ff3950c27f.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../style/_global.css"/>
-    </head>
-    <body>
-      <div>
-        <nav class="navbar navbar-expand navbar-dark bg-dark" id="navSpacing">
-          <a href="#" class="navbar-brand">EZ-RSVP</a>
-          <div class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-house"></i> Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">About</a>
-            </li>
-          </div>
-    
-          <div class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fa-solid fa-right-to-bracket"></i> Login
-                </a>
-                </li>
-            <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fa-solid fa-user-plus"></i> Sign Up
-            </a>
-            </li>
-          </div>
-        </nav>
-      </div>
-    </body>
-    </html>
+their name, email address, and a password. 
+Also contains a link to the login page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../script/setup_head.js"></script>
+    <script src="https://kit.fontawesome.com/ff3950c27f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script src="../script/navbar.js"></script>
+    <div class="loginbox">
+        <h1>Signup</h1>
+        <form action-="" method="POST" class="">
+            <!--Username-->
+                <label for="username" class="">Username</label> 
+                <input type="name" id="username" name="username" placeholder="Enter Username" required autofocus>
+
+            <!--Email-->
+            <label for="email" class="">Email</label> 
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+        
+            <!--User Password-->
+                <label for="userPassword" class="">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <!--Sign Up Button, move to user dashboard-->
+                <input type="submit" value="Signup" href="user_dashboard.html">
+
+                <a href="user_login.html">Already have an account? Login here</a>
+        </form>
+    </div>
+</body>
+</html>

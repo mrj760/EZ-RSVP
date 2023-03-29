@@ -10,12 +10,13 @@ $dark-teal: #232a31;
 $dark-blue: #2d3748;
 
 body {
-    color: black;
+    color: $light-gray;
     font-family: "Roboto", sans-serif;
     background-color: $dark-purple;
 }
 
 .button {
+    color: $dark-purple;
     background-color: $light-gray;
     border: 0px;
     text-align: center;
@@ -31,12 +32,12 @@ body {
     margin: $y $x $y $x;
 
     &:hover {
-        background-color: $light-green;
+        background-color: $light-blue;
     }
 }
 
 .textBox {
-    height: 20px;
+    height: auto;
 
     $x: 0.35em;
     $y: 0.25em;

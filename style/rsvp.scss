@@ -11,12 +11,13 @@
 }
 
 .textBox {
+    height: auto;
     width: 240px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 #nameTextBox {
-    margin-top: 25dvh;
+    margin-top: 20dvh;
 }
 
 #emailTextBox {
@@ -42,7 +43,7 @@
 #captchaTextBox {
     height: 40%;
     width: 80%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 $outputFontSize: 1.2rem;
