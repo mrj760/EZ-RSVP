@@ -1,8 +1,10 @@
 /* 
     Sets the title of the page.
     Sets the meta characteristics of the page.
-    Adds the given dependencies (Stylesheets etc.) to the page.
+    Adds the given stylesheets to the page.
         - Includes project-global stylesheet and page-specific stylesheet.
+    
+    Finally adds all given Scripts to the page
 */
 
 
@@ -20,9 +22,22 @@ let meta =
  + '<meta http-equiv="X-UA-Compatible" content="IE=edge">\n'
  + '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
 
-let dependencies =
+let stylesheets =
  '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>\n'
  + '<link href="../style/_global.css" rel="stylesheet">\n'
  + '<link rel="stylesheet" href="../style/'+ pagename + '.css"/>\n'
 
-document.head.innerHTML = title + meta + dependencies + document.head.innerHTML;
+document.head.innerHTML = title + meta + stylesheets + document.head.innerHTML;
+
+
+function addScript(src, crossorigin = -1) {
+    let script = document.createElement('script');
+    script.setAttribute('src', src);
+    if (crossorigin != -1)
+    {
+        script.setAttribute('crossorigin', crossorigin);
+    }
+    document.head.appendChild(script);
+}
+
+addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');
