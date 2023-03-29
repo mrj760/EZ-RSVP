@@ -12,8 +12,13 @@ let cancelButton = document.querySelector('#cancelFormButton');
 
 var canvas = document.getElementById("previousQuestions");
 var ctx = canvas.getContext("2d");
+ctx.canvas.width  = window.innerWidth / 1.5;
+ctx.canvas.height = window.innerHeight / 2;
 ctx.font = "30px Arial";
-ctx.fillText("After questions are saved there are added to this canvas", 50, 50);
+ctx.fillText("After questions are saved they are added to this canvas", 10, 25);
+ctx.globalCompositeOperation = 'destination-over'
+ctx.fillStyle="white";
+ctx.fillRect(0,0,canvas.width,canvas.height);
 
 // This event listener is stimulated whenever the user press the "Enter" button
 // refactor to save . . . .

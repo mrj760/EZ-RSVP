@@ -11,7 +11,7 @@ html = "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\
     "        </li>\n" +
     "        <li class=\"nav-item\">\n" +
     "            <a href=\"user_dashboard.html\" class=\"nav-link\">\n" +
-    "                <i class=\"fa-solid fa-user-plus\"></i> Dashboard" +
+    "                <i class=\"fa-solid fa-table-columns\"></i> Dashboard" +
     "            </a>\n" +
     "        </li>\n" +
     "    </div>\n" +
