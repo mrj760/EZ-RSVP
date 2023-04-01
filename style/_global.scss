@@ -15,6 +15,16 @@ body {
     background-color: $dark-purple;
 }
 
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 .button {
     color: $dark-purple;
     background-color: $light-gray;

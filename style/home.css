@@ -1,0 +1,18 @@
+.leadingText {
+  height: 10vh;
+  text-align: center;
+  margin-top: 43vh;
+}
+
+.fullscreenDiv {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+#introDiv {
+  background-image: url("https://cdn.pixabay.com/photo/2020/07/11/04/55/particles-5392771_960_720.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}/*# sourceMappingURL=home.css.map */
