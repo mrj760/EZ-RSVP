@@ -46,6 +46,8 @@ saveQuestionButton.addEventListener('click', function(){
 
 
     if(input != "Enter your question" && choice != "N/A"){
+        questionCounter++;
+
         //if something has been entered, save it to the question container
         console.log("A question has been submitted.");
 
@@ -65,10 +67,15 @@ saveQuestionButton.addEventListener('click', function(){
                 //nothing yet
                 break;
             case 'textBox':
-                //stuff
+                html = "<textarea id='custom' name='custom' rows='4' cols='50' disabled></textarea><br><br>\n"
+                document.getElementById("questionContainer").innerHTML += html;
                 break;
             case 'Y/N':
-                //stuff
+                html = "<input type='radio' id='yes' name='yes' value='yes' disabled>\n" +
+                  "<label for='yes'>yes</label><br> \n" +
+                  "<input type='radio' id='no' name='no' value='no' disabled>\n" +
+                  "<label for='no'>no</label><br>\n";
+                document.getElementById("questionContainer").innerHTML += html;
                 break;
             default:
                 console.log("nonvalid behavior reached");
