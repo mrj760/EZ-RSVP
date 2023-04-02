@@ -1,76 +1,33 @@
 <!-- This page will include a brief introduction to the site 
     and links to create an account or login. -->
-
 <!DOCTYPE HTML>
 <html lang="en">
 
 <head>
     <script src="../script/setup_head.js"></script>
-    <link href="../style/_global.css" rel="stylesheet">
-    <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
-}
-
-
-
-#center {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,1));
-    text-align: center;
-    position:relative;
-    top: 150px;
-    max-height: 100%;
-    max-width: 100%;
-  border: 15px solid whitesmoke;
-  padding: 50px;
-  margin: 20px;
-}
-
-#button{
-    text-align: center;
-    position:relative;
-    top: 245px;
-}
-
-button{
-    background-image: linear-gradient(to bottom, rgba(255,165,0,0.7), rgba(255,165,0,1));
-    border: 0px;
-    height: 50px;
-    width: 200px;
-}
-    </style>
 </head>
 
-<body style ="background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); background-position: center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
-
-
-    <script src="../script/navbar.js"></script>
-
-    <div id = "leadingImage">
-
-        <div id = "center">
-            <h1 class = "leading text"><bold>Event Planning Made Simple. For Everyone.</bold></h1>
-            
+<body>
+    <div id="introDiv" class="fullscreenDiv">
+        <div id="introTextContainer">
+            <h1 class="leadingText">
+                <bold>
+                    Event Planning Made Simple. For Everyone.
+                </bold>
+            </h1>
         </div>
-    
-        <div id = "button">
-            <button type="button">Get Started For Free</button>
+    </div>
+    <div id="about" class="fullscreenDiv">
+        <div id="aboutBackground">
+            <div id="getStartedButton">
+                <button type="button">Get Started For Free</button>
+            </div>
         </div>
     </div>
 
+    <script src="../script/navbar.js"></script>
+    <script src="../script/home.js"></script>
 
-
-    
 </body>
 
 </html>

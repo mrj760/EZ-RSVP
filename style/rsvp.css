@@ -5,6 +5,16 @@ body {
   background-color: #232331;
 }
 
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 .button {
   color: #232331;
   background-color: #dbdee1;
