@@ -5,6 +5,7 @@
 
 <head>
     <script src="../script/setup_head.js"></script>
+    <link href="../style/create_event_rsvp.scss" rel="stylesheet">
 </head>
 
 <body onresize="myFunction()">
@@ -15,17 +16,37 @@
         </h1>
 
         <div id="questionCreator">
-            <canvas id="previousQuestions">previous questions</canvas>
+            <!--<canvas id="previousQuestions">previous questions</canvas>-->
+            <!--<canvas id="questionNumber">Q1</canvas>-->
 
-            <canvas id="questionNumber">Q1</canvas>
+            <div id="questionContainer">
+                <h4>Your current form:</h4><br></br>
+                <label for="name">Question 1 -- Full Name: </label>
+                <input type="text" id="name" name="name" disabled><br><br>
+                <label for="email">Question 2 -- Email: </label>
+                <input type="text" id="email" name="email" disabled><br><br>
+
+            </div>
+
+
+
             <br></br>
+            <h5>New Question Details</h5>
             <input id="questionBox" type="text" name="question" title="question" value="Enter your question"></input>
 
             <select name="questionType" id="questionType" title="questionType">
+                <option value="N/A">Not Selected</option>
                 <option value="multiChoice">Multiple Choice</option>
                 <option value="checkBoxes">Check Boxes</option>
                 <option value="textBox">Comment Box</option>
+                <option value="oneLine">One Line Text</option>
+                <option value="Y/N">Yes/No</option>
             </select>
+
+            <div id="questionDemo">
+                <h6>specify values for certain question types here for instance specify check box and multi choice options</h6>
+
+            </div>
 
             <br></br>
             <div id="questionbuttons">
@@ -40,7 +61,7 @@
 
         <div id="formButtons">
             <br></br>
-            <button id="addQuestionButton" type="submit">New Question</button>
+            <!--<button id="addQuestionButton" type="submit">New Question</button>-->
 
             <button id="createFormButton" type="submit">Create</button>
 

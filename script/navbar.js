@@ -1,4 +1,6 @@
-html = "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\">\n" +
+html =
+    "<div id=\"nav\">" +
+    "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\">\n" +
     "    <a href=\"home.html\" class=\"navbar-brand\">EZ-RSVP</a>\n" +
     "    <div class=\"navbar-nav mr-auto\">\n" +
     "        <li class=\"nav-item\">\n" +
@@ -27,7 +29,8 @@ html = "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\
     "            </a>\n" +
     "        </li>\n" +
     "    </div>\n" +
-    "</nav>";
+    "</nav>"
+    "</div>";
 
 if (!document.body.innerHTML.includes('<nav class=')) {
     document.body.innerHTML = html + '\n' + document.body.innerHTML;
