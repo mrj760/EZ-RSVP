@@ -28,11 +28,18 @@ let questionType = document.querySelector('#questionType');
 questionType.addEventListener('change', function(){
 
 console.log("a change has been made in the drop down menu");
+let input = document.getElementById("questionBox").value;
 let choice =  document.getElementById("questionType").value;
 
-    if(choice == "Multiple Choice" || choice == "Check Boxes"){
+    if(input != "Enter your question" && (choice == "multiChoice" || choice == "checkBoxes")){
         //use demo container to allow specifications
-        console.log("multi choice or check boxes should be specified")
+        console.log("multi choice or check boxes should be specified");
+
+        html = "<p> " + input + ": </p>";
+        document.getElementById("questionDemo").innerHTML += html;
+
+        html = "<input type='text' id='custom' name='custom' disabled><br><br>\n"
+        document.getElementById("questionDemo").innerHTML += html;
     }
 });
 
@@ -57,14 +64,19 @@ saveQuestionButton.addEventListener('click', function(){
         switch(choice)
         {
             case 'MultiChoice':
-                //notthing yet
+                console.log("multi choice");//notthing yet
+                html = "<input type='text' id='custom' name='custom' disabled><br><br>\n"
+                document.getElementById("questionContainer").innerHTML += html;
                 break;
             case 'oneLine':
                 html = "<input type='text' id='custom' name='custom' disabled><br><br>\n"
                 document.getElementById("questionContainer").innerHTML += html;
                 break;
-            case 'CheckBoxes':
-                //nothing yet
+            case 'checkBoxes':
+                console.log("check boxes");//nothing yet
+                html = "<input type='checkbox' id='custom' name='custom' disabled><br><br>\n" + 
+                "<label for='option1'> option1 </label><br>\n"
+                document.getElementById("questionContainer").innerHTML += html;
                 break;
             case 'textBox':
                 html = "<textarea id='custom' name='custom' rows='4' cols='50' disabled></textarea><br><br>\n"
