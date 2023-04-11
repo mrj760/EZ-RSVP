@@ -6,8 +6,74 @@ let createButton = document.querySelector('#createFormButton');
 let cancelButton = document.querySelector('#cancelFormButton');
 let saveQuestionButton = document.querySelector('#saveQuestionButton');
 let questionType = document.querySelector('#questionType');
+var customOptions = [];
+var addOptionButtons = [];
+var removeOptionButtons = [];
+
+hideAllCustomOptions();
+
+//////////////////////////////////////////////////////////////////////////////////
+//function to hide all the custom options elements
+///////////////////////////////////////////////////////////////////////////////////
+function hideAllCustomOptions(){
+    for(let i = 0; i < 6; i++)
+    {
+        console.log('addOptionButton' + (i + 1));
+        //console.log(document.getElementById('option ' + (i + 1)));
+        customOptions[i] = document.getElementById('option ' + (i + 1)); //grabs and stores the custom option element in the array
+        addOptionButtons[i] = document.getElementById('addOptionButton' + (i + 1));
+        removeOptionButtons[i] = document.getElementById('removeOptionButton' + (i + 1));
+        console.log(addOptionButtons[i]);
+        customOptions[i].style.display = "none"; //hides the custom option element in the document
+        addOptionButtons[i].style.display = "none";
+        removeOptionButtons[i].style.display = "none";
+    }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////
+//funciton to show all the custom options elements
+///////////////////////////////////////////////////////////////////////////////////
+function showAllCustomOptions(){
+    for(let i = 0; i < 6; i++)
+    {
+        //customOptions[i] = document.getElementById('option ' + i); //grabs and stores the custom option element in the array
+        customOptions[i].style.display = "block"; //shows the custom option element in the document
+        addOptionButtons[i].style.display = "block";
+        removeOptionButtons[i].style.display = "block";
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+//Function to show all the custom options elements when user selects checkbox or multiple choice
+///////////////////////////////////////////////////////////////////////////////////
+questionType.addEventListener('change', function(){
+
+    //hideAllCustomOptions();
+    console.log("a change has been made in the drop down menu"); //when in doubt, print it out
+
+    //get the input in the question box, question type selected from the drop down menu
+    let input = document.getElementById("questionBox").value;
+    let choice =  document.getElementById("questionType").value;
+
+    //the number of custom options specified by the user starts at 0
+    let customOptionCounter = 0;
+    let customOptionID = "customOption"; //this is part of the id attribute of the custom option, will change slightly with every new option created
+    let optionInputs = []; //array of all the input elements in the custom options
+
+    //if the user has edited the questionboxe's value and the choices multichoice or checkboxes is selected
+    if(input != "Enter your question" && (choice == "multiChoice" || choice == "checkBoxes")){
+
+        showAllCustomOptions(); //shows all the custom options
+
+
+
+    }
+
+
+});
+
+
+/*///////////////////////////////////////////////////////////////////////////////////
 //when the user changes the option in the drop down menu, activate this function
 questionType.addEventListener('change', function(){
 
@@ -88,6 +154,8 @@ let optionInputs = []; //array of all the input elements in the custom options
 doesNotExist.addEventListener('click', function(){
     //do stuff
 });
+*/
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 saveQuestionButton.addEventListener('click', function(){
