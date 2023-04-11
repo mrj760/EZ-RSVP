@@ -13,7 +13,13 @@
 #getStartedButton {
   text-align: center;
   position: relative;
-  top: 245px;
+  top: 235px;
+}
+
+#registerForFreeButton {
+  text-align: center;
+  position: relative;
+  top: 75px;
 }
 
 button {
