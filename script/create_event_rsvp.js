@@ -2,15 +2,38 @@
 let questionCounter = 2;
 let userText = document.querySelector('#questionBox');
 let createButton = document.querySelector('#createFormButton');
-//let output = document.querySelector('#output');
 let cancelButton = document.querySelector('#cancelFormButton');
 let saveQuestionButton = document.querySelector('#saveQuestionButton');
 let questionType = document.querySelector('#questionType');
 var customOptions = [];
 var addOptionButtons = [];
 var removeOptionButtons = [];
+var optionCheckboxes = [];
+var optionRadioButtons = [];
+var optionSpacers = [];
 
-hideAllCustomOptions();
+hideAllCustomOptions(); //first thing to do is to hide all custom options
+
+//declare a class called otions
+class CustomOption{
+    images = []; //imageLoops
+    hidden; 
+    animation; //imageLoops animation currently running
+    animation_counter; //holds the current animation frame
+    position = [2]; //holds x and y positions, respectively
+    height; //how tall or squished the sprite is
+    width; //how thick or thin the sprite is
+    activation_radius; 
+    scale; //how big the sprite is
+
+    constructor(){
+        this.x = 10;
+        this.y = 10;
+        this.heading = 'idle'; //heading can be idle, walk_E, walk_S, etc
+        this.animation = 'idle'; //heading can be idle, walk_E, walk_S, etc
+    }
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //function to hide all the custom options elements
@@ -18,28 +41,44 @@ hideAllCustomOptions();
 function hideAllCustomOptions(){
     for(let i = 0; i < 6; i++)
     {
-        console.log('addOptionButton' + (i + 1));
+        //console.log('addOptionButton' + (i + 1));
         //console.log(document.getElementById('option ' + (i + 1)));
         customOptions[i] = document.getElementById('option ' + (i + 1)); //grabs and stores the custom option element in the array
         addOptionButtons[i] = document.getElementById('addOptionButton' + (i + 1));
         removeOptionButtons[i] = document.getElementById('removeOptionButton' + (i + 1));
-        console.log(addOptionButtons[i]);
+        optionCheckboxes[i] = document.getElementById('optionCheckbox' + (i + 1));
+        optionRadioButtons[i] = document.getElementById('optionRadio' + (i + 1));
+        optionSpacers[i] = document.getElementById('spacer' + (i + 1));
+        //console.log(addOptionButtons[i]);
         customOptions[i].style.display = "none"; //hides the custom option element in the document
         addOptionButtons[i].style.display = "none";
         removeOptionButtons[i].style.display = "none";
+        optionCheckboxes[i].style.display = "none";
+        optionRadioButtons[i].style.display = "none";
+        optionSpacers[i].style.display = "none";
     }
+
+    //console.log(document.getElementById("questionDemo").innerHTML);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
 //funciton to show all the custom options elements
 ///////////////////////////////////////////////////////////////////////////////////
-function showAllCustomOptions(){
+function showAllCustomOptions(choice){
     for(let i = 0; i < 6; i++)
     {
-        //customOptions[i] = document.getElementById('option ' + i); //grabs and stores the custom option element in the array
-        customOptions[i].style.display = "block"; //shows the custom option element in the document
-        addOptionButtons[i].style.display = "block";
-        removeOptionButtons[i].style.display = "block";
+        customOptions[i].style.display = "inline"; //shows the custom option element in the document
+        addOptionButtons[i].style.display = "inline";
+        removeOptionButtons[i].style.display = "inline";
+        optionSpacers[i].style.display = "inline";
+        if(choice == 'multiChoice')
+        {
+            optionRadioButtons[i].style.display = "inline"; //radio buttons are shown
+        }
+        else //checkboxes are shown
+        {
+            optionCheckboxes[i].style.display = "inline";
+        }
     }
 }
 
@@ -57,13 +96,12 @@ questionType.addEventListener('change', function(){
 
     //the number of custom options specified by the user starts at 0
     let customOptionCounter = 0;
-    let customOptionID = "customOption"; //this is part of the id attribute of the custom option, will change slightly with every new option created
     let optionInputs = []; //array of all the input elements in the custom options
 
     //if the user has edited the questionboxe's value and the choices multichoice or checkboxes is selected
     if(input != "Enter your question" && (choice == "multiChoice" || choice == "checkBoxes")){
 
-        showAllCustomOptions(); //shows all the custom options
+        showAllCustomOptions(choice); //shows all the custom options
 
 
 
@@ -71,6 +109,55 @@ questionType.addEventListener('change', function(){
 
 
 });
+
+///////////////////////////////////////////////////////////////////////////////////
+//event listener for each delete option button
+///////////////////////////////////////////////////////////////////////////////////
+removeOptionButtons.forEach(function(elem, index) {
+    elem.addEventListener("click", function() {
+        //hide the corresponding custom option element and delete whatever might have been inputed
+        elem.value = "";
+
+        //call helper function to hide
+        hideSingleCustomOption(index);
+    });
+});
+
+///////////////////////////////////////////////////////////////////////////////////
+//event listener for each add option button
+///////////////////////////////////////////////////////////////////////////////////
+addOptionButtons.forEach(function(elem, index) {
+    elem.addEventListener("click", function() {
+        //find if there are any custom options not displayed
+        if(customOptions[index].style.display == "inline")
+        {
+            let undisplayedCustomOptionCounter = index; //the index of the custom option in all custom options array
+        
+        }   
+
+        //display one of (or the only custom option not displayed)
+        showSingleCustomOption(index, undisplayedCustomOption);
+
+        //do nothing if there are no custom options not displayed
+        return;
+    });
+});
+
+
+///////////////////////////////////////////////////////////////////////////////////
+//Hide single custom option
+///////////////////////////////////////////////////////////////////////////////////
+function hideSingleCustomOption(index){
+
+    customOptions[index].style.display = "none"; //hides the custom option element in the document
+    addOptionButtons[index].style.display = "none";
+    removeOptionButtons[index].style.display = "none";
+    optionCheckboxes[index].style.display = "none";
+    optionRadioButtons[index].style.display = "none";
+    optionSpacers[index].style.display = "none";
+
+}
+
 
 
 /*///////////////////////////////////////////////////////////////////////////////////
@@ -221,6 +308,7 @@ window.addEventListener("resize", function(){
     //var txt = "Window size: width=" + w + ", height=" + h;
     //document.getElementById("demo").innerHTML = txt;
   });
+
 // This event listener is stimulated whenever the user clicks the "Create" button
 // The created form is saved . . .
 createFormButton.addEventListener('click', function () {
