@@ -16,22 +16,31 @@ hideAllCustomOptions(); //first thing to do is to hide all custom options
 
 //declare a class called otions
 class CustomOption{
-    images = []; //imageLoops
-    hidden; 
-    animation; //imageLoops animation currently running
-    animation_counter; //holds the current animation frame
-    position = [2]; //holds x and y positions, respectively
-    height; //how tall or squished the sprite is
-    width; //how thick or thin the sprite is
-    activation_radius; 
-    scale; //how big the sprite is
+    choice;//choice selection as 'multichoice' or 'checkboxes'
+    hidden; //true or false value shows when the option is hidden
+    customOption;//all custom option elements
+    addOptionButton;
+    removeOptionButton;
+    optionCheckbox;
+    optionRadioButton;
+    optionSpacer;
 
-    constructor(){
-        this.x = 10;
-        this.y = 10;
-        this.heading = 'idle'; //heading can be idle, walk_E, walk_S, etc
-        this.animation = 'idle'; //heading can be idle, walk_E, walk_S, etc
+    constructor(choice, hidden, customOption, addOptionButton, removeOptionButton, optionCheckbox, optionRadioButton, optionSpacer)
+    {
     }
+
+    show(){
+
+    }
+
+    hide(){
+
+    }
+
+    clear(){
+
+    }
+
 }
 
 
@@ -128,15 +137,31 @@ removeOptionButtons.forEach(function(elem, index) {
 ///////////////////////////////////////////////////////////////////////////////////
 addOptionButtons.forEach(function(elem, index) {
     elem.addEventListener("click", function() {
+        let undisplayedCustomOptionCounter = -1;
+
         //find if there are any custom options not displayed
         if(customOptions[index].style.display == "inline")
         {
-            let undisplayedCustomOptionCounter = index; //the index of the custom option in all custom options array
+            undisplayedCustomOptionCounter = index; //the index of the custom option in all custom options array
         
         }   
 
+        console.log("add option button clicked and custom option counter is " + undisplayedCustomOptionCounter);
         //display one of (or the only custom option not displayed)
-        showSingleCustomOption(index, undisplayedCustomOption);
+        if(undisplayedCustomOptionCounter != -1){
+            customOptions[undisplayedCustomOptionCounter].style.display = "inline"; //shows the custom option element in the document
+            addOptionButtons[undisplayedCustomOptionCounter].style.display = "inline";
+            removeOptionButtons[undisplayedCustomOptionCounter].style.display = "inline";
+            optionSpacers[undisplayedCustomOptionCounter].style.display = "inline";
+            if(document.getElementById("questionType").value == 'multiChoice')
+            {
+                optionRadioButtons[undisplayedCustomOptionCounter].style.display = "inline"; //radio buttons are shown
+            }
+            else //checkboxes are shown
+            {
+                optionCheckboxes[undisplayedCustomOptionCounter].style.display = "inline";
+            }
+        }
 
         //do nothing if there are no custom options not displayed
         return;
@@ -158,7 +183,11 @@ function hideSingleCustomOption(index){
 
 }
 
-
+/*Things to do:
+1. implement add button functionality
+2. implement save functionality for multiple choice questions and checkboxes
+3. make the submit button reroute to dashboard.
+*/
 
 /*///////////////////////////////////////////////////////////////////////////////////
 //when the user changes the option in the drop down menu, activate this function
