@@ -9,6 +9,18 @@
 </head>
 
 <body>
+    <h1>Event Details</h1>
+    <!-- Show event details from create_event. Should be used with back-end -->
+    <div> 
+        <p class="">Event name:<input type="text" name="event_name" value="{{event_name}}" readonly> </p>
+    </div>
+    <div>
+        <p class="">Event date:<input type="text" name="event_date" value="{{event_date}}" </p>
+    </div>
+    <div>
+        <p class="">Event details:<textarea name="event_details" readonly>{{event_details}}</textarea></p>
+    </div>
+    
     <script src="../script/navbar.js"></script>
 </body>
 
