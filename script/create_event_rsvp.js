@@ -96,24 +96,21 @@ function showAllCustomOptions(choice){
 ///////////////////////////////////////////////////////////////////////////////////
 questionType.addEventListener('change', function(){
 
-    //hideAllCustomOptions();
+    hideAllCustomOptions();
     console.log("a change has been made in the drop down menu"); //when in doubt, print it out
 
     //get the input in the question box, question type selected from the drop down menu
     let input = document.getElementById("questionBox").value;
     let choice =  document.getElementById("questionType").value;
 
-    //the number of custom options specified by the user starts at 0
-    let customOptionCounter = 0;
-    let optionInputs = []; //array of all the input elements in the custom options
-
     //if the user has edited the questionboxe's value and the choices multichoice or checkboxes is selected
     if(input != "Enter your question" && (choice == "multiChoice" || choice == "checkBoxes")){
 
         showAllCustomOptions(choice); //shows all the custom options
 
-
-
+    }
+    else{
+        hideAllCustomOptions(); //hides all the custom options
     }
 
 
@@ -140,12 +137,14 @@ addOptionButtons.forEach(function(elem, index) {
         let undisplayedCustomOptionCounter = -1;
 
         //find if there are any custom options not displayed
-        if(customOptions[index].style.display == "inline")
-        {
-            undisplayedCustomOptionCounter = index; //the index of the custom option in all custom options array
-        
-        }   
-
+        for(var i = 0; i < 6; i++){
+            if(customOptions[i].style.display == "none")
+            {
+                undisplayedCustomOptionCounter = i; //the index of the custom option in all custom options array
+            
+            } 
+        }
+  
         console.log("add option button clicked and custom option counter is " + undisplayedCustomOptionCounter);
         //display one of (or the only custom option not displayed)
         if(undisplayedCustomOptionCounter != -1){
@@ -168,11 +167,11 @@ addOptionButtons.forEach(function(elem, index) {
     });
 });
 
-
 ///////////////////////////////////////////////////////////////////////////////////
 //Hide single custom option
 ///////////////////////////////////////////////////////////////////////////////////
 function hideSingleCustomOption(index){
+    customOptions[index].value = ""; //delete whatever was inputed
 
     customOptions[index].style.display = "none"; //hides the custom option element in the document
     addOptionButtons[index].style.display = "none";
@@ -294,10 +293,21 @@ saveQuestionButton.addEventListener('click', function(){
         switch(choice)
         {
             case 'multiChoice':
-                console.log("multi choice");//notthing yet
-                html = "<input type='text' id='custom' name='custom' disabled><br><br>\n"
+                console.log("multi choice");//nothing yet
+                html = "";
+                for(var i = 0; i < 6; i++)
+                {
+                    if(customOptions[i].value != "")
+                    {
+                        html += "<input type='radio' id='optionRadio' name='custom' disabled>\n" + 
+                        customOptions[i].value +
+                        "<br>\n";
+                        console.log("save question");
+                    }
+                    
+                }
                 document.getElementById("questionContainer").innerHTML += html;
-                document.getElementById("questionDemo").innerHTML = "";
+                hideAllCustomOptions();
                 break;
             case 'oneLine':
                 html = "<input type='text' id='custom' name='custom' disabled><br><br>\n"
@@ -305,10 +315,20 @@ saveQuestionButton.addEventListener('click', function(){
                 break;
             case 'checkBoxes':
                 console.log("check boxes");//nothing yet
-                html = "<input type='checkbox' id='custom' name='custom' disabled><br><br>\n" + 
-                "<label for='option1'> option1 </label><br>\n"
+                html = "";
+                for(var i = 0; i < 6; i++)
+                {
+                    if(customOptions[i].value != "")
+                    {
+                        html += "<input type='checkbox' id='optionRadio' name='custom' disabled>\n" + 
+                        customOptions[i].value +
+                        "<br>\n";
+                        console.log("save question");
+                    }
+                    
+                }
                 document.getElementById("questionContainer").innerHTML += html;
-                document.getElementById("questionDemo").innerHTML = "";
+                hideAllCustomOptions();
                 break;
             case 'textBox':
                 html = "<textarea id='custom' name='custom' rows='4' cols='50' disabled></textarea><br><br>\n"
