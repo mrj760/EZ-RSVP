@@ -3,7 +3,7 @@ let currentDivIdx = 0;
 lastY = 0;
 let isAnimating = false;
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function () {
 
     if (fullscreenDivs.length <= 1 || isAnimating) return;
 

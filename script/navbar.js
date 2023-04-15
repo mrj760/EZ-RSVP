@@ -32,11 +32,9 @@ html =
     "</nav>\n" +
     "</div>";
 
-window.addEventListener("load", function () {
-    if (!document.body.innerHTML.includes('<nav class=')) {
-        document.body.innerHTML = html + '\n' + document.body.innerHTML;
-    }
-})
+if (!document.body.innerHTML.includes('<nav class=')) {
+    document.body.innerHTML = html + '\n' + document.body.innerHTML;
+}
 
 
 

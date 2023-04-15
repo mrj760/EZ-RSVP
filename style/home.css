@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-* {
-  color: #dbdee1;
-}
-
 body {
   color: #dbdee1;
   font-family: "Roboto", sans-serif;
@@ -29,14 +25,18 @@ body {
 }
 
 #nav {
+  min-width: 540px;
   position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
+  top: 0px;
+  z-index: 2;
   width: 100%;
   padding: 0px 10px 0px 10px;
   background-color: #222529;
   box-sizing: border-box;
+}
+
+#navspace {
+  margin-bottom: 50px;
 }
 
 button {
@@ -54,7 +54,6 @@ button {
 
 .fullscreenDiv {
   height: 100vh;
-  overflow-y: scroll;
 }
 
 .buttonDiv {

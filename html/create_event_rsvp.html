@@ -1,16 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- This page is a form that the event creator can customize 
     to collect information that may be important for the event. -->
-<head>
-    <script src="../script/setup_head.js"></script>
-    <script src="../script/navbar.js"></script>
-</head>
+
+    <head>
+        <script src="../script/_global.js"></script>
+        <link rel="stylesheet" href="../style/_global.css"/>
+    </head>
 
 <body onresize="myFunction()">
 
-    <div class="form creator">
+    <div class="formCreator">
         <h1 id="formCreatorHeading">
             Please Create your RSVP form. This page will help you collect information to serve your event"s attendees.
         </h1>
@@ -29,7 +29,7 @@
 
             <br>
             <h5>New Question Details</h5>
-            <input id="questionBox" type="text" name="question" title="question" value="Enter your question"></input>
+            <input id="questionBox" type="text" name="question" title="question" placeholder="Enter your question"></input>
 
             <select name="questionType" id="questionType" title="questionType">
                 <option value="N/A">Not Selected</option>
@@ -108,7 +108,5 @@
     </div>
 
 </body>
-
-<script src="../script/create_event_rsvp.js"></script>
 
 </html>

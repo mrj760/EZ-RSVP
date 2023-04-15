@@ -3,30 +3,33 @@ their name, email address, and a password.
 Also contains a link to the login page. -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="../script/setup_head.js"></script>
+    <script src="../script/_global.js"></script>
+    <link rel="stylesheet" href="../style/_global.css" />
 </head>
+
 <body>
-    <script src="../script/navbar.js"></script>
     <div class="loginbox">
         <h1>Signup</h1>
         <form action-="" method="POST">
             <!--Username-->
-                <label for="username">Username</label> 
-                <input type="name" id="username" name="username" placeholder="Enter Username" required autofocus>
+            <label for="username">Username</label>
+            <input type="name" id="username" name="username" placeholder="Enter Username" required autofocus>
 
             <!--Email-->
-            <label for="email">Email</label> 
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter Email" required>
-        
+
             <!--User Password-->
-                <label for="userPassword">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <label for="userPassword">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
 
             <!--Sign Up Button, move to user dashboard-->
-                <input type="submit" value="Signup" href="user_dashboard.html">
-                <a href="user_login.html">Already have an account? Login here</a>
+            <form type="submit" value="Signup" href="user_dashboard.html">
+            <a href="user_login.html">Already have an account? Login here</a>
         </form>
     </div>
 </body>
+
 </html>

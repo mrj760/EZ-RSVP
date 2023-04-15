@@ -4,34 +4,34 @@
 <html lang="en">
 
 <head>
-    <script src="../script/setup_head.js"></script>
+    <script src="../script/_global.js"></script>
+    <link rel="stylesheet" href="../style/_global.css"/>
 </head>
 
 <body>
     <h1>Create Event</h1>
-    <form action="" method="POST" class="">
-        <div class ="">
-            <label class="" for="event_name">Event name:</label>
-            <input id="event_name" type="text" name="event_name" class="" required="required">
+    <form action="" method="POST">
+        <div>
+            <label for="event_name">Event name:</label>
+            <input id="event_name" type="text" name="event_name" required="required">
         </div>
-        <div class="">
-            <label class="" for="event_date">Date:</label>
-            <input id="event_date" type="date" name="event_date" class="" required="required">
+        <div>
+            <label for="event_date">Date:</label>
+            <input id="event_date" type="date" name="event_date" required="required">
         </div>
-        <div class="">
-            <label class="" for="event_details">Event Details:</label>
-            <br/>
-        <div class="">
-            <p>
-                <textarea name="event_details" rows="3" cols="60" required="required"></textarea>
-            </p>
-        </div>
-        <input type="submit" value="Create" href="user_dashboard.html">
-        <input type="reset" value="Reset"> 
+        <div>
+            <label for="event_details">Event Details:</label>
+            <br />
+            <div>
+                <p>
+                    <textarea name="event_details" rows="3" cols="60" required="required"></textarea>
+                </p>
+            </div>
+            <input type="submit" value="Create" href="user_dashboard.html">
+            <input type="reset" value="Reset">
     </form>
     </div>
-    <script src="../script/navbar.js"></script>
 
-</body>
+</div>
 
-</html>
+</div>

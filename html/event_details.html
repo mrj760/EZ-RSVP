@@ -1,27 +1,18 @@
-<!-- This page will display the event details such as 
-    the date, time, venue, event description, 
-    and a link to the form to submit an RSVP. -->
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <script src="../script/setup_head.js"></script>
+    <script src="../script/_global.js"></script>
+    <link rel="stylesheet" href="../style/_global.css"/>
 </head>
 
-<body>
-    <h1>Event Details</h1>
-    <!-- Show event details from create_event. Should be used with back-end -->
-    <div> 
-        <p class="">Event name:<input type="text" name="event_name" value="{{event_name}}" readonly> </p>
-    </div>
-    <div>
-        <p class="">Event date:<input type="text" name="event_date" value="{{event_date}}"></p>
-    </div>
-    <div>
-        <p class="">Event details:<textarea name="event_details" rows="3" cols="60" readonly>{{event_details}}</textarea></p>
-    </div>
-    
-    <script src="../script/navbar.js"></script>
-</body>
+<div>
+    <div id="event_name"></div>
+    <div id="event_details"></div>
+    <div id="event_location"></div>
+    <div id="event_datetime"></div>
+    <div id="buttons"></div>
+</div>
 
 </html>

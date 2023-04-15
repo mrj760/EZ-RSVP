@@ -12,9 +12,6 @@ $dark-gray: #222529;
 
 $marigold: rgb(255, 165, 0);
 
-* {
-    color: $light-gray;
-}
 
 body {
     color: $light-gray;
@@ -55,13 +52,20 @@ body {
     margin: $x $y $x $y;
 }
 
+$navbar-height: 50px;
+$min-navbar-width: 540px;
+
 #nav {
+    min-width: $min-navbar-width;
     position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
+    top: 0px;
+    z-index: 2;
     width: 100%;
     padding: 0px 10px 0px 10px;
     background-color: $dark-gray;
     box-sizing: border-box;
+}
+
+#navspace {
+    margin-bottom:$navbar-height;
 }
