@@ -1,29 +1,48 @@
-#introTextContainer {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0));
-  text-align: center;
-  position: relative;
-  top: 150px;
-  max-height: 100%;
-  max-width: 100%;
-  border: 15px solid whitesmoke;
-  padding: 50px;
-  margin: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  color: #dbdee1;
 }
 
-#getStartedButton {
-  text-align: center;
-  position: relative;
-  top: 235px;
+body {
+  color: #dbdee1;
+  font-family: "Roboto", sans-serif;
+  background-color: #232331;
 }
 
-#registerForFreeButton {
+.button {
+  color: #232331;
+  background-color: #dbdee1;
+  border: 0px;
   text-align: center;
-  position: relative;
-  top: 75px;
+  font-weight: bold;
+  padding: 0.25em 0.35em 0.25em 0.35em;
+  margin: 1em 1em 1em 1em;
+}
+.button:hover {
+  background-color: #cee3f6;
+}
+
+.textBox {
+  height: auto;
+  padding: 0.35em 0.25em 0.35em 0.25em;
+  margin: 1em 0.5em 1em 0.5em;
+}
+
+#nav {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  background-color: #222529;
+  box-sizing: border-box;
 }
 
 button {
-  background-image: linear-gradient(to bottom, rgba(255, 165, 0, 0.7), rgb(255, 165, 0));
+  color: #232331;
+  background-color: #232331;
+  background-image: linear-gradient(0deg, rgba(255, 165, 0, 0.7), rgb(255, 165, 0) 60%);
   border: 0px;
   height: 50px;
   width: 200px;
@@ -36,6 +55,24 @@ button {
 .fullscreenDiv {
   height: 100vh;
   overflow-y: scroll;
+}
+
+.buttonDiv {
+  text-align: center;
+  position: relative;
+  top: 245px;
+}
+
+.introTextContainer {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0));
+  text-align: center;
+  position: relative;
+  top: 150px;
+  max-height: 100%;
+  max-width: 100%;
+  border: 15px solid whitesmoke;
+  padding: 50px;
+  margin: 20px;
 }
 
 #introDiv {

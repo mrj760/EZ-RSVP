@@ -8,22 +8,18 @@ $light-gray: #dbdee1;
 $dark-purple: #232331;
 $dark-teal: #232a31;
 $dark-blue: #2d3748;
+$dark-gray: #222529;
+
+$marigold: rgb(255, 165, 0);
+
+* {
+    color: $light-gray;
+}
 
 body {
     color: $light-gray;
     font-family: "Roboto", sans-serif;
     background-color: $dark-purple;
-}
-
-#nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    padding: 10px;
-    background-color: $dark-purple;
-    box-sizing: border-box;
 }
 
 .button {
@@ -57,4 +53,15 @@ body {
     $x: 1em;
     $y: 0.5em;
     margin: $x $y $x $y;
+}
+
+#nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    background-color: $dark-gray;
+    box-sizing: border-box;
 }

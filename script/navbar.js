@@ -29,11 +29,14 @@ html =
     "            </a>\n" +
     "        </li>\n" +
     "    </div>\n" +
-    "</nav>"
+    "</nav>\n" +
     "</div>";
 
-if (!document.body.innerHTML.includes('<nav class=')) {
-    document.body.innerHTML = html + '\n' + document.body.innerHTML;
-}
+window.addEventListener("load", function () {
+    if (!document.body.innerHTML.includes('<nav class=')) {
+        document.body.innerHTML = html + '\n' + document.body.innerHTML;
+    }
+})
+
 
 

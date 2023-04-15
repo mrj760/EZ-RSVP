@@ -1,19 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  color: #dbdee1;
+}
+
 body {
   color: #dbdee1;
   font-family: "Roboto", sans-serif;
   background-color: #232331;
-}
-
-#nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  padding: 10px;
-  background-color: #232331;
-  box-sizing: border-box;
 }
 
 .button {
@@ -33,6 +26,17 @@ body {
   height: auto;
   padding: 0.35em 0.25em 0.35em 0.25em;
   margin: 1em 0.5em 1em 0.5em;
+}
+
+#nav {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  background-color: #222529;
+  box-sizing: border-box;
 }
 
 * {

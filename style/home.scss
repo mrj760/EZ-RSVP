@@ -1,23 +1,9 @@
-#introTextContainer {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
-    text-align: center;
-    position: relative;
-    top: 150px;
-    max-height: 100%;
-    max-width: 100%;
-    border: 15px solid whitesmoke;
-    padding: 50px;
-    margin: 20px;
-}
-
-#getStartedButton {
-    text-align: center;
-    position: relative;
-    top: 245px;
-}
+@import "_global.scss";
 
 button {
-    background-image: linear-gradient(to bottom, rgba(255, 165, 0, 0.7), rgba(255, 165, 0, 1));
+    color: $dark-purple;
+    background-color: $dark-purple;
+    background-image: linear-gradient(0deg, rgba($marigold, .7), $marigold 60%);
     border: 0px;
     height: 50px;
     width: 200px;
@@ -30,6 +16,24 @@ button {
 .fullscreenDiv {
     height: 100vh;
     overflow-y: scroll;
+}
+
+.buttonDiv {
+    text-align: center;
+    position: relative;
+    top: 245px;
+}
+
+.introTextContainer {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
+    text-align: center;
+    position: relative;
+    top: 150px;
+    max-height: 100%;
+    max-width: 100%;
+    border: 15px solid whitesmoke;
+    padding: 50px;
+    margin: 20px;
 }
 
 #introDiv {
