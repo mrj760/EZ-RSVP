@@ -36,5 +36,20 @@ body {
 }
 
 #navspace {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+}
+
+.infoDiv {
+  margin: 10px max(30px, 30%) 10px max(30px, 30%);
+}
+
+#allInfoDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#eventName {
+  font-size: 2em;
+  font-weight: 600;
 }/*# sourceMappingURL=event_details.css.map */

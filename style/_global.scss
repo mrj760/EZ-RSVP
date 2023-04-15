@@ -12,6 +12,8 @@ $dark-gray: #222529;
 
 $marigold: rgb(255, 165, 0);
 
+$default-left-margin: 10%;
+
 
 body {
     color: $light-gray;
@@ -52,7 +54,7 @@ body {
     margin: $x $y $x $y;
 }
 
-$navbar-height: 50px;
+$navbar-height: 60px;
 $min-navbar-width: 540px;
 
 #nav {

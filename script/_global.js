@@ -17,10 +17,24 @@ for (let i = 0; i < title.length; i++) {
 }
 title = '<title>EZ-RSVP: ' + title.join(' ') + '</title>\n';
 
-let meta =
-    '<meta charset="UTF-8">\n'
-    + '<meta http-equiv="X-UA-Compatible" content="IE=edge">\n'
-    + '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+function addMeta(attrVals) {
+    for (i in attrVals) {
+        let meta = document.createElement('meta');
+        meta.setAttribute(attrVals[i][0], attrVals[i][1]);
+        document.head.appendChild(meta);
+    }
+}
+
+addMeta([
+    ['charset', 'UTF-8'],
+    ['http-equiv', 'X-UA-Compatible'],
+    ['content', 'IE=edge'],
+    ['name', 'viewport'],
+    ['content', 'width=device-width, initial-scale=1.0'],
+]);
+
+'<meta http-equiv="X-UA-Compatible" content="IE=edge">';
+'<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
 let stylesheets =
     '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>\n'
@@ -35,7 +49,7 @@ function addScript(src, crossorigin = -1, append = true) {
     document.head.appendChild(script);
 }
 
-document.head.innerHTML = document.head.innerHTML + title + meta + stylesheets;
+document.head.innerHTML = document.head.innerHTML + title + stylesheets;
 
 addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');
 addScript('../script/' + pagename + '.js');
