@@ -32,7 +32,8 @@
         margin-bottom: 10px;
 
         &[type="name"], 
-        &[type="password"] {
+        &[type="password"],
+        &[type="email"] {
             border: none;
             border-bottom: 1px solid #000000;
             background: transparent;

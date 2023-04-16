@@ -75,7 +75,7 @@ button:hover {
   width: 100%;
   margin-bottom: 10px;
 }
-.loginbox input[type=name], .loginbox input[type=password] {
+.loginbox input[type=name], .loginbox input[type=password], .loginbox input[type=email] {
   border: none;
   border-bottom: 1px solid #000000;
   background: transparent;
