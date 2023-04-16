@@ -1,5 +1,6 @@
+window.addEventListener("load", function(){
 
-let questionCounter = 2;
+    let questionCounter = 2;
 let userText = document.querySelector('#questionBox');
 let createButton = document.querySelector('#createFormButton');
 let cancelButton = document.querySelector('#cancelFormButton');
@@ -364,7 +365,7 @@ createFormButton.addEventListener('click', function () {
 
     //form is saved
     //user redirected back to dashboard
-
+    location.href = "../html/create_event.html";
 });
 
 //works
@@ -375,3 +376,6 @@ cancelFormButton.addEventListener('click', function () {
     location.href = "../html/create_event.html";
 
 });
+
+});
+

@@ -52,12 +52,14 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   margin: 20px;
+  margin-top: 0px;
 
   
 }/*# sourceMappingURL=create_event_rsvp.css.map */
 
 h1{
   text-align: center;
+  
 }
 
 #questionSpecifier{
