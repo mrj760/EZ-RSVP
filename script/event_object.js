@@ -9,13 +9,11 @@ class Event {
     }
 }
 
-const event_node_array = Event;
+const event_node_array = new Array();
 
-for(let i=0; event_node_array.length; i++){
-    appendElmtToDiv(event_node_array[i])
-} 
+
 
 window.addEventListener("load", function() {
-    displayEvent(example);
+    displayEvent(event_node_array);
 });
 

@@ -9,6 +9,15 @@ class Event {
     }
 }
 
+var event_node_array = new Array();
+event_node_array.push(new Event('','','','',''));
+
+
+
 window.addEventListener("load", function() {
-    displayEvent(example);
+    displayEvent(event_node_array);
 });
+
+function displayEvent(){
+
+}
