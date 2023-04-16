@@ -1,11 +1,10 @@
 const fullscreenDivs = document.querySelectorAll('.fullscreenDiv')
 let currentDivIdx = 0;
 lastY = 0;
-let isAnimating = false;
 
 window.addEventListener('scroll', function () {
 
-    if (fullscreenDivs.length <= 1 || isAnimating) return;
+    if (fullscreenDivs.length <= 1) return;
 
     y = window.scrollY.toFixed(2);
     scrolledDown = lastY < y;
@@ -22,7 +21,4 @@ window.addEventListener('scroll', function () {
         fullscreenDivs[--currentDivIdx].scrollIntoView({ behavior: 'auto' , block:'start', inline:'nearest', duration:500});
         isAnimating = true;
     }
-    setTimeout(() => {
-        isAnimating = false;
-    }, 100);
 })
