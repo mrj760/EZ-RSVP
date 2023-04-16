@@ -9,20 +9,22 @@ class Event {
     }
 }
 
+
 //example: 
 let eventList = new Array();
-
-eventList.push("Steve's BBQ", "https://~", "Eating BBQ with Steve", "San Marcos, CA", "October 4, 2023, 12:00pm");
-eventList.push("Mike's Hunt", "https://~", "Hunting with Mike", "San Marcos, CA", "October 5, 2023, 12:00pm");
+eventList.push(new Event("Steve's BBQ", "https://~", "Eating BBQ with Steve", "San Marcos, CA", "October 4, 2023, 12:00pm"));
+eventList.push(new Event("Mike's Hunt", "https://~", "Hunting with Mike", "San Marcos, CA", "October 5, 2023, 12:00pm"));
 
 
 window.addEventListener("load", function() {
     displayDashboardEvent(eventList);
 });
 
+
 // In the dashboard, just show picture and name of event
 // show the event list using loop
-function displayDashboardEvent(event) {
+function displayDashboardEvent() {
+
     for(let i=0; i < eventList.length; i++){
         
         let userEventsDiv = document.getElementById('userEventsDiv');
@@ -31,21 +33,19 @@ function displayDashboardEvent(event) {
         eventDiv.classList.add('event');
         userEventsDiv.appendChild(eventDiv);
         eventDiv.addEventListener('click', function () {
-            alert('you clicked on ' + event[i].name);
+            alert('you clicked on ' + eventList[i].name);
         })
-        console.log(eventDiv);
 
         let photoURLDiv = document.getElementById('photoURLDiv');
-
         let photo = document.createElement('img');
-        photo.src = event[i].photoURL;
+        photo.src = eventList[i].photoURL;
         photoURLDiv.appendChild(photo);
         
-        appendElmtToDiv(userEventsDiv, eventList[i].name);
-        console.log(photoURLDiv);
+        appendElmtToDiv(eventDiv, eventList[i].name);
     }
 
 }
+
 function appendElmtToDiv(divNode, value, elmt='p') {
     let child = document.createElement(elmt);
     child.innerHTML = value;
@@ -57,10 +57,3 @@ function appendElmtToDiv(divNode, value, elmt='p') {
 //     var el = document.getElementById("dashboard_EventPic");
 //     var el_name = document.getElementById("dashboard_EventName");
 
-//     el.onclick = clickEvent();
-//     el_name.onlcick = clickEvent();
-// }
-
-// function clickEvent(){
-//     alert('You click the event');
-// }
