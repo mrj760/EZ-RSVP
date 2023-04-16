@@ -44,7 +44,7 @@ function displayDashboardEvent() {
         photoDiv.appendChild(photo);
         eventDiv.appendChild(photoDiv);
 
-        let eventName = document.createElement('div');
+        let eventName = document.createElement('p');
         eventName.innerHTML = eventList[i].name;
         eventName.classList.add('eventName');
         eventDiv.appendChild(eventName);
