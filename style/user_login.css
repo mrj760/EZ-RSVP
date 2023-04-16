@@ -1,20 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
+  min-height: 100vh;
   color: #dbdee1;
   font-family: "Roboto", sans-serif;
   background-color: #232331;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(219, 222, 225, 0.1) 70%, rgba(219, 222, 225, 0.2));
 }
 
-.button {
-  color: #232331;
-  background-color: #dbdee1;
+button {
+  background-image: linear-gradient(0deg, rgba(255, 165, 0, 0.7), rgb(255, 165, 0) 60%);
+  border: 0px;
+  height: 50px;
+  width: 200px;
+  color: #222529;
+  background-color: rgb(255, 165, 0);
   border: 0px;
   text-align: center;
   font-weight: bold;
   padding: 0.25em 0.35em 0.25em 0.35em;
   margin: 1em 1em 1em 1em;
 }
-.button:hover {
+button:hover {
   background-color: #cee3f6;
 }
 
@@ -37,7 +43,7 @@ body {
 }
 
 #navspace {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .loginbox {

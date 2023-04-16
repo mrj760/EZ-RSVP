@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $dark-purple;
 }
 
 .textBox {
@@ -18,18 +17,16 @@
 }
 
 #nameTextBox {
-    margin-top: 20dvh;
+    margin-top: 5dvh;
 }
 
 #emailTextBox {
-    margin-top: 20px;
 }
 
-#captchaBackground {
-    height: 300px;
-    width: 300px;
-    margin-top: 5%;
-    background-color: $dark-blue;
+#inputContainer {
+    margin-top: 30%;
+    transform: translateY(-50%);
+    background-color: $light-gray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,11 +35,12 @@
 }
 
 #captcha {
-    height: 40%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #captchaTextBox {
-    height: 40%;
+    height: 3rem;
     width: 80%;
     font-size: 1.1rem;
 }
@@ -50,11 +48,17 @@
 $outputFontSize: 1.2rem;
 
 #incorrect {
+    border-radius: 5px;
+    padding: .2em;
+    background-color: $dark-gray;
     color: #ff0000;
     font-size: $outputFontSize;
 }
 
 #correct {
+    border-radius: 5px;
+    padding: .2em;
+    background-color: $dark-gray;
     color: #7fff00;
     font-size: $outputFontSize;
 }
