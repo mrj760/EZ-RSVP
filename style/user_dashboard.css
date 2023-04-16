@@ -72,6 +72,7 @@ a:hover {
 .photoDiv {
   width: 90%;
   height: 80%;
+  
 }
 
 .eventName {
@@ -79,6 +80,7 @@ a:hover {
   font-size: 1.4rem;
   font-weight: 600;
   text-align: center;
+  
 }
 
 #userEventsDiv {
@@ -86,4 +88,5 @@ a:hover {
   margin-left: 5%;
   margin-right: 5%;
   display: flex;
+  overflow: hidden;
 }/*# sourceMappingURL=user_dashboard.css.map */
