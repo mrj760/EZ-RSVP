@@ -19,7 +19,7 @@
     & #eventCoverPhoto {
         margin-left: 50%;
         transform: translateX(-50%);
-        width: max(150px, 70%);
+        width: clamp(60rem, 60%, 90rem);
         img {
             width: 100%;
         }

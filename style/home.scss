@@ -1,14 +1,5 @@
 @import './_global.scss';
 
-button {
-    color: $dark-purple;
-    background-color: $dark-purple;
-    background-image: linear-gradient(0deg, rgba($marigold, .7), $marigold 60%);
-    border: 0px;
-    height: 50px;
-    width: 200px;
-}
-
 .leadingText {
     text-align: center;
 }
