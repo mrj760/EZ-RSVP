@@ -64,6 +64,8 @@ window.addEventListener("load", function () {
         context.clearRect(0, 0, captchaText.width, captchaText.height);
         let x = captchaText.width / 2;
         let y = captchaText.height / 2;
+        context.font = "bold 28px verdana, sans-serif";
+        context.fillStyle = "#000000";
         context.fillText(captcha, x, y);
 
         captchaOutput.innerHTML = "<span>Waiting...</span>";
