@@ -28,8 +28,11 @@ function displayDashboardEvent() {
 
         let userEventsDiv = document.getElementById('userEventsDiv');
 
+        let linkToEventDetails = document.createElement('a');
+        linkToEventDetails.classList.add('userEvent');
+        linkToEventDetails.href = "./event_details.html"
+
         let eventDiv = document.createElement('div');
-        eventDiv.classList.add('userEvent');
         eventDiv.addEventListener('click', function () {
             alert('you clicked on ' + eventList[i].name);
         })
@@ -46,7 +49,8 @@ function displayDashboardEvent() {
         eventName.classList.add('eventName');
         eventDiv.appendChild(eventName);
 
-        userEventsDiv.appendChild(eventDiv);
+        linkToEventDetails.appendChild(eventDiv);
+        userEventsDiv.appendChild(linkToEventDetails);
     }
 
 }

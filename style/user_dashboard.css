@@ -8,13 +8,11 @@ body {
 }
 
 button {
-  color: #232331;
-  background-color: #232331;
   background-image: linear-gradient(0deg, rgba(255, 165, 0, 0.7), rgb(255, 165, 0) 60%);
   border: 0px;
   height: 50px;
   width: 200px;
-  color: #232331;
+  color: #222529;
   background-color: rgb(255, 165, 0);
   border: 0px;
   text-align: center;
