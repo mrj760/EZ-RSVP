@@ -1,7 +1,8 @@
 class Event {
-    constructor(name, details, location, datetime)
+    constructor(name, photoURL, details, location, datetime)
     {
         this.name = name;
+        this.photoURL = photoURL;
         this.details = details;
         this.location = location;
         this.datetime = datetime;
@@ -11,7 +12,11 @@ class Event {
 is_owner = false;
 
 example = new Event(
+// Name
 "Maria's Quincenera", 
+// Photo
+"https://www.metropolbanquet.com/wp-content/uploads/New-10-1-2000x1333.jpg",
+// Description
 'We are overjoyed to announce that our daughter, '
     + 'Maria, will be celebrating her quincenera on October 12th. '
     + 'This special day will commemorate Maria\'s 15 years and her passage into young womanhood. '
@@ -29,7 +34,9 @@ example = new Event(
     + 'quincenera! Mementos and testimonials from the day will be posted for all to enjoy '
     + 'following the event. We hope that you can make time to share this memorable quinceañera with us. '
     + 'Maria and our family look forward to celebrating this special occasion with each of you!',
-"San Marcos, CA", 
+// Location
+"San Marcos, CA",
+// Date, Time
 "October 2, 2020, 12:00pm");
 
 window.addEventListener("load", function() {
@@ -39,11 +46,17 @@ window.addEventListener("load", function() {
 function displayEvent(event) {
 
     nameDiv = document.getElementById("eventName");
+    coverPhotoDiv = document.getElementById("eventCoverPhoto");
     detailsDiv = document.getElementById("eventDetails");
     locationDiv = document.getElementById("eventLocation");
     datetimeDiv = document.getElementById("eventDatetime");
 
     appendElmtToDiv(nameDiv, event.name);
+    
+    let photo = document.createElement('img');
+    photo.src = event.photoURL;
+    coverPhotoDiv.appendChild(photo);
+    
     appendElmtToDiv(detailsDiv, event.details);
     appendElmtToDiv(locationDiv, "Location: " + event.location);
     appendElmtToDiv(datetimeDiv, "Date: " + event.datetime);

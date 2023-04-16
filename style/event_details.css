@@ -25,7 +25,7 @@ body {
 }
 
 #nav {
-  min-width: 540px;
+  overflow-x: auto;
   position: fixed;
   top: 0px;
   z-index: 2;
@@ -33,6 +33,7 @@ body {
   padding: 0px 10px 0px 10px;
   background-color: #222529;
   box-sizing: border-box;
+  font-size: 100%;
 }
 
 #navspace {
@@ -52,4 +53,17 @@ body {
 #eventName {
   font-size: 2em;
   font-weight: 600;
+}
+
+#outerEventCoverPhotoDiv #eventCoverPhoto {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: max(150px, 70%);
+}
+#outerEventCoverPhotoDiv #eventCoverPhoto img {
+  width: 100%;
+}
+
+#eventDetails {
+  width: max(150px, 50%);
 }/*# sourceMappingURL=event_details.css.map */

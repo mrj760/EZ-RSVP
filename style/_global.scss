@@ -14,7 +14,6 @@ $marigold: rgb(255, 165, 0);
 
 $default-left-margin: 10%;
 
-
 body {
     color: $light-gray;
     font-family: "Roboto", sans-serif;
@@ -55,10 +54,9 @@ body {
 }
 
 $navbar-height: 60px;
-$min-navbar-width: 540px;
 
 #nav {
-    min-width: $min-navbar-width;
+    overflow-x: auto;
     position: fixed;
     top: 0px;
     z-index: 2;
@@ -66,6 +64,7 @@ $min-navbar-width: 540px;
     padding: 0px 10px 0px 10px;
     background-color: $dark-gray;
     box-sizing: border-box;
+    font-size: 100%;
 }
 
 #navspace {
