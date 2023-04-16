@@ -12,8 +12,8 @@ class Event {
 
 //example: 
 let eventList = new Array();
-eventList.push(new Event("Steve's BBQ", "https://~", "Eating BBQ with Steve", "San Marcos, CA", "October 4, 2023, 12:00pm"));
-eventList.push(new Event("Mike's Hunt", "https://~", "Hunting with Mike", "San Marcos, CA", "October 5, 2023, 12:00pm"));
+eventList.push(new Event("Steve's BBQ", "https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "Eating BBQ with Steve", "San Marcos, CA", "October 4, 2023, 12:00pm"));
+eventList.push(new Event("Mike's Hunt", "https://dwr.virginia.gov/wp-content/uploads/top-reasons-to-take-a-friend.jpg", "Hunting with Mike", "San Marcos, CA", "October 5, 2023, 12:00pm"));
 
 
 window.addEventListener("load", function() {
