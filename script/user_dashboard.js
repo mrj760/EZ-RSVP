@@ -9,3 +9,6 @@ class Event {
     }
 }
 
+window.addEventListener("load", function() {
+    displayEvent(example);
+});

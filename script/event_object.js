@@ -15,3 +15,7 @@ for(let i=0; event_node_array.length; i++){
     appendElmtToDiv(event_node_array[i])
 } 
 
+window.addEventListener("load", function() {
+    displayEvent(example);
+});
+
