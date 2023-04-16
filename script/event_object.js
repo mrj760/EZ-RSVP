@@ -8,12 +8,3 @@ class Event {
         this.datetime = datetime;
     }
 }
-
-const event_node_array = new Array();
-
-
-
-window.addEventListener("load", function() {
-    displayEvent(event_node_array);
-});
-
