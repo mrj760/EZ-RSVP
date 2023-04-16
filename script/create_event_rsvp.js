@@ -335,10 +335,10 @@ saveQuestionButton.addEventListener('click', function(){
                 document.getElementById("questionContainer").innerHTML += html;
                 break;
             case 'Y/N':
-                html = "<input type='radio' id='yes' name='yes' value='yes' disabled>\n" +
-                  "<label for='yes'>yes</label><br> \n" +
-                  "<input type='radio' id='no' name='no' value='no' disabled>\n" +
-                  "<label for='no'>no</label><br>\n";
+                html = "<input type='radio' id='yes' name='yes' value='yes' disabled>\n"
+                + "<label for='yes'>yes</label><br> \n"
+                + "<input type='radio' id='no' name='no' value='no' disabled>\n"
+                + "<label for='no'>no</label><br>\n";
                 document.getElementById("questionContainer").innerHTML += html;
                 break;
             default:
