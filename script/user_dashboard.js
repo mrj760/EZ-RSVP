@@ -46,7 +46,6 @@ let event_list = new dashEvents();
 event_list.dash_events("Steve's BBQ", "https://~", "Eating BBQ with Steve", "San Marcos, CA", "October 4, 2023, 12:00pm");
 event_list.dash_events("Mike's Hunt", "https://~", "Hunting with Mike", "San Marcos, CA", "October 5, 2023, 12:00pm");
 
-console.log(dashEvents.allEvents);
 
 window.addEventListener("load", function() {
     displayDashboardEvent(event_list);
