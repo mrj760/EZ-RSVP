@@ -5,10 +5,6 @@ html = "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\
     "            <a href=\"home.html\" class=\"nav-link\">\n" +
     "                <i class=\"fa-solid fa-house\"></i> Home" +
     "            </a>\n" +
-    "        </li>\n" +
-    "        <li class=\"nav-item\">\n" +
-    "            <a href=\"about.html\" class=\"nav-link\">About</a>\n" +
-    "        </li>\n" +
     "        <li class=\"nav-item\">\n" +
     "            <a href=\"user_dashboard.html\" class=\"nav-link\">\n" +
     "                <i class=\"fa-solid fa-table-columns\"></i> Dashboard" +
