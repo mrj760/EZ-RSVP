@@ -40,9 +40,8 @@ body {
   margin-bottom: 60px;
 }
 
-
 #questionContainer {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(0, 0, 0));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), black);
   text-align: center;
   max-height: 100%;
   max-width: 100%;
@@ -52,23 +51,19 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   margin: 20px;
+} 
+h1 {
+  text-align: center;
+}
 
-  
+#questionSpecifier {
+  text-align: center;
+}
+
+#questionbuttons {
+  text-align: center;
+}
+
+#formButtons {
+  text-align: center;
 }/*# sourceMappingURL=create_event_rsvp.css.map */
-
-h1{
-  text-align: center;
-}
-
-#questionSpecifier{
-  text-align: center;
-}
-
-#questionbuttons{
-  text-align: center;
-}
-
-#formButtons{
-  
-  text-align: center;
-}
