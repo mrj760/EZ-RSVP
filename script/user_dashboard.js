@@ -30,18 +30,20 @@ function displayDashboardEvent() {
         let userEventsDiv = document.getElementById('userEventsDiv');
 
         let eventDiv = document.createElement('div');
-        eventDiv.classList.add('event');
-        userEventsDiv.appendChild(eventDiv);
+        eventDiv.classList.add('userEvent');
         eventDiv.addEventListener('click', function () {
             alert('you clicked on ' + eventList[i].name);
         })
 
-        let photoURLDiv = document.getElementById('photoURLDiv');
+        let photoDiv = document.createElement('div');
+        photoDiv.classList.add('photoDiv');
         let photo = document.createElement('img');
         photo.src = eventList[i].photoURL;
-        photoURLDiv.appendChild(photo);
-        
+        photoDiv.appendChild(photo);
+        eventDiv.appendChild(photoDiv);
         appendElmtToDiv(eventDiv, eventList[i].name);
+
+        userEventsDiv.appendChild(eventDiv);
     }
 
 }
