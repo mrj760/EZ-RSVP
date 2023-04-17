@@ -76,9 +76,11 @@ window.addEventListener("load", function () {
         if (userText.value === captcha) {
             captchaOutput.classList.add("correctCaptcha");
             captchaOutput.innerHTML = "<span id=\"correct\">Correct!</span>";
+            window.location.href = "event_cofrimation.html";
         } else {
             captchaOutput.classList.add("incorrectCaptcha");
             captchaOutput.innerHTML = "<span id=\"incorrect\">Incorrect, please try again</span>";
         }
     }
+
 })
