@@ -31,7 +31,7 @@ function displayDashboardEvent() {
         let linkToEventDetails = document.createElement('a');
         linkToEventDetails.classList.add('userEvent');
         linkToEventDetails.href = "./event_details.html"
-
+        
         let eventDiv = document.createElement('div');
         eventDiv.addEventListener('click', function () {
             alert('you clicked on ' + eventList[i].name);
@@ -43,13 +43,16 @@ function displayDashboardEvent() {
         photo.src = eventList[i].photoURL;
         photoDiv.appendChild(photo);
         eventDiv.appendChild(photoDiv);
-
+        
+        let eventNameDiv = document.createElement('div');
+        eventNameDiv.classList.add('eventNameDiv');
         let eventName = document.createElement('p');
         eventName.innerHTML = eventList[i].name;
         eventName.classList.add('eventName');
-        eventDiv.appendChild(eventName);
+        eventNameDiv.appendChild(eventName);
 
         linkToEventDetails.appendChild(eventDiv);
+        linkToEventDetails.appendChild(eventNameDiv);
         userEventsDiv.appendChild(linkToEventDetails);
     }
 

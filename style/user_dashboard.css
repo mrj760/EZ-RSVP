@@ -79,9 +79,9 @@ a:hover {
   margin-bottom: 5%;
   font-size: 1.4rem;
   font-weight: 600;
-  text-align: center;
-  
+  text-align: center; 
 }
+
 
 #userEventsDiv {
   width: 80%;
