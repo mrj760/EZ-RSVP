@@ -13,6 +13,10 @@ a {
     text-decoration: none;
     div {
         height: 100%;
+        &:hover {
+            background-color: rgb(76, 74, 95);
+            color: goldenrod;
+        }
     }
     &:hover {
         color: inherit;
@@ -32,13 +36,13 @@ a {
 }
 
 .eventNameDiv {
-    position: relative;
-    bottom: 0;
+    height: 20%;
+    font-size: auto;
 }
 
 .eventName {
     // margin-bottom: 5%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-align: center;
 }
