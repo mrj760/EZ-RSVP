@@ -1,5 +1,15 @@
 @import './_global.scss';
 
+button {
+    background-color: #ba4d9f;
+    border: solid 2px #fe67d7;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    color: rgb(255, 247, 250);
+    font-weight: 1000;
+}
+
 .leadingText {
     text-align: center;
 }

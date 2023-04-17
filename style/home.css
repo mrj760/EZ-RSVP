@@ -15,7 +15,7 @@ button,
   width: 200px;
   border: groove 1px #d3d3d6;
   border-radius: 0.2em;
-  color: #e9e9ea;
+  color: #f4f4f5;
   text-align: center;
   font-weight: bold;
   font-size: 1.1rem;
@@ -119,6 +119,16 @@ button:hover,
 
 #navspace {
   margin-bottom: 50px;
+}
+
+button {
+  background-color: #ba4d9f;
+  border: solid 2px #fe67d7;
+  padding: 20px;
+  width: auto;
+  height: auto;
+  color: rgb(255, 247, 250);
+  font-weight: 1000;
 }
 
 .leadingText {

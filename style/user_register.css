@@ -15,7 +15,7 @@ button,
   width: 200px;
   border: groove 1px #d3d3d6;
   border-radius: 0.2em;
-  color: #e9e9ea;
+  color: #f4f4f5;
   text-align: center;
   font-weight: bold;
   font-size: 1.1rem;
@@ -51,7 +51,6 @@ button:hover,
   margin: 0;
   padding: 0;
   font-weight: bold;
-  
 }
 .background .textbox {
   border: none;
@@ -61,8 +60,6 @@ button:hover,
   height: 40px;
   color: #000000;
   font-size: 16px;
-  text-align: center;
-  margin: auto;
 }
 .background button, .background .button {
   border: none;
@@ -74,8 +71,6 @@ button:hover,
   border-radius: 20px;
   margin-top: 20px;
   margin-left: 0;
-  text-align: center;
- 
 }
 .background input {
   margin-bottom: 10px;
@@ -88,7 +83,6 @@ button:hover,
   height: 40px;
   color: #000000;
   font-size: 16px;
-  
 }
 .background input[type=submit] {
   border: none;
@@ -106,7 +100,6 @@ button:hover,
   font-size: 12px;
   line-height: 20px;
   color: darkgrey;
-  
 }
 .background a:hover {
   color: #000000;
