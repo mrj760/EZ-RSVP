@@ -15,6 +15,7 @@ window.addEventListener("load", function () {
     let submitButton = document.querySelector('#submitButton');
     let captchaOutput = document.querySelector('#captchaOutput');
     let refreshButton = document.querySelector('#refreshButton');
+    let confirmButton = document.querySelector('#confirmButton');
 
     let alphaNums = [
         // 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -43,6 +44,9 @@ window.addEventListener("load", function () {
 
     //
     refreshButton.addEventListener('click', refreshCaptcha);
+
+    //
+    confirmButton.addEventListener('click', goToConfirm);
 
     //
     function randomNumber(min, max) {
@@ -76,10 +80,19 @@ window.addEventListener("load", function () {
         if (userText.value === captcha) {
             captchaOutput.classList.add("correctCaptcha");
             captchaOutput.innerHTML = "<span id=\"correct\">Correct!</span>";
-            window.location.href = "rsvp_confirmation.html";
         } else {
             captchaOutput.classList.add("incorrectCaptcha");
             captchaOutput.innerHTML = "<span id=\"incorrect\">Incorrect, please try again</span>";
+        }
+    }
+
+    function goToConfirm(userText){
+        if (userText.value === captcha){
+            window.location.href="rsvp_confirmation.html";
+        }
+        else{
+            captchaOutput.classList.add("incorrectCaptcha");
+            captchaOutput.innerHTML = "<span id=\"incorrect\">Can't do confirm</span>";
         }
     }
 
