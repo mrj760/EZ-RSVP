@@ -17,22 +17,28 @@
         <!-- Add additional details here via JS.
             These are details laid out by the event creator. -->
 
-        <div id="inputContainer">
+        <div id="inputContainer" class="background">
 
+            <h1>RSVP for: &ltEvent Name&gt </h1>
+
+            <label for="name">Name</label><br>
             <input id="nameTextBox" class="textBox" type="text" name="name" title="name" placeholder="John Smith" />
-
+            <br>
+            <label for="email">Email</label><br>
             <input id="emailTextBox" class="textBox" type="text" name="email" title="email"
                 placeholder="JohnSmith@mail.com" />
 
             <div id="additionalDetails"></div>
 
             <canvas id="captcha"></canvas>
-
-            <input id="captchaTextBox" class="textBox" type="text" name="text" title="text"
-                placeholder="Enter CAPTCHA"></input>
+            <br>
+            <label for="captcha">Captcha</label>
+            <br>
+            <input id="captchaTextBox" class="textBox" type="text" name="captcha" title="text"
+                placeholder="Enter CAPTCHA" />
 
             <div id="buttons">
-                
+
                 <button id="submitButton" class="button" type="button">Submit Captcha</button>
                 <button id="refreshButton" class="button" type="button">Refresh Captcha</button>
                 <br>

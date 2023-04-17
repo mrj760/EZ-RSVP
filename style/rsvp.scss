@@ -4,45 +4,16 @@
     text-align: center;
 }
 
-.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.textBox {
-    height: auto;
-    width: 240px;
-    font-size: 1.2rem;
-}
-
-#nameTextBox {
-    margin-top: 5dvh;
-}
-
-#emailTextBox {
-}
-
 #inputContainer {
-    border-radius: 5px;
-    margin-top: 30%;
-    transform: translateY(-50%);
-    background-color: rgb(155, 153, 166);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-bottom: 1rem;
+    width: auto;
 }
 
 #captcha {
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 #captchaTextBox {
-    height: 3rem;
-    width: 80%;
+    // height: 3rem;
+    // width: 80%;
     font-size: 1.1rem;
 }
 
@@ -50,17 +21,16 @@ $outputFontSize: 1.2rem;
 
 #incorrect {
     border-radius: 5px;
-    padding: .2em;
-    background-color: $dark-gray;
+    padding: 0.2em;
+    background-color: black;
     color: #ff0000;
     font-size: $outputFontSize;
 }
 
 #correct {
     border-radius: 5px;
-    padding: .2em;
-    background-color: $dark-gray;
+    padding: 0.2em;
+    background-color: black;
     color: #7fff00;
     font-size: $outputFontSize;
 }
-

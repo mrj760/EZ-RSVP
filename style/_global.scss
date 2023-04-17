@@ -22,39 +22,122 @@ body {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba($light-gray, 0.1) 70%, rgba($light-gray, 0.2));
 }
 
-button, .button {
-    background-color: whitesmoke;
-    background-image: linear-gradient(180deg, rgba($marigold, 1), rgba($marigold, .4));
-    border: 0px;
-    height: 50px;
+button,
+.button {
+    background-color: mix($dark-purple, $light-gray, 70%);
+    background-image: linear-gradient(180deg, rgba($marigold, 0.6), rgba($marigold, 0.3));
+    // background-image: linear-gradient(180deg, rgba($marigold, 1), rgba($marigold, .4));
+
+    height: 40px;
     width: 200px;
 
-    color: $dark-gray;
-    border: 0px;
-    border-radius: .2em;
-    text-align: center;
+    border: groove 1px mix($dark-purple, white, 20%);
+    border-radius: 0.2em;
 
+    color: mix($dark-purple, white, 10%);
+    text-align: center;
     font-weight: bold;
+    font-size: 1.1rem;
 
     padding: 0.25em 0.35em;
     margin: 1em 1em;
 
     &:hover {
-        background-image: linear-gradient(180deg, rgba($marigold, .6), rgba($marigold, .3));
-        background-color: rgb(145, 141, 183);
+        background-image: linear-gradient(180deg, rgba($marigold, 0.4), rgba($marigold, 0.05));
     }
 }
 
-.textBox {
-    height: auto;
+.background {
 
-    $x: 0.35em;
-    $y: 0.25em;
-    padding: $x $y $x $y;
+    width: 320px;
+    background: #ffffff;
+    color: #000000;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 60px 30px;
+    font-family: system-ui;
+    text-align: left;
 
-    $x: 1em;
-    $y: 0.5em;
-    margin: $x $y $x $y;
+
+    > h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    label {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .textbox {
+        border: none;
+        border: 1px solid #000000;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #000000;
+        font-size: 16px;
+    }
+
+    button,
+    .button {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #000000;
+        color: #ffffff;
+        font-size: 18px;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    input {
+        // width: 100%;
+        margin-bottom: 10px;
+
+        &[type="name"],
+        &[type="email"],
+        &[type="password"],
+        &[type="text"] {
+            border: none;
+            border-bottom: 1px solid #000000;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #000000;
+            font-size: 16px;
+        }
+
+        &[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #000000;
+            color: #ffffff;
+            font-size: 18px;
+            border-radius: 20px;
+            margin-top: 20px;
+            margin-left: 0;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 20px;
+        color: darkgrey;
+        &:hover {
+            color: #000000;
+        }
+    }
 }
 
 $navbar-height: 50px;
