@@ -33,10 +33,14 @@ a {
 .photoDiv {
     width: 90%;
     height: 80%;
+    img {
+        height: 80%;
+    }
 }
 
 .eventNameDiv {
-    height: 20%;
+    margin-top: 2%;
+    height: 17%;
     font-size: auto;
 }
 

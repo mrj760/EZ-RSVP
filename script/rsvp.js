@@ -35,12 +35,12 @@ window.addEventListener("load", function () {
     //
     userText.addEventListener('keyup', function (e) {
         if (e.keyCode === 13) { // Enter key
-            outputResult(userText);
+            submitCaptcha(userText);
         }
     });
 
     //
-    submitButton.addEventListener('click', function () { outputResult(userText) });
+    submitButton.addEventListener('click', function () { submitCaptcha(userText) });
 
     //
     refreshButton.addEventListener('click', refreshCaptcha);
@@ -75,24 +75,28 @@ window.addEventListener("load", function () {
         captchaOutput.innerHTML = "<span>Waiting...</span>";
     }
 
+    let captchaCorrect = false;
+
     //
-    function outputResult(userText) {
+    function submitCaptcha(userText) {
         if (userText.value === captcha) {
             captchaOutput.classList.add("correctCaptcha");
             captchaOutput.innerHTML = "<span id=\"correct\">Correct!</span>";
+            captchaCorrect = true;
         } else {
             captchaOutput.classList.add("incorrectCaptcha");
             captchaOutput.innerHTML = "<span id=\"incorrect\">Incorrect, please try again</span>";
         }
     }
 
+
     function goToConfirm(){
-        if (userText.value === captcha){
+        if (captchaCorrect){
             window.location.href="rsvp_confirmation.html";
         }
         else{
             captchaOutput.classList.add("incorrectCaptcha");
-            captchaOutput.innerHTML = "<span id=\"incorrect\">Can't do confirm</span>";
+            captchaOutput.innerHTML = "<span id=\"incorrect\">Please submit captcha</span>";
         }
     }
 
