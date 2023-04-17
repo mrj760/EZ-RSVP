@@ -5,15 +5,65 @@ class Event {
         this.details = details;
         this.location = location;
         this.datetime = datetime;
+        this.parseSplitter = "sdfuynf9s87dfy9 23807r32 98psDFsdf8s76dfSDFASDAF8G8GA"
+    }
+
+
+    get stringify () {
+        return this.name + this.parseSplitter + this.photoURL + this.parseSplitter + this.details + this.parseSplitter 
+        + this.location + this.parseSplitter + this.datetime;
+    }
+
+    parse(str) {
+        str = str.split(this.parseSplitter);
+        this.name = str[0];
+        this.photoURL = str[1];
+        this.details = str[2];
+        this.location = str[3];
+        this.datetime = str[4];
     }
 }
 
 
-//example: 
 let eventList = new Array();
-eventList.push(new Event("Steve's BBQ", "https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "Eating BBQ with Steve", "San Marcos, CA", "October 4, 2023, 12:00pm"));
-eventList.push(new Event("Mike's Hunt", "https://dwr.virginia.gov/wp-content/uploads/top-reasons-to-take-a-friend.jpg", "Hunting with Mike", "San Marcos, CA", "October 5, 2023, 12:00pm"));
 
+eventList.push(new Event(
+    "Steve's BBQ", 
+    "https://images.pexels.com/photos/533325/pexels-photo-533325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "Eating BBQ with Steve", 
+    "San Marcos, CA", 
+    "October 4, 2023, 12:00pm"));
+
+eventList.push(new Event(
+    "Mike's Hunt", 
+    "https://dwr.virginia.gov/wp-content/uploads/top-reasons-to-take-a-friend.jpg", 
+    "Hunting with Mike", 
+    "San Marcos, CA", 
+    "October 5, 2023, 12:00pm"));
+
+eventList.push(new Event(
+    "Maria's Quincenera",
+    "https://www.metropolbanquet.com/wp-content/uploads/New-10-1-2000x1333.jpg",
+    'We are overjoyed to announce that our daughter, '
+    + 'Maria, will be celebrating her quincenera on October 12th. '
+    + 'This special day will commemorate Maria\'s 15 years and her passage into young womanhood. '
+    + 'We invite you to join us in celebrating Maria on this momentous occasion. '
+    + 'The day will begin with a special mass to give thanks for the grace of 15 years of life. '
+    + 'We will then gather for a reception with traditional food, dancing, music, and festivities. '
+    + 'Maria will make her grand entrance in a beautiful quinceñera gown, '
+    + 'freshly shod with elegant ballet-style shoes, completed with her bouquet of roses. '
+    + 'There will be memories and joy for all, as Maria shares her first waltz with '
+    + 'her father and enjoys this magical night surrounded by family and friends. '
+    + 'Guests will have the opportunity to capture photos and videos of the dances, '
+    + 'cake cutting, bouquet toss, and other special moments. Please RSVP through our '
+    + 'website event page and let us know if you plan to join in the celebration. '
+    + 'We look forward to an afternoon full of love, community, and celebration for Maria\'s '
+    + 'quincenera! Mementos and testimonials from the day will be posted for all to enjoy '
+    + 'following the event. We hope that you can make time to share this memorable quinceañera with us. '
+    + 'Maria and our family look forward to celebrating this special occasion with each of you!',
+    "San Marcos, CA",
+    "June 16th, 2022"
+))
 
 window.addEventListener("load", function () {
     displayDashboardEvent(eventList);
@@ -34,7 +84,7 @@ function displayDashboardEvent() {
         
         let eventDiv = document.createElement('div');
         eventDiv.addEventListener('click', function () {
-            alert('you clicked on ' + eventList[i].name);
+            localStorage.setItem('event', eventList[i].stringify);
         });
 
         let photoDiv = document.createElement('div');
