@@ -4,13 +4,13 @@
         to collect information that may be important for the event. -->
 
 <head>
-    <script src="../script/_global.js"></script>
     <link rel="stylesheet" href="../style/_global.css" />
+    <script src="../script/_global.js"></script>
 </head>
 
 <body onresize="myFunction()">
 
-    <div class="formCreator">
+    <div class="background">
         <h1 id="formCreatorHeading">
             Collect Information to Serve Your Event"s Attendees.
         </h1>
@@ -19,24 +19,29 @@
             <canvas id="previousQuestions">previous questions</canvas>
 
             <div id="questionContainer">
-                <h4>Your current form:</h4><br>
-                <label for="name" class="default">Question 1 -- Full Name: </label>
-                <input type="text" class="name" name="name" disabled><br><br>
-                <label for="email" class="default">Question 2 -- Email: </label>
-                <input type="text" class="email" name="email" disabled><br><br>
+                <h4>Your current form:</h4>
+                <br>
+                <label for="name" class="default">Full Name: </label>
+                <br>
+                <input type="text" class="name" name="name" placeholder="John Smith" disabled>
+                <br>
+                <label for="email" class="default">Email: </label>
+                <br>
+                <input type="text" class="email" name="email" placeholder="johnsmith@email.com" disabled>
+                <br>
+                <br>
             </div>
 
             <div id="questionSpecifier">
                 <h5>New Question Details</h5>
                 <input id="questionBox" type="text" name="question" title="question"
-                    placeholder="Enter your question"></input>
+                    placeholder="Enter your question"/>
 
                 <select name="questionType" id="questionType" title="questionType">
                     <option value="multiChoice">Multiple Choice</option>
                     <option value="checkBoxes">Check Boxes</option>
                     <option value="textBox">Comment Box</option>
                 </select>
-
 
                 <div id="questionDemo">
                     <h6>Multi-choice or checkbox options will appear here:</h6>
