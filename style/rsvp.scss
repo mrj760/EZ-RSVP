@@ -24,9 +24,10 @@
 }
 
 #inputContainer {
+    border-radius: 5px;
     margin-top: 30%;
     transform: translateY(-50%);
-    background-color: $light-gray;
+    background-color: rgb(155, 153, 166);
     display: flex;
     align-items: center;
     justify-content: center;
