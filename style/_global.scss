@@ -14,6 +14,10 @@ $marigold: rgb(255, 165, 0);
 
 $default-left-margin: 10%;
 
+html {
+    min-height: 100vh;
+}
+
 body {
     min-height: 100vh;
     color: $light-gray;

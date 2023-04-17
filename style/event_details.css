@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html {
+  min-height: 100vh;
+}
+
 body {
   min-height: 100vh;
   color: #dbdee1;
@@ -126,25 +130,35 @@ button:hover,
 }
 
 #allInfoDiv {
+  margin-top: 10%;
+  margin-left: 25%;
+  width: 50%;
+  color: black;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #eventName {
+  width: 75%;
+  margin-left: 50%;
   font-size: 2em;
   font-weight: 600;
 }
 
+#outerEventCoverPhotoDiv {
+  text-align: center;
+}
 #outerEventCoverPhotoDiv #eventCoverPhoto {
   margin-left: 50%;
   transform: translateX(-50%);
-  width: clamp(60rem, 60%, 90rem);
+  width: max(100px, 70%);
 }
 #outerEventCoverPhotoDiv #eventCoverPhoto img {
   width: 100%;
 }
 
 #eventDetails {
-  width: max(150px, 50%);
+  width: 75%;
 }/*# sourceMappingURL=event_details.css.map */

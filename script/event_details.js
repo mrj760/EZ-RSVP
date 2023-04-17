@@ -42,7 +42,7 @@ function displayEvent(event) {
     locationDiv = document.getElementById("eventLocation");
     datetimeDiv = document.getElementById("eventDatetime");
 
-    appendElmtToDiv(nameDiv, event.name);
+    appendElmtToDiv(nameDiv, event.name, 'h1');
     
     let photo = document.createElement('img');
     photo.src = event.photoURL;
