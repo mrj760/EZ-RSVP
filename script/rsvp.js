@@ -36,6 +36,7 @@ window.addEventListener("load", function () {
     userText.addEventListener('keyup', function (e) {
         if (e.keyCode === 13) { // Enter key
             outputResult(userText);
+            goToConfirm(userText);
         }
     });
 
