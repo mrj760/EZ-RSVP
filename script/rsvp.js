@@ -36,7 +36,6 @@ window.addEventListener("load", function () {
     userText.addEventListener('keyup', function (e) {
         if (e.keyCode === 13) { // Enter key
             outputResult(userText);
-            goToConfirm(userText);
         }
     });
 
@@ -87,7 +86,7 @@ window.addEventListener("load", function () {
         }
     }
 
-    function goToConfirm(userText){
+    function goToConfirm(){
         if (userText.value === captcha){
             window.location.href="rsvp_confirmation.html";
         }
