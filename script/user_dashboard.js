@@ -30,12 +30,12 @@ function displayDashboardEvent() {
 
         let linkToEventDetails = document.createElement('a');
         linkToEventDetails.classList.add('userEvent');
-        linkToEventDetails.href = "./event_details.html"
+        linkToEventDetails.href = "./event_details.html";
         
         let eventDiv = document.createElement('div');
         eventDiv.addEventListener('click', function () {
             alert('you clicked on ' + eventList[i].name);
-        })
+        });
 
         let photoDiv = document.createElement('div');
         photoDiv.classList.add('photoDiv');
@@ -50,9 +50,9 @@ function displayDashboardEvent() {
         eventName.innerHTML = eventList[i].name;
         eventName.classList.add('eventName');
         eventNameDiv.appendChild(eventName);
+        eventDiv.appendChild(eventNameDiv);
 
         linkToEventDetails.appendChild(eventDiv);
-        linkToEventDetails.appendChild(eventNameDiv);
         userEventsDiv.appendChild(linkToEventDetails);
     }
 
