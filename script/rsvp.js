@@ -83,6 +83,8 @@ window.addEventListener("load", function () {
             captchaOutput.classList.add("correctCaptcha");
             captchaOutput.innerHTML = "<span id=\"correct\">Correct!</span>";
             captchaCorrect = true;
+            document.getElementById("confirmButton").style.visibility = "visible";
+
         } else {
             captchaOutput.classList.add("incorrectCaptcha");
             captchaOutput.innerHTML = "<span id=\"incorrect\">Incorrect, please try again</span>";
