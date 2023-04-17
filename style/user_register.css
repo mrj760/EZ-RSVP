@@ -8,20 +8,22 @@ body {
 }
 
 button {
-  background-image: linear-gradient(0deg, rgba(255, 165, 0, 0.7), rgb(255, 165, 0) 60%);
+  background-color: whitesmoke;
+  background-image: linear-gradient(180deg, orange, rgba(255, 165, 0, 0.4));
   border: 0px;
   height: 50px;
   width: 200px;
   color: #222529;
-  background-color: rgb(255, 165, 0);
   border: 0px;
+  border-radius: 3em;
   text-align: center;
   font-weight: bold;
-  padding: 0.25em 0.35em 0.25em 0.35em;
-  margin: 1em 1em 1em 1em;
+  padding: 0.25em 0.35em;
+  margin: 1em 1em;
 }
 button:hover {
-  background-color: #cee3f6;
+  background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.6), rgba(255, 165, 0, 0.3));
+  background-color: rgb(145, 141, 183);
 }
 
 .textBox {
@@ -48,7 +50,7 @@ button:hover {
 
 .loginbox {
   width: 320px;
-  height: 420px;
+  height: 480px;
   background: #ffffff;
   color: #000000;
   top: 50%;

@@ -19,33 +19,29 @@ body {
     color: $light-gray;
     font-family: "Roboto", sans-serif;
     background-color: $dark-purple;
-    background-image: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba($light-gray, .1) 70%, rgba($light-gray, .2));
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba($light-gray, 0.1) 70%, rgba($light-gray, 0.2));
 }
 
 button {
-
-    background-image: linear-gradient(0deg, rgba($marigold, .7), $marigold 60%);
+    background-color: whitesmoke;
+    background-image: linear-gradient(180deg, rgba($marigold, 1), rgba($marigold, .4));
     border: 0px;
     height: 50px;
     width: 200px;
 
     color: $dark-gray;
-    background-color: $marigold;
     border: 0px;
+    border-radius: 3em;
     text-align: center;
 
     font-weight: bold;
 
-    $x: 0.35em;
-    $y: 0.25em;
-    padding: $y $x $y $x;
-
-    $x: 1em;
-    $y: 1em;
-    margin: $y $x $y $x;
+    padding: 0.25em 0.35em;
+    margin: 1em 1em;
 
     &:hover {
-        background-color: $light-blue;
+        background-image: linear-gradient(180deg, rgba($marigold, .6), rgba($marigold, .3));
+        background-color: rgb(145, 141, 183);
     }
 }
 
@@ -76,5 +72,5 @@ $navbar-height: 50px;
 }
 
 #navspace {
-    margin-bottom:$navbar-height;
+    margin-bottom: $navbar-height;
 }
