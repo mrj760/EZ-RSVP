@@ -2,25 +2,8 @@
 
 
 .infoDiv {
-    margin: 10px max(30px, 30%) 10px max(30px, 30%);
-}
-
-#allInfoDiv {
-    margin-top: 10%;
-    margin-left: 25%;
-    width: 50%;
-    color: black;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#eventName {
-    width: 75%;
-    margin-left: 50%;
-    font-size: 2em;
-    font-weight: 600;
+    margin-top: 2vh;
+    text-align: center;
 }
 
 #outerEventCoverPhotoDiv {
@@ -33,8 +16,4 @@
             width: 100%;
         }
     }
-}
-
-#eventDetails {
-    width: 75%;
 }
