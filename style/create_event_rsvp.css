@@ -16,14 +16,13 @@ button,
   background-color: #5a5b66;
   background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.6), rgba(255, 165, 0, 0.3));
   height: 40px;
-  width: 200px;
-  border: groove 1px #d3d3d6;
+  width: min(200px, 25vw);
+  border: groove min(3px, 1vw) #d3d3d6;
   border-radius: 0.2em;
   color: #f4f4f5;
   text-align: center;
   font-weight: bold;
-  font-size: 1.1rem;
-  padding: 0.25em 0.35em;
+  font-size: min(18px, max(2.1vw, 2.1vh));
   margin: 1em 1em;
 }
 button:hover,
@@ -32,13 +31,11 @@ button:hover,
 }
 
 .background {
-  width: 320px;
+  width: 50%;
   background: #ffffff;
   color: #000000;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+  left: 25%;
+  position: relative;
   box-sizing: border-box;
   padding: 60px 30px;
   font-family: system-ui;
@@ -67,19 +64,33 @@ button:hover,
 }
 .background button, .background .button {
   border: none;
-  outline: none;
-  height: 40px;
+  height: min(40px, 10vh);
   background: #000000;
   color: #ffffff;
-  font-size: 18px;
+  font-size: min(18px, max(2vw, 2vh));
   border-radius: 20px;
   margin-top: 20px;
   margin-left: 0;
+}
+.background .secondaryButton {
+  border: none;
+  height: min(33px, 10vh);
+  color: #ffffff;
+  font-size: min(16px, max(1.8vw, 1.8vh));
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 0;
+  width: 9em;
+  font-weight: 500;
+  background-color: rgb(97, 97, 97);
+  border-radius: 20px;
 }
 .background input {
   margin-bottom: 10px;
 }
 .background input[type=name], .background input[type=email], .background input[type=password], .background input[type=text] {
+  width: 30vw;
+  text-align: left;
   border: none;
   border-bottom: 1px solid #000000;
   background: transparent;
@@ -88,7 +99,7 @@ button:hover,
   color: #000000;
   font-size: 16px;
 }
-.background input[type=submit] {
+.background input[type=button] {
   border: none;
   outline: none;
   height: 40px;
@@ -109,7 +120,7 @@ button:hover,
   color: #000000;
 }
 
-#nav {
+#navDiv {
   overflow-x: auto;
   position: fixed;
   top: 0px;
@@ -121,10 +132,18 @@ button:hover,
   font-size: 100%;
 }
 
-#navspace {
-  margin-bottom: 50px;
+#navSpacing {
+  height: min(50px, max(7vw, 7vh));
+  max-width: 100vw;
+  font-size: min(18px, max(2vh, 2vw));
+  padding-top: min(20px, 3vh);
+  padding-bottom: min(20px, 3vh);
 }
 
-.background {
-  width: auto;
+#navspace {
+  margin-bottom: max(min(50px, max(7vw, 7vh)), 10vh);
+}
+
+#buttons {
+  text-align: center;
 }/*# sourceMappingURL=create_event_rsvp.css.map */

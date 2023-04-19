@@ -9,32 +9,31 @@
 </head>
 
 <body>
-    <form action="" method="POST">
-        <div class="background">
-            <h1>Create Event</h1>
+    <div class="background">
+        <h1>Create Event</h1>
+        <form>
             <div>
-                <label for="event_name" class="default">Event name:</label>
-                <input id="event_name" type="text" name="event_name" required="required">
+                <label class="default">Event name:<br>
+                    <input id="eventName" type="text" name="eventName" required="required">
+                </label>
             </div>
             <div>
-                <label for="event_date" class="default">Date:</label>
-                <input id="event_date" type="date" name="event_date" required="required">
+                <label class="default">Date:<br>
+                    <input id="eventDate" type="date" name="eventDate" required="required">
+                </label>
             </div>
             <div>
-                <label for="event_details" class="">Event Details</label>
-                <br />
+                <label class="">Event Details
+                    <br>
+                    <textarea name="eventDetails" wrap="hard" rows="3" cols="30" required="required"></textarea>
+                </label>
             </div>
-            <div>
-                <p>
-                    <textarea name="event_details" rows="3" cols="30" required="required"></textarea>
-                </p>
+            <div id="buttons">
+                <input type="submit" value="Create" class="button" href="user_dashboard.html">
+                <input type="reset" value="Reset" class="secondaryButton">
             </div>
-            <input type="submit" value="Create" class="button" href="user_dashboard.html">
-            <input type="reset" value="Reset" class="button">
-        </div>
-    </form>
-
-
+        </form>
     </div>
+</body>
 
-    </div>
+</html>

@@ -33,17 +33,17 @@ button,
     // background-image: linear-gradient(180deg, rgba($marigold, 1), rgba($marigold, .4));
 
     height: 40px;
-    width: 200px;
+    width: min(200px, 25vw);
 
-    border: groove 1px mix($dark-purple, white, 20%);
+    border: groove min(3px, 1vw) mix($dark-purple, white, 20%);
     border-radius: 0.2em;
 
     color: mix($dark-purple, white, 5%);
     text-align: center;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: min(18px, max(2.1vw, 2.1vh));
 
-    padding: 0.25em 0.35em;
+    // padding: 0.25em 0.35em;
     margin: 1em 1em;
 
     &:hover {
@@ -52,19 +52,15 @@ button,
 }
 
 .background {
-
-    width: 320px;
+    width: 50%;
     background: #ffffff;
     color: #000000;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
+    left: 25%;
+    position: relative;
     box-sizing: border-box;
     padding: 60px 30px;
     font-family: system-ui;
     text-align: left;
-
 
     > h1 {
         margin: 0;
@@ -93,14 +89,28 @@ button,
     & button,
     & .button {
         border: none;
-        outline: none;
-        height: 40px;
+        height: min(40px, 10vh);
         background: #000000;
         color: #ffffff;
-        font-size: 18px;
+        font-size: min(18px, max(2vw, 2vh));
         border-radius: 20px;
         margin-top: 20px;
         margin-left: 0;
+    }
+
+    .secondaryButton {
+        border: none;
+        height: min(33px, 10vh);
+        color: #ffffff;
+        font-size: min(16px, max(1.8vw, 1.8vh));
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-left: 0;
+
+        width: 9em;
+        font-weight: 500;
+        background-color: rgb(97, 97, 97);
+        border-radius: 20px;
     }
 
     & input {
@@ -111,6 +121,8 @@ button,
         &[type="email"],
         &[type="password"],
         &[type="text"] {
+            width: 30vw;
+            text-align: left;
             border: none;
             border-bottom: 1px solid #000000;
             background: transparent;
@@ -120,7 +132,7 @@ button,
             font-size: 16px;
         }
 
-        &[type="submit"] {
+        &[type="button"] {
             border: none;
             outline: none;
             height: 40px;
@@ -144,9 +156,7 @@ button,
     }
 }
 
-$navbar-height: 50px;
-
-#nav {
+#navDiv {
     overflow-x: auto;
     position: fixed;
     top: 0px;
@@ -158,6 +168,16 @@ $navbar-height: 50px;
     font-size: 100%;
 }
 
+$navbar-height: min(50px, max(7vw, 7vh));
+
+#navSpacing {
+    height: $navbar-height;
+    max-width: 100vw;
+    font-size: min(18px, max(2vh, 2vw));
+    padding-top: min(20px, 3vh);
+    padding-bottom: min(20px, 3vh);
+}
+
 #navspace {
-    margin-bottom: $navbar-height;
+    margin-bottom: max($navbar-height, 10vh);
 }
