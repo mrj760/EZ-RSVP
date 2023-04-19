@@ -179,5 +179,6 @@ $navbar-height: min(50px, max(7vw, 7vh));
 }
 
 #navspace {
-    margin-bottom: max($navbar-height, 10vh);
+    // margin-bottom: max($navbar-height, 10vh);
+    margin-bottom: $navbar-height;
 }
