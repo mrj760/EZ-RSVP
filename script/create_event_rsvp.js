@@ -1,6 +1,5 @@
-window.addEventListener("load", function(){
 
-    let questionCounter = 2;
+let questionCounter = 2;
 let userText = document.querySelector('#questionBox');
 let createButton = document.querySelector('#createFormButton');
 let cancelButton = document.querySelector('#cancelFormButton');
@@ -336,10 +335,10 @@ saveQuestionButton.addEventListener('click', function(){
                 document.getElementById("questionContainer").innerHTML += html;
                 break;
             case 'Y/N':
-                html = "<input type='radio' id='yes' name='yes' value='yes' disabled>\n" +
-                  "<label for='yes'>yes</label><br> \n" +
-                  "<input type='radio' id='no' name='no' value='no' disabled>\n" +
-                  "<label for='no'>no</label><br>\n";
+                html = "<input type='radio' id='yes' name='yes' value='yes' disabled>\n"
+                + "<label for='yes'>yes</label><br> \n"
+                + "<input type='radio' id='no' name='no' value='no' disabled>\n"
+                + "<label for='no'>no</label><br>\n";
                 document.getElementById("questionContainer").innerHTML += html;
                 break;
             default:
@@ -365,7 +364,7 @@ createFormButton.addEventListener('click', function () {
 
     //form is saved
     //user redirected back to dashboard
-    location.href = "../html/create_event.html";
+
 });
 
 //works
@@ -376,6 +375,3 @@ cancelFormButton.addEventListener('click', function () {
     location.href = "../html/create_event.html";
 
 });
-
-});
-

@@ -1,5 +1,5 @@
 html =
-    "<div id=\"nav\">" +
+    "<div id=\"navDiv\">" +
     "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\">\n" +
     "    <a href=\"home.html\" class=\"navbar-brand\">EZ-RSVP</a>\n" +
     "    <div class=\"navbar-nav mr-auto\">\n" +

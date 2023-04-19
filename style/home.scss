@@ -1,12 +1,12 @@
 @import './_global.scss';
 
-button {
-    color: $dark-purple;
-    background-color: $dark-purple;
-    background-image: linear-gradient(0deg, rgba($marigold, .7), $marigold 60%);
-    border: 0px;
-    height: 50px;
-    width: 200px;
+
+h1 {
+    font-size: min(30px, max(3.3vw,3.3vh);
+}
+
+p {
+    font-size: 2vw;
 }
 
 .leadingText {
@@ -15,24 +15,21 @@ button {
 
 .fullscreenDiv {
     height: 100vh;
+    padding-top: 15%;
 }
 
 .buttonDiv {
+    margin-top: 10vh;
     text-align: center;
-    position: relative;
-    top: 245px;
+    top: 1vh;
 }
 
 .introTextContainer {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
     text-align: center;
-    position: relative;
-    top: 150px;
-    max-height: 100%;
     max-width: 100%;
-    border: 15px solid whitesmoke;
-    padding: 50px;
-    margin: 20px;
+    border: 1vw solid whitesmoke;
+    padding: 3vh;
 }
 
 #introDiv {
@@ -42,3 +39,4 @@ button {
     background-attachment: fixed;
     background-size: cover;
 }
+

@@ -1,21 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html {
+  min-height: 100vh;
+}
+
 body {
+  min-height: 100vh;
   color: #dbdee1;
   font-family: "Roboto", sans-serif;
   background-color: #232331;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(219, 222, 225, 0.1) 70%, rgba(219, 222, 225, 0.2));
 }
 
+button,
 .button {
-  color: #232331;
-  background-color: #dbdee1;
-  border: 0px;
+  background-color: #5a5b66;
+  background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.6), rgba(255, 165, 0, 0.3));
+  height: 40px;
+  width: min(200px, 25vw);
+  border: groove min(3px, 1vw) #d3d3d6;
+  border-radius: 0.2em;
+  color: #f4f4f5;
   text-align: center;
   font-weight: bold;
-  padding: 0.25em 0.35em 0.25em 0.35em;
-  margin: 1em 1em 1em 1em;
+  font-size: min(18px, max(2.1vw, 2.1vh));
+  margin: 1em 1em;
 }
+button:hover,
 .button:hover {
-  background-color: #cee3f6;
+  background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.4), rgba(255, 165, 0, 0.05));
 }
 
 .background {
@@ -121,7 +133,7 @@ body {
 }
 
 #navSpacing {
-  height: min(50px, max(7vw, 7vh));
+  height: 50px;
   max-width: 100vw;
   font-size: min(18px, max(2vh, 2vw));
   padding-top: min(20px, 3vh);
@@ -129,7 +141,7 @@ body {
 }
 
 #navspace {
-  margin-bottom: min(50px, max(7vw, 7vh));
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=_global.css.map */

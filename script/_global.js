@@ -33,8 +33,6 @@ addMeta([
     ['content', 'width=device-width, initial-scale=1.0'],
 ]);
 
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">';
-'<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
 let stylesheets =
     '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>\n'
@@ -49,6 +47,7 @@ function addScript(src, crossorigin = -1, append = true) {
     document.head.appendChild(script);
 }
 
+console.log(document.head.innerHTML)
 document.head.innerHTML = document.head.innerHTML + title + stylesheets;
 
 addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');

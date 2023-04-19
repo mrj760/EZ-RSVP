@@ -4,58 +4,40 @@
     text-align: center;
 }
 
-.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $dark-purple;
-}
-
-.textBox {
-    height: auto;
-    width: 240px;
-    font-size: 1.2rem;
-}
-
-#nameTextBox {
-    margin-top: 20dvh;
-}
-
-#emailTextBox {
-    margin-top: 20px;
-}
-
-#captchaBackground {
-    height: 300px;
-    width: 300px;
-    margin-top: 5%;
-    background-color: $dark-blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-bottom: 1rem;
-}
+// #inputContainer {
+//     width: auto;
+// }
 
 #captcha {
-    height: 40%;
+    margin-top: 30px;
+    height: 100px;
+}
+
+
+#confirmButton {
+    visibility:hidden;
 }
 
 #captchaTextBox {
-    height: 40%;
-    width: 80%;
+    // height: 3rem;
+    // width: 80%;
     font-size: 1.1rem;
 }
 
 $outputFontSize: 1.2rem;
 
 #incorrect {
+    border-radius: 5px;
+    padding: 0.2em;
+    background-color: black;
     color: #ff0000;
     font-size: $outputFontSize;
 }
 
 #correct {
+    border-radius: 5px;
+    padding: 0.2em;
+    background-color: black;
     color: #7fff00;
     font-size: $outputFontSize;
 }
-
