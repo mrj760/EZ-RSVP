@@ -141,7 +141,7 @@ button:hover,
 }
 
 #navspace {
-  margin-bottom: max(min(50px, max(7vw, 7vh)), 10vh);
+  margin-bottom: min(50px, max(7vw, 7vh));
 }
 
 .infoDiv {
@@ -149,14 +149,6 @@ button:hover,
   text-align: center;
 }
 
-#outerEventCoverPhotoDiv {
-  text-align: center;
-}
-#outerEventCoverPhotoDiv #eventCoverPhoto {
-  margin-left: 50%;
-  transform: translateX(-50%);
-  width: max(100px, 70%);
-}
 #outerEventCoverPhotoDiv #eventCoverPhoto img {
-  width: 100%;
+  width: 40vw;
 }/*# sourceMappingURL=event_details.css.map */

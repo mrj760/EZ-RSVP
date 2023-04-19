@@ -141,7 +141,7 @@ button:hover,
 }
 
 #navspace {
-  margin-bottom: max(min(50px, max(7vw, 7vh)), 10vh);
+  margin-bottom: min(50px, max(7vw, 7vh));
 }
 
 .introTextContainer {
