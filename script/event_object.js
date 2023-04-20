@@ -24,5 +24,5 @@ class Event {
 
 const jsonString = JSON.stringify(str);
 
-localStorage.setItem('createEvent', jsonString);
+window.localStorage.setItem('createEvent', jsonString);
 
