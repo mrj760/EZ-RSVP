@@ -7,12 +7,10 @@ class Event {
         this.location = location;
         this.datetime = datetime;
     }
-
     get stringify () {
         return this.name + this.parseSplitter + this.photoURL + this.parseSplitter + this.details + this.parseSplitter 
-        + this.location + this.parseSplitter + this.datetime;
-    }
-
+        + this.location + this.parseSplitter + this.datetime;}
+    
     parse(str) {
         str = str.split(this.parseSplitter);
         this.name = str[0];
@@ -21,7 +19,10 @@ class Event {
         this.location = str[3];
         this.datetime = str[4];
     }
-
 }
-localStorage.setItem(str);
+
+
+const jsonString = JSON.stringify(str);
+
+localStorage.setItem('createEvent', jsonString);
 
