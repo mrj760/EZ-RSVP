@@ -21,22 +21,3 @@ class Event {
     }
 }
 
-// get all inputs from create events.
-let createdEvent = [];
-
-function saveCreatedEvent(){
-    // get value from each input
-    var eventName = document.getElementById("eventName");
-    var eventLocation = document.getElementById("eventLocation");
-    var eventDate = document.getElementById("eventDate");
-    var eventDetails = document.getElementById("eventDetails");
-
-    // push them into array
-    createdEvent.push(eventName);
-    createdEvent.push(eventLocation);
-    createdEvent.push(eventDate);
-    createdEvent.push(eventDetails);
-
-    // store array in local storage
-    localStorage.setItem('createdEvent', createdEvent.stringify);
-}
