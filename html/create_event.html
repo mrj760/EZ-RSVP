@@ -30,11 +30,11 @@
             <div>
                 <label class="">Event Details
                     <br>
-                    <textarea name="eventDetails" wrap="hard" rows="3" cols="30" required="required"></textarea>
+                    <textarea id="eventDetails" name="eventDetails" wrap="hard" rows="3" cols="30" required="required"></textarea>
                 </label>
             </div>
             <div id="buttons">
-                <input type="submit" value="Create" class="button" href="user_dashboard.html">
+                <input type="submit" value="Create" class="button" href="user_dashboard.html" onclick="saveCreatedEvent()">
                 <input type="reset" value="Reset" class="secondaryButton">
             </div>
         </form>

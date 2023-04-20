@@ -20,29 +20,23 @@ class Event {
         this.datetime = str[4];
     }
 }
-// get event name from create_event.html
-const createdEvent = document.getElementById('eventName');
 
-// implement passCreateEvent()
-window.addEventListener("load", function () {
-    passCreatedEvent(createdEvent);
-});
+// get all inputs from create events.
+let createdEvent = [];
 
-// pass the event name from create page to dashboard page
-function passCreatedEvent(event) { 
-    
-    let eventDiv = document.createElement("div");
-    eventDiv.addEventListener("click", function(){
-        localStorage.setItem('event', createdEvent.stringify);
-    });
+function saveCreatedEvent(){
+    // get value from each input
+    var eventName = document.getElementById("eventName");
+    var eventLocation = document.getElementById("eventLocation");
+    var eventDate = document.getElementById("eventDate");
+    var eventDetails = document.getElementById("eventDetails");
 
-    let eventNameDiv = document.createElement('div');
-    eventNameDiv.classList.add('eventNameDiv');
-    let eventName = document.createElement('p');
-    eventName.innerHTML = event.name;
-    eventName.classList.add('eventName');
-    eventNameDiv.appendChild(eventName);
-    eventDiv.appendChild(eventNameDiv);
+    // push them into array
+    createdEvent.push(eventName);
+    createdEvent.push(eventLocation);
+    createdEvent.push(eventDate);
+    createdEvent.push(eventDetails);
 
-    userEventsDiv.appendChild(eventDiv);
+    // store array in local storage
+    localStorage.setItem('createdEvent', createdEvent.stringify);
 }
