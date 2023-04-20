@@ -20,9 +20,29 @@ class Event {
         this.datetime = str[4];
     }
 }
+// get event name from create_event.html
+const createdEvent = document.getElementById('eventName');
 
+// implement passCreateEvent()
+window.addEventListener("load", function () {
+    passCreatedEvent(createdEvent);
+});
 
-const jsonString = JSON.stringify(str);
+// pass the event name from create page to dashboard page
+function passCreatedEvent(event) { 
+    
+    let eventDiv = document.createElement("div");
+    eventDiv.addEventListener("click", function(){
+        localStorage.setItem('event', createdEvent.stringify);
+    });
 
-window.localStorage.setItem('createEvent', jsonString);
+    let eventNameDiv = document.createElement('div');
+    eventNameDiv.classList.add('eventNameDiv');
+    let eventName = document.createElement('p');
+    eventName.innerHTML = event.name;
+    eventName.classList.add('eventName');
+    eventNameDiv.appendChild(eventName);
+    eventDiv.appendChild(eventNameDiv);
 
+    userEventsDiv.appendChild(eventDiv);
+}
