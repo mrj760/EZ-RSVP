@@ -20,6 +20,12 @@ var optionSpacers = [];
 //5.how to dynamically create new questions (so unlimited number of questions)
 //6.how to dynamically create new custom options for each custom question (so unlimited number of custom options)
 
+
+//strategy 1: show/hide questions and options already present in html (limited number of questions and custom options)
+//strategy 2: dynamically create new questions and custom options
+//at the end of either of these methods, save all the question objects to questions array in form object
+
+
 hideAllCustomOptions(); //first thing to do is to hide all custom options
 
 class CustomForm{
