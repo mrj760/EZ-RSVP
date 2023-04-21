@@ -85,6 +85,20 @@ button:hover,
   background-color: rgb(97, 97, 97);
   border-radius: 20px;
 }
+
+.background .cancelButton {
+  border: none;
+  height: min(20px, 5vh);
+  color: red;
+  font-size: min(16px, max(1.8vw, 1.8vh));
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 0;
+  width: 3em;
+  font-weight: 500;
+  background-color:  transparent;
+  border-radius: 20px;
+}
 .background input {
   margin-bottom: 10px;
 }

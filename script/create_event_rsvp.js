@@ -12,7 +12,23 @@ var optionCheckboxes = [];
 var optionRadioButtons = [];
 var optionSpacers = [];
 
+//strategy:
+//1. adjust to new style
+//2.options are shown below each question
+//3. each question can be deleted or modified even after initial creation
+//4. new question is created above when new question button is clicked
+//5.how to dynamically create new questions (so unlimited number of questions)
+//6.how to dynamically create new custom options for each custom question (so unlimited number of custom options)
+
 hideAllCustomOptions(); //first thing to do is to hide all custom options
+
+class CustomForm{
+    Questions;
+}
+
+class Question{
+    CustomOptions =  CustomOption[];
+}
 
 //declare a class called otions
 class CustomOption{
