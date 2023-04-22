@@ -3,41 +3,59 @@ let questions = [];
 class Question {
 
     constructor() {
+        
 
         this.div = document.createElement("div");
-        this.div.appendChild(document.createElement('br'));
+        this.div.classList.add("questionDiv");
+        // div.id set via `set number()`
+
+        this.leftDiv = document.createElement('div');
+        this.leftDiv.classList.add("left");
+        this.rightDiv = document.createElement('div');
+        this.rightDiv.classList.add("right");
+
+        const me = this; // important for event listeners
 
         this.label = document.createElement("label");
-        this.div.appendChild(this.label);
+        // label set via `set number()`
 
         this.deleteButton = document.createElement("i");
         this.deleteButton.classList.add("fa-solid");
         this.deleteButton.classList.add("fa-xmark");
-        this.deleteButton.classList.add("x");
-        const me = this;
         this.deleteButton.addEventListener("click", function() {
             me.div.remove();
             questions.splice(me.number, 1);
             fillQuestions();
         });
-        this.div.appendChild(this.deleteButton);
+        this.rightDiv.appendChild(this.deleteButton);
 
-        this.div.appendChild(document.createElement('br'));
 
         this.text = document.createElement('input');
         this.text.type = "text";
-        this.div.appendChild(this.text);
 
         this.select = document.createElement("select");
+
+        this.select.addEventListener("change", function () {
+            me.type = me.select.options[me.select.selectedIndex].value;
+        });
 
         this.createOption('text', 'Text');
         this.createOption('multichoice', 'Multiple Choice');
         this.createOption('checkbox', 'Check Box');
-
         this.type = this.select.options[this.select.selectedIndex].value;
 
-        this.div.appendChild(this.select);
+
+        this.leftDiv.appendChild(this.label);
+        this.leftDiv.appendChild(document.createElement('br'));
+        this.leftDiv.appendChild(this.text);
+
+        this.rightDiv.appendChild(this.deleteButton);
+        this.rightDiv.appendChild(document.createElement('br'));
+        this.rightDiv.appendChild(this.select);
+
         this.div.appendChild(document.createElement('br'));
+        this.div.appendChild(this.leftDiv);
+        this.div.appendChild(this.rightDiv);
         this.div.appendChild(document.createElement('br'));
 
         this.options = [];
