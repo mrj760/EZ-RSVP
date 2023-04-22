@@ -1,6 +1,5 @@
 class Question {
 
-
     constructor() {
 
         this.div = document.createElement("div");
@@ -66,10 +65,6 @@ window.addEventListener("load", function () {
         fillQuestions();
     });
 });
-
-function createQuestion(questionNumber) {
-
-}
 
 function fillQuestions() {
     for (let i = 0; i < questions.length; i++) {
