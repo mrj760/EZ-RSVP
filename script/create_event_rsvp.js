@@ -1,3 +1,5 @@
+let questions = [];
+
 class Question {
 
     constructor() {
@@ -7,6 +9,18 @@ class Question {
 
         this.label = document.createElement("label");
         this.div.appendChild(this.label);
+
+        this.deleteButton = document.createElement("i");
+        this.deleteButton.classList.add("fa-solid");
+        this.deleteButton.classList.add("fa-xmark");
+        this.deleteButton.classList.add("x");
+        const me = this;
+        this.deleteButton.addEventListener("click", function() {
+            me.div.remove();
+            questions.splice(me.number, 1);
+            fillQuestions();
+        });
+        this.div.appendChild(this.deleteButton);
 
         this.div.appendChild(document.createElement('br'));
 
@@ -46,7 +60,6 @@ class Question {
     }
 }
 
-let questions = [];
 let customQuestionsDiv;
 let newQuestionButton;
 let saveButton;
@@ -61,7 +74,6 @@ window.addEventListener("load", function () {
     newQuestionButton.addEventListener("click", function () {
         let question = new Question(questions.length);
         questions.push(question);
-
         fillQuestions();
     });
 });
