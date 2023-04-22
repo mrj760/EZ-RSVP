@@ -24,6 +24,7 @@ class Event {
     }
 }
 
+let createdEvent = new Event();
 
 function saveCreatedEvent(){
     // get value from each input
@@ -37,9 +38,10 @@ function saveCreatedEvent(){
     this.datetime = eventDate;
     this.details = eventDetails;
 
+    createdEvent(this.name, "", this.details, this.location, this.datetime );
 
     // store array in local storage
-    localStorage.setItem('createdEvent', .stringify);
+    localStorage.setItem('createdEvent', createdEvent.stringify);
 
     location.href = "user_dashboard.html"
 
