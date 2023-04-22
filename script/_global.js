@@ -47,7 +47,7 @@ function addScript(src, crossorigin = -1, append = true) {
     document.head.appendChild(script);
 }
 
-console.log(document.head.innerHTML)
+// console.log(document.head.innerHTML)
 document.head.innerHTML = document.head.innerHTML + title + stylesheets;
 
 addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');

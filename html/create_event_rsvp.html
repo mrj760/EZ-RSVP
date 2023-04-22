@@ -8,7 +8,7 @@
     <script src="../script/_global.js"></script>
 </head>
 
-<body onresize="myFunction()">
+<body>
 
     <div class="background">
         <h1>
@@ -28,52 +28,14 @@
         </label>
         <br>
 
-        <div id="customQuestionsDiv">
-            <label for="option 1">Custom Question 1:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="cancelButton">X</button><br>
-                <input type="textbox" name="question" id="option1">
-                <select name="questionType" id="questionType">
-                    <option value="multiChoice">Multichoice</option>
-                    <option value="checkBoxes">CheckBoxes</option>
-                    <option value="oneLine">Text Input</option>
-                    <option value="textBox">Comment Box</option>
-                    <option value="Y/N">Yes/No</option>
-                  </select> <br>
-
-                <input type="checkbox" id ="customOption 1">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="checkbox" id="customOption 2">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="checkbox" id="customOption 3">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="checkbox" id="customOption 4">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="checkbox" id="customOption 5">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="checkbox" id="customOption 6">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="radio" class="btn btn-success" value="Submit">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="radio" class="btn btn-success" value="Submit">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="radio" class="btn btn-success" value="Submit">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="radio" class="btn btn-success" value="Submit">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="radio" class="btn btn-success" value="Submit">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                <input type="radio" class="btn btn-success" value="Submit">
-                <input type="textbox" name="question" id="option1" placeholder="John Smith"> <br>
-                </label>
-        </div>
+        <div id="customQuestionsDiv"></div>
 
         <div id="buttons">
             <br>
-            <button id="addQuestionButton" class="button">New Question</button>
+            <button id="newQuestionButton" class="button" type="button">New Question</button>
             <br>
-            <button id="createFormButton" class="button">Save</button>
-            <button id="cancelFormButton" class="secondaryButton">Back</button>
+            <button id="saveButton" class="button" type="button">Save</button>
+            <button id="backButton" class="secondaryButton" type="button">Back</button>
         </div>
     </div>
 </body>
