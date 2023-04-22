@@ -3,7 +3,8 @@ let questions = [];
 class Question {
 
     constructor() {
-        
+
+        const me = this; // important for event listeners
 
         this.div = document.createElement("div");
         this.div.classList.add("questionDiv");
@@ -14,7 +15,6 @@ class Question {
         this.rightDiv = document.createElement('div');
         this.rightDiv.classList.add("right");
 
-        const me = this; // important for event listeners
 
         this.label = document.createElement("label");
         // label set via `set number()`
@@ -22,9 +22,9 @@ class Question {
         this.deleteButton = document.createElement("i");
         this.deleteButton.classList.add("fa-solid");
         this.deleteButton.classList.add("fa-xmark");
-        this.deleteButton.addEventListener("click", function() {
+        this.deleteButton.addEventListener("click", function () {
             me.div.remove();
-            questions.splice(me.number, 1);
+            questions.splice(me.number, 1); // remove from list
             fillQuestions();
         });
         this.rightDiv.appendChild(this.deleteButton);
@@ -34,15 +34,38 @@ class Question {
         this.text.type = "text";
 
         this.select = document.createElement("select");
-
-        this.select.addEventListener("change", function () {
-            me.type = me.select.options[me.select.selectedIndex].value;
-        });
-
-        this.createOption('text', 'Text');
-        this.createOption('multichoice', 'Multiple Choice');
-        this.createOption('checkbox', 'Check Box');
+        this.offerQuestionType('text', 'Text');
+        this.offerQuestionType('singlepick', 'Single Pick');
+        this.offerQuestionType('multipick', 'Multi Pick');
         this.type = this.select.options[this.select.selectedIndex].value;
+        this.answerOptions = [];
+        this.answerOptions.push(new AnswerOption());
+        this.newOptionButton = document.createElement('button');
+        this.newOptionButton.classList.add("secondaryButton");
+        this.newOptionButton.innerHTML = "New Option";
+        this.select.addEventListener("change", function () {
+
+            for (let i = 0; i < me.answerOptions.length; i++) {
+                me.answerOptions[i].div.remove();
+                me.newOptionButton.remove();
+            }
+
+            me.type = me.select.options[me.select.selectedIndex].value;
+            switch (me.type) {
+
+                case ('text'):
+                    break;
+
+                case ('singlepick'):
+                case ('multipick'):
+                    for (let i = 0; i < me.answerOptions.length; i++) {
+                        me.answerOptions[i].type = me.type == 'singlepick' ? 'radio' : 'checkbox';
+                        me.leftDiv.appendChild(me.answerOptions[i].div);
+                    }
+                    me.leftDiv.appendChild(me.newOptionButton);
+                    break;
+            }
+        });
 
 
         this.leftDiv.appendChild(this.label);
@@ -57,11 +80,9 @@ class Question {
         this.div.appendChild(this.leftDiv);
         this.div.appendChild(this.rightDiv);
         this.div.appendChild(document.createElement('br'));
-
-        this.options = [];
     }
 
-    createOption(value, text) {
+    offerQuestionType(value, text) {
         let option = document.createElement('option');
         option.value = value;
         option.innerHTML = text;
@@ -76,6 +97,32 @@ class Question {
     get number() {
         return this.div.id.substring(8);
     }
+}
+
+class AnswerOption {
+
+    constructor(type = 'radio') {
+        this.div = document.createElement('div');
+        this.div.classList.add('optionDiv');
+
+        this.clickable = document.createElement('input');
+        this.clickable.type = type;
+
+        this.description = document.createElement('input');
+        this.description.type = 'text';
+
+        this.div.appendChild(this.clickable);
+        this.div.appendChild(this.description);
+    }
+
+    set type(type) {
+        this.clickable.type = type;
+    }
+
+    set text(text) {
+        this.description.value = text;
+    }
+
 }
 
 let customQuestionsDiv;
