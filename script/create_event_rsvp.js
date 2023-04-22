@@ -33,40 +33,23 @@ class Question {
         this.text = document.createElement('input');
         this.text.type = "text";
 
+        this.answerOptions = [new AnswerOption()];
         this.select = document.createElement("select");
         this.offerQuestionType('text', 'Text');
         this.offerQuestionType('singlepick', 'Single Pick');
         this.offerQuestionType('multipick', 'Multi Pick');
-        this.type = this.select.options[this.select.selectedIndex].value;
-        this.answerOptions = [];
-        this.answerOptions.push(new AnswerOption());
+        this.type = this.select.value;
         this.newOptionButton = document.createElement('button');
         this.newOptionButton.classList.add("secondaryButton");
         this.newOptionButton.innerHTML = "New Option";
-        this.select.addEventListener("change", function () {
-
-            for (let i = 0; i < me.answerOptions.length; i++) {
-                me.answerOptions[i].div.remove();
-                me.newOptionButton.remove();
-            }
-
-            me.type = me.select.options[me.select.selectedIndex].value;
-            switch (me.type) {
-
-                case ('text'):
-                    break;
-
-                case ('singlepick'):
-                case ('multipick'):
-                    for (let i = 0; i < me.answerOptions.length; i++) {
-                        me.answerOptions[i].type = me.type == 'singlepick' ? 'radio' : 'checkbox';
-                        me.leftDiv.appendChild(me.answerOptions[i].div);
-                    }
-                    me.leftDiv.appendChild(me.newOptionButton);
-                    break;
-            }
+        this.select.addEventListener("change", function (e) {
+            me.type = e.currentTarget.value;
+            me.fillOptions();
         });
-
+        this.newOptionButton.addEventListener("click", function () {
+            me.answerOptions.push(new AnswerOption());
+            me.fillOptions();
+        })
 
         this.leftDiv.appendChild(this.label);
         this.leftDiv.appendChild(document.createElement('br'));
@@ -87,6 +70,21 @@ class Question {
         option.value = value;
         option.innerHTML = text;
         this.select.appendChild(option);
+    }
+
+    fillOptions() {
+        for (let i = 0; i < this.answerOptions.length; i++) {
+            this.answerOptions[i].div.remove();
+            this.newOptionButton.remove();
+        }
+        if (this.type == 'text') {
+            return;
+        }
+        for (let i = 0; i < this.answerOptions.length; i++) {
+            this.answerOptions[i].type = this.type == 'singlepick' ? 'radio' : 'checkbox';
+            this.leftDiv.appendChild(this.answerOptions[i].div);
+        }
+        this.leftDiv.appendChild(this.newOptionButton);
     }
 
     set number(num) {

@@ -23,6 +23,16 @@
     width: 22%;
     color: red;
     margin-left: 1px;
+    i, select {
+        position:absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        padding: 3px;
+    }
+    select {
+        margin-bottom: 9vh;
+    }
 }
 
 #buttons {
