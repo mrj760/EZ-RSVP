@@ -1,3 +1,4 @@
+
 class Event {
     constructor(name, photoURL, details, location, datetime) {
         this.name = name;
@@ -25,6 +26,7 @@ class Event {
 }
 
 function saveCreatedEvent(){
+    //event.preventDefault();
 
     // get values from the input
     var createdEventName = document.getElementById("eventName").value;
@@ -32,10 +34,10 @@ function saveCreatedEvent(){
     var createdEventDate = document.getElementById("eventDate").value;
     var createdEventDetails = document.getElementById("eventDetails").value;
 
-    let newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
+    var newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
 
     localStorage.setItem('createdEvent', newEvent.stringify);
-    location.href = './user_dashboard.html';
+    location.href = '../user_dashboard.html';
 
     console.log("Stored infor is: " + createdEventName + createdEventLocation + createdEventDate + createdEventDetails);
 }

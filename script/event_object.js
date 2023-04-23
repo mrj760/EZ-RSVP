@@ -25,19 +25,19 @@ class Event {
 }
 
 function saveCreatedEvent(){
+    //event.preventDefault();
 
     // get values from the input
-    var createdEventName = document.getElementById("eventName").value;
-    var createdEventLocation = document.getElementById("eventLocation").value;
-    var createdEventDate = document.getElementById("eventDate").value;
-    var createdEventDetails = document.getElementById("eventDetails").value;
+    const createdEventName = document.getElementById("eventName").value;
+    const createdEventLocation = document.getElementById("eventLocation").value;
+    const createdEventDate = document.getElementById("eventDate").value;
+    const createdEventDetails = document.getElementById("eventDetails").value;
 
-    let newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
+    var newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
 
     localStorage.setItem('createdEvent', newEvent.stringify);
-    location.href = './user_dashboard.html';
+    location.href = '../user_dashboard.html';
 
     console.log("Stored infor is: " + createdEventName + createdEventLocation + createdEventDate + createdEventDetails);
 }
-
 
