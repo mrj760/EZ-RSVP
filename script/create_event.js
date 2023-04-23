@@ -24,26 +24,19 @@ class Event {
     }
 }
 
-let createdEvent = new Event();
+function saveCreatedEvent(event){
+    event.preventDefault();
 
-function saveCreatedEvent(){
-    // get value from each input
-    var eventName = document.getElementById("eventName");
-    var eventLocation = document.getElementById("eventLocation");
-    var eventDate = document.getElementById("eventDate");
-    var eventDetails = document.getElementById("eventDetails");
+    // get values from the input
+    const createdEventName = document.getElementById("eventName").value;
+    const createdEventLocation = document.getElementById("eventLocation").value;
+    const createdEventDate = document.getElementById("eventDate").value;
+    const createdEventDetails = document.getElementById("eventDetails").value;
 
-    this.name = eventName;
-    this.location = eventLocation;
-    this.datetime = eventDate;
-    this.details = eventDetails;
+    const newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
 
-    createdEvent(this.name, "", this.details, this.location, this.datetime );
+    localStorage.setItem('createdEvent', newEvent.stringify);
+    location.href = './user_dashboard.html';
 
-    // store array in local storage
-    localStorage.setItem('createdEvent', createdEvent.stringify);
-
-    location.href = "user_dashboard.html"
-
-    console.log("local data store.")
+    console.log("Stored infor is: " + createdEventName + createdEventLocation + createdEventDate + createdEventDetails);
 }
