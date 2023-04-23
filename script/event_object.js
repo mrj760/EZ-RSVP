@@ -23,21 +23,3 @@ class Event {
         this.datetime = str[4];
     }
 }
-
-function saveCreatedEvent(){
-    //event.preventDefault();
-
-    // get values from the input
-    const createdEventName = document.getElementById("eventName").value;
-    const createdEventLocation = document.getElementById("eventLocation").value;
-    const createdEventDate = document.getElementById("eventDate").value;
-    const createdEventDetails = document.getElementById("eventDetails").value;
-
-    var newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
-
-    localStorage.setItem('createdEvent', newEvent.stringify);
-    location.href = '../user_dashboard.html';
-
-    console.log("Stored infor is: " + createdEventName + createdEventLocation + createdEventDate + createdEventDetails);
-}
-
