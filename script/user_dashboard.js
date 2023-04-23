@@ -65,6 +65,10 @@ eventList.push(new Event(
     "June 16th, 2022"
 ))
 
+// from create_event.html
+createdEvent = localStorage.getItem('createdEvent');
+eventList.push(createdEvent);
+
 window.addEventListener("load", function () {
     displayDashboardEvent(eventList);
 });

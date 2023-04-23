@@ -24,16 +24,15 @@ class Event {
     }
 }
 
-function saveCreatedEvent(event){
-    event.preventDefault();
+function saveCreatedEvent(){
 
     // get values from the input
-    const createdEventName = document.getElementById("eventName").value;
-    const createdEventLocation = document.getElementById("eventLocation").value;
-    const createdEventDate = document.getElementById("eventDate").value;
-    const createdEventDetails = document.getElementById("eventDetails").value;
+    var createdEventName = document.getElementById("eventName").value;
+    var createdEventLocation = document.getElementById("eventLocation").value;
+    var createdEventDate = document.getElementById("eventDate").value;
+    var createdEventDetails = document.getElementById("eventDetails").value;
 
-    const newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
+    let newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails)
 
     localStorage.setItem('createdEvent', newEvent.stringify);
     location.href = './user_dashboard.html';
