@@ -19,7 +19,7 @@
         </div>
 
         <div id="getStartedButton" class="buttonDiv">
-            <a href="user_register.html">
+            <a href="user_register.php">
                 <button type="button">Get Started For Free</button>
             </a>
         </div>
@@ -34,7 +34,7 @@
         </div>
 
         <div id="registerForFreeButton" class="buttonDiv">
-            <a href="about.html">
+            <a href="about.php">
                 <button type="button">More About Us</button>
             </a>
         </div>
