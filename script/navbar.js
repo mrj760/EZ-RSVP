@@ -1,30 +1,31 @@
-html =
-    "<div id=\"navDiv\">" +
+navDiv = document.createElement('div')
+navDiv.id = 'navDiv';
+navDiv.innerHTML = 
     "<nav class=\"navbar navbar-expand navbar-dark bg-dark\" id=\"navSpacing\">\n" +
-    "    <a href=\"home.html\" class=\"navbar-brand\">EZ-RSVP</a>\n" +
+    "    <a href=\"home.php\" class=\"navbar-brand\">EZ-RSVP</a>\n" +
     "    <div class=\"navbar-nav mr-auto\">\n" +
     "        <li class=\"nav-item\">\n" +
-    "            <a href=\"home.html\" class=\"nav-link\">\n" +
+    "            <a href=\"home.php\" class=\"nav-link\">\n" +
     "                <i class=\"fa-solid fa-house\"></i> Home" +
     "            </a>\n" +
     "        </li>\n" +
     "        <li class=\"nav-item\">\n" +
-    "            <a href=\"about.html\" class=\"nav-link\">About</a>\n" +
+    "            <a href=\"about.php\" class=\"nav-link\">About</a>\n" +
     "        </li>\n" +
     "        <li class=\"nav-item\">\n" +
-    "            <a href=\"user_dashboard.html\" class=\"nav-link\">\n" +
+    "            <a href=\"user_dashboard.php\" class=\"nav-link\">\n" +
     "                <i class=\"fa-solid fa-table-columns\"></i> Dashboard" +
     "            </a>\n" +
     "        </li>\n" +
     "    </div>\n" +
     "    <div class=\"navbar-nav ms-auto\">\n" +
     "        <li class=\"nav-item\">\n" +
-    "            <a href=\"user_login.html\" class=\"nav-link\">\n" +
+    "            <a href=\"user_login.php\" class=\"nav-link\">\n" +
     "                <i class=\"fa-solid fa-right-to-bracket\"></i> Login" +
     "            </a>\n" +
     "        </li>\n" +
     "        <li class=\"nav-item\">\n" +
-    "            <a href=\"user_register.html\" class=\"nav-link\">\n" +
+    "            <a href=\"user_register.php\" class=\"nav-link\">\n" +
     "                <i class=\"fa-solid fa-user-plus\"></i> Sign Up" +
     "            </a>\n" +
     "        </li>\n" +
@@ -32,9 +33,4 @@ html =
     "</nav>\n" +
     "</div>";
 
-if (!document.body.innerHTML.includes('<nav class=')) {
-    document.body.innerHTML = html + '\n' + document.body.innerHTML;
-}
-
-
-
+window.addEventListener("load", function () {document.body.prepend(navDiv);})

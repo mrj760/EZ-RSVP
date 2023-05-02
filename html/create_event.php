@@ -12,8 +12,7 @@
 <body>
     <div class="background">
         <h1>Create Event</h1>
-        <form action = "../create_event.php"
-        method = "post">
+        <form action = "../create_event.php" method = "post">
             <div>
                 <label class="default">Event name:<br>
                     <input id="eventName" type="text" name="eventName" required="required">
@@ -36,8 +35,7 @@
                 </label>
             </div>
             <div id="buttons">
-                <input type="button" value="Create" class="button" onclick="saveCreatedEvent()">
-                <input class = "submitbutton" type = "submit"  value = "Submit Order"/>
+                <input type="submit" value="Create" class="button" onclick="saveCreatedEvent()">
                 <input type="reset" value="Reset" class="secondaryButton">
             </div>
         </form>

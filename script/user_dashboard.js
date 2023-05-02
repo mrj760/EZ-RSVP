@@ -89,7 +89,7 @@ function displayDashboardEvent() {
 
         let linkToEventDetails = document.createElement('a');
         linkToEventDetails.classList.add('userEvent');
-        linkToEventDetails.href = "./event_details.html";
+        linkToEventDetails.href = "./event_details.php";
 
         let eventDiv = document.createElement('div');
         eventDiv.addEventListener('click', function () {

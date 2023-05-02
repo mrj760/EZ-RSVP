@@ -7,9 +7,23 @@
     Finally adds all given Scripts to the page
 */
 
+
+function addScript(src, crossorigin = -1, append = true) {
+    let script = document.createElement('script');
+    script.setAttribute('src', src);
+    if (crossorigin != -1) {
+        script.setAttribute('crossorigin', crossorigin);
+    }
+    document.head.appendChild(script);
+}
+
+addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');
+addScript('../script/' + pagename + '.js');
+addScript('../script/' + 'navbar' + '.js');
+
 var path = window.location.pathname;
 var pagename = path.split("/").pop();
-pagename = pagename.substring(0, pagename.length - 5);
+pagename = pagename.substring(0, pagename.length - 4);
 let title = pagename.split('_');
 
 for (let i = 0; i < title.length; i++) {
@@ -38,21 +52,8 @@ let stylesheets =
     '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>\n'
     + '<link rel="stylesheet" href="../style/' + pagename + '.css"/>\n'
 
-function addScript(src, crossorigin = -1, append = true) {
-    let script = document.createElement('script');
-    script.setAttribute('src', src);
-    if (crossorigin != -1) {
-        script.setAttribute('crossorigin', crossorigin);
-    }
-    document.head.appendChild(script);
-}
-
 // console.log(document.head.innerHTML)
-document.head.innerHTML = document.head.innerHTML + title + stylesheets;
-
-addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');
-addScript('../script/' + pagename + '.js');
-addScript('../script/' + 'navbar' + '.js');
+document.head.innerHTML = title + document.head.innerHTML + stylesheets;
 
 window.addEventListener("load", function (event) {
     document.body.innerHTML = '<div id="navspace"></div>\n' + document.body.innerHTML;

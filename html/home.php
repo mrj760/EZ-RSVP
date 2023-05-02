@@ -4,7 +4,7 @@
     and links to create an account or login. -->
 
 <head>
-    <link rel="stylesheet" href="../style/_global.css" />
+    <link rel="stylesheet" type="text/css" href="../style/_global.css?<?=filesize('../style/_global.css');?>"/>
     <script src="../script/_global.js"></script>
 </head>
 

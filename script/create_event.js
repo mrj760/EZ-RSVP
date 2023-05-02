@@ -37,7 +37,7 @@ function saveCreatedEvent(){
     var newEvent = new Event(createdEventName, "", createdEventLocation, createdEventDate, createdEventDetails);
 
     localStorage.setItem('createdEvent', newEvent.stringify);
-    location.href = 'user_dashboard.html';
+    location.href = 'user_dashboard.php';
 
     console.log("Stored infor is: " + createdEventName + createdEventLocation + createdEventDate + createdEventDetails);
 }

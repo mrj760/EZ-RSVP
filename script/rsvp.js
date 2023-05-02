@@ -94,7 +94,7 @@ window.addEventListener("load", function () {
 
     function goToConfirm(){
         if (captchaCorrect){
-            window.location.href="rsvp_confirmation.html";
+            window.location.href="rsvp_confirmation.php";
         }
         else{
             captchaOutput.classList.add("incorrectCaptcha");
