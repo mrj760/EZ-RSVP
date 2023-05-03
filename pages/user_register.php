@@ -12,7 +12,7 @@ Also contains a link to the login page. -->
 <body>
         <div class="background">
             <h1>Signup</h1>
-            <form action-="" method="POST">
+            <form action="../php/signup.php" method="POST">
                 <!--Username-->
                 <label for="username" class="lable">Username</label>
                 <br>
@@ -31,7 +31,7 @@ Also contains a link to the login page. -->
                 <br>
 
                 <!--Sign Up Button, move to user dashboard-->
-                <input type="submit" value="Signup" class="button" href="user_dashboard.html" />
+                <input type="submit" value="Signup" class="button"/>
                 <br>
                 <a href="user_login.html">Already have an account? Login here</a>
                 <br>
