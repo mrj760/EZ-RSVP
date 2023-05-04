@@ -17,6 +17,7 @@ Also contains a link to the login page. -->
             <?php
             require_once("../php/db.config.php");
             session_start();
+            $_SESSION = array();
             ?>
             <!--Username-->
             <label for="username" class="lable">Username</label>
@@ -29,7 +30,7 @@ Also contains a link to the login page. -->
             ?>
             <input type="name" id="username" name="username" placeholder="Enter Username" value="<?php echo $username; ?>" required autofocus>
             <?php
-            $usernameError = $_SESSION['usernameTaken'] ? "Username taken... Retry" : "";
+            $usernameError = isset($_SESSION['usernameTaken']) && $_SESSION['usernameTaken'] ? "Username taken... Retry" : "";
             $_SESSION['usernameTaken'] = false;
             ?>
             <p id="usernameError"><?php echo $usernameError; ?></p>
@@ -38,7 +39,7 @@ Also contains a link to the login page. -->
             <br>
             <input type="email" id="email" name="email" placeholder="Enter Email" value="<?php echo $email; ?>" required>
             <?php
-            $emailError = $_SESSION['emailTaken'] ? "Email taken... Retry" : "";
+            $emailError = isset($_SESSION['emailTaken']) && $_SESSION['emailTaken'] ? "Email taken... Retry" : "";
             $_SESSION['emailTaken'] = false;
             ?>
             <p id="emailError"><?php echo $emailError; ?></p>
@@ -110,9 +111,5 @@ Also contains a link to the login page. -->
 
         </form>
     </div>
-
-
-
 </body>
-
 </html>
