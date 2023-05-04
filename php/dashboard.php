@@ -3,7 +3,6 @@ require_once('db.config.php');
 
 // Start php session to store local data to be passed to next php pages
 session_start();
-$_SESSION['userID'] = "testUser2@ez-rsvp.com";
 
 // Send a GET request to retrieve all events for user
 $SQL = "SELECT * FROM events WHERE owner = '" . $_SESSION['userID'] . "'";
