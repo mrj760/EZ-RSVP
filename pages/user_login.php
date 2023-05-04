@@ -4,8 +4,8 @@ Also contains a link to the registration page. -->
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../style/_global.css" />
-    <script src="../script/_global.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style/_global.css?<?= filesize('../style/_global.css'); ?>" />
+    <script src="../script/_global.js?<?= filesize('../script/_global.js'); ?>"></script>
 </head>
 
 <body>

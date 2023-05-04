@@ -1,5 +1,4 @@
-<?php
-require_once('db.config.php');
+<?php require_once('db.config.php');
 
 // Start php session to pull local data from prior php pages
 session_start();

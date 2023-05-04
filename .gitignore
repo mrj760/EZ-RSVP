@@ -1,3 +1,4 @@
 .hintrc
 *.css.map
 .DS_Store
+.vscode/*

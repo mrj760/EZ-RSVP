@@ -18,8 +18,8 @@ function addScript(src, crossorigin = -1, append = true) {
 }
 
 addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');
-addScript('../script/' + pagename + '.js');
-addScript('../script/' + 'navbar' + '.js');
+addScript('../script/' + pagename + '.js?<?=filesize("../script/' + pagename + '.js"); ?>');
+addScript('../script/' + 'navbar' + '.js?<?=filesize("../script/' + 'navbar' + '.js"); ?>');
 
 var path = window.location.pathname;
 var pagename = path.split("/").pop();
@@ -47,10 +47,9 @@ addMeta([
     ['content', 'width=device-width, initial-scale=1.0'],
 ]);
 
-
 let stylesheets =
-    '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>\n'
-    + '<link rel="stylesheet" href="../style/' + pagename + '.css"/>\n'
+    '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"/>\n'
+    + '<link rel="stylesheet" type="text/css" href="../style/' + pagename + '.css?<?=filesize("../style/' + pagename + '.css"); ?>"/>\n'
 
 // console.log(document.head.innerHTML)
 document.head.innerHTML = title + document.head.innerHTML + stylesheets;

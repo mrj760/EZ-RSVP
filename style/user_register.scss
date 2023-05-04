@@ -1,1 +1,6 @@
 @import './_global.scss';
+
+#usernameError, 
+#emailError {
+    color: red;
+}

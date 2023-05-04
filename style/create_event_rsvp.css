@@ -161,9 +161,19 @@ button:hover,
 .right {
   display: inline-block;
   text-align: left;
-  width: 25%;
+  width: 22%;
   color: red;
   margin-left: 1px;
+}
+.right i, .right select {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  padding: 3px;
+}
+.right select {
+  margin-bottom: 9vh;
 }
 
 #buttons {

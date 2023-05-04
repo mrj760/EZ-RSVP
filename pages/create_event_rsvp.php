@@ -4,8 +4,8 @@
         to collect information that may be important for the event. -->
 
 <head>
-    <link rel="stylesheet" href="../style/_global.css" />
-    <script src="../script/_global.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style/_global.css?<?= filesize('../style/_global.css'); ?>" />
+    <script src="../script/_global.js?<?= filesize('../script/_global.js'); ?>"></script>
 </head>
 
 <body>

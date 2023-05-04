@@ -142,4 +142,9 @@ button:hover,
 
 #navspace {
   margin-bottom: 50px;
+}
+
+#usernameError,
+#emailError {
+  color: red;
 }/*# sourceMappingURL=user_register.css.map */

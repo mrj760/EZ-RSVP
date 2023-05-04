@@ -5,8 +5,8 @@
     with optional further details specified by event organizer -->
 
 <head>
-    <link rel="stylesheet" href="../style/_global.css" />
-    <script src="../script/_global.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style/_global.css?<?= filesize('../style/_global.css'); ?>" />
+    <script src="../script/_global.js?<?= filesize('../script/_global.js'); ?>"></script>
 </head>
 
 <body>
@@ -25,8 +25,7 @@
             <input id="nameTextBox" class="textBox" type="text" name="name" title="name" placeholder="John Smith" />
             <br>
             <label for="email">Email</label><br>
-            <input id="emailTextBox" class="textBox" type="text" name="email" title="email"
-                placeholder="JohnSmith@mail.com" />
+            <input id="emailTextBox" class="textBox" type="text" name="email" title="email" placeholder="JohnSmith@mail.com" />
 
             <div id="additionalDetails"></div>
 
@@ -35,8 +34,7 @@
             <br>
             <label for="captcha">Captcha</label>
             <br>
-            <input id="captchaTextBox" class="textBox" type="text" name="captcha" title="text"
-                placeholder="Enter CAPTCHA" />
+            <input id="captchaTextBox" class="textBox" type="text" name="captcha" title="text" placeholder="Enter CAPTCHA" />
 
             <div id="buttons">
 
