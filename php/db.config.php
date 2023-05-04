@@ -1,7 +1,7 @@
 <?php
 //Establish all vars needed to connect to DB
 $HOST = "localhost";
-$PORT = "2345";
+$PORT = "5432";
 $USER = "events";
 $PASSWORD = "Testing123!";
 $DB = "events";
