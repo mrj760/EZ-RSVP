@@ -144,6 +144,10 @@ button:hover,
   margin-bottom: 50px;
 }/*# sourceMappingURL=about.css.map */
 
+#img{
+  height:100%;
+}
+
 .row {
   display: flex;
 }
