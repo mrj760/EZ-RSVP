@@ -21,7 +21,7 @@ and links to create an account or login. -->
     </div>
     
     <div class = "column">
-    <img id = "img" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg">
+    <img id = "img" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px">
     </div>
 </div>
 </body>
