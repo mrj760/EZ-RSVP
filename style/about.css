@@ -149,5 +149,6 @@ button:hover,
 }
 
 .column {
-  flex: 50.00%;
+  flex: 20.00%;
+  padding: 5px;
 }
