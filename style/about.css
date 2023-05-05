@@ -146,6 +146,7 @@ button:hover,
 
 #img{
   height:70%;
+  display:none;
 }
 
 .row {
