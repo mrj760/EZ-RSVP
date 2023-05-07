@@ -9,6 +9,14 @@ Also contains a link to the registration page. -->
 </head>
 
 <body>
+    <?php
+    if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) {
+        unset($_COOKIE['loggedin']);
+        setcookie('loggedin', null, -1);
+        unset($_COOKIE['username']);
+        setcookie('username', null, -1);
+    }
+    ?>
     <div class="background">
         <h1>Login</h1>
         <form action-="" method="POST">
@@ -16,7 +24,6 @@ Also contains a link to the registration page. -->
             <label for="username">Username</label>
             <br>
             <input type="name" id="username" name="username" placeholder="Enter Username" required autofocus>
-
             <br>
             <!--User Password-->
             <label for="userPassword">Password</label>
