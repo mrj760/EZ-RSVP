@@ -113,7 +113,7 @@ window.addEventListener("load", function () {
         rightdiv.appendChild(registerli);
 
         let register = document.createElement('a');
-        register.href = 'user_dashboard.php';
+        register.href = 'user_register.php';
         register.classList.add('nav-link');
         register.innerHTML = ' Sign Up';
         registerli.appendChild(register);
