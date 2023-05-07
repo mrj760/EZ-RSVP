@@ -19,7 +19,7 @@ Also contains a link to the registration page. -->
     ?>
     <div class="background">
         <h1>Login</h1>
-        <form action-="" method="POST">
+        <form action-="../php/validate.log.php?" method="POST">
             <!--Username-->
             <label for="username">Username</label>
             <br>
@@ -31,7 +31,7 @@ Also contains a link to the registration page. -->
             <input type="password" id="password" name="password" placeholder="Enter Password" required>
             <br>
             <!--Sign In Button, move to user dashboard-->
-            <input type="submit" value="Login" class="button" href="user_dashboard.html">
+            <input type="submit" value="Login" class="button">
             <br>
             <a href="#">Forgot Password</a>
             <br>
