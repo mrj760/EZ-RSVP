@@ -23,7 +23,7 @@ navDiv.innerHTML =
     "            <a href=\"user_login.php\" class=\"nav-link\">\n" +
     "               <i class=\"fa-solid fa-right-to-bracket\"></i> Login" + "<?php } ?>" +
     "           <?php else {" + "<a href=\"user_login.php\" class=\"nav-link\">\n" + 
-    "               <i class=\"fa-solid fa-right-to-bracket\"></i> Logout" + "<?php } ?>"
+    "               <i class=\"fa-solid fa-right-to-bracket\"></i> Logout" + "<?php } ?>" +
     "            </a>\n" + 
     "        </li>\n" +
     "        <li class=\"nav-item\">\n" +
