@@ -19,30 +19,33 @@ Also contains a link to the login page. -->
             session_start();
             $_SESSION = array();
             ?>
+
             <!--Username-->
             <label for="username" class="lable">Username</label>
             <br>
             <?php
             $username = isset($_SESSION['username']) ? $_SESSION['username'] : "";
-            $_SESSION['username'] = "";
+            unset($_SESSION['username']);
             $email = isset($_SESSION['email']) ? $_SESSION['email'] : "";
-            $_SESSION['email'] = "";
+            unset($_SESSION['email']);
             ?>
             <input type="name" id="username" name="username" placeholder="Enter Username" value="<?php echo $username; ?>" required autofocus>
             <?php
             $usernameError = isset($_SESSION['usernameTaken']) && $_SESSION['usernameTaken'] ? "Username taken... Retry" : "";
-            $_SESSION['usernameTaken'] = false;
+            unset($_SESSION['usernameTaken']);
             ?>
             <p id="usernameError"><?php echo $usernameError; ?></p>
+
             <!--Email-->
             <label for="email">Email</label>
             <br>
             <input type="email" id="email" name="email" placeholder="Enter Email" value="<?php echo $email; ?>" required>
             <?php
             $emailError = isset($_SESSION['emailTaken']) && $_SESSION['emailTaken'] ? "Email taken... Retry" : "";
-            $_SESSION['emailTaken'] = false;
+            unset($_SESSION['emailTaken']);
             ?>
             <p id="emailError"><?php echo $emailError; ?></p>
+
             <!--User Password-->
             <label for="userPassword">Password</label>
             <br>
@@ -88,7 +91,7 @@ Also contains a link to the login page. -->
                     $_SESSION['username'] = $_POST['username'];
                     $_SESSION['email'] = $_POST['email'];
                     pg_close();
-                    header('Location: user_register.php');
+                    // header('Location: user_register.php');
                 } else {
                     $result = pg_prepare(
                         $CONNECTION,
@@ -103,6 +106,8 @@ Also contains a link to the login page. -->
                         echo json_encode(array("message" => "User creation failed!"));
                         exit;
                     } else {
+                        setcookie("loggedin", true, time() + (86400) * 30);
+                        setcookie("username", $username, time() + (86400) * 30);
                         header("Location: user_dashboard.php");
                     }
                 }
