@@ -11,13 +11,7 @@ Also contains a link to the registration page. -->
 <body>
     <div class="background">
         <h1>Login</h1>
-        <form action-="" method="POST">
-            <?php
-            require_once("../php/db.config.php");
-            session_start();
-            $_SESSION = array();
-            ?>
-
+        <form action-="../php/validate.log.php?" method="POST">
             <!--Username-->
             <label for="username">Username</label>
             <br>
@@ -30,25 +24,11 @@ Also contains a link to the registration page. -->
             <input type="password" id="password" name="password" placeholder="Enter Password" required>
             <br>
             <!--Sign In Button, move to user dashboard-->
-            <input type="submit" value="Login" class="button" href="user_dashboard.html">
+            <input type="submit" value="Login" class="button">
             <br>
             <a href="#">Forgot Password</a>
             <br>
             <a href="user_register.html">Don't have an account? Signup here</a>
-            <?php
-            if isset($_POST["username"] && isset($_POST["userPassword"])) {
-                $username = $_POST["username"];
-                $password = sha1($_POST["userPassword"]);
-
-                $TableName = "users";
-
-                $sql = "SELECT * FROM $TableName
-                WHERE email=$username and password=$psassword;";
-
-                $result = pg_execute($sql);
-            }
-
-            ?>
         </form>
     </div>
 </body>
