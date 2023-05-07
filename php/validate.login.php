@@ -24,7 +24,7 @@ if isset($_POST["username"] && isset($_POST["userPassword"])) {
     pg_close($CONNECTION);
     
     // redirect to dashboard
-    header("Location : dashboard.php");
+    header("Location : user_dashboard.php");
     exit();
 }
 
