@@ -17,14 +17,14 @@ function addScript(src, crossorigin = -1, append = true) {
     document.head.appendChild(script);
 }
 
-addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');
-addScript('../script/' + pagename + '.js?<?=filesize("../script/' + pagename + '.js"); ?>');
-addScript('../script/' + 'navbar' + '.js?<?=filesize("../script/' + 'navbar' + '.js"); ?>');
-
 var path = window.location.pathname;
 var pagename = path.split("/").pop();
 pagename = pagename.substring(0, pagename.length - 4);
 let title = pagename.split('_');
+
+
+addScript('../script/' + pagename + '.js?<?=filesize("../script/' + pagename + '.js"); ?>');
+addScript('../script/' + 'navbar' + '.js?<?=filesize("../script/' + 'navbar' + '.js"); ?>');
 
 for (let i = 0; i < title.length; i++) {
     title[i] = title[i][0].toUpperCase() + title[i].substring(1);
@@ -55,5 +55,10 @@ let stylesheets =
 document.head.innerHTML = title + document.head.innerHTML + stylesheets;
 
 window.addEventListener("load", function (event) {
-    document.body.innerHTML = '<div id="navspace"></div>\n' + document.body.innerHTML;
+    
+    addScript('https://kit.fontawesome.com/ff3950c27f.js', 'anonymous');
+
+    navspace = document.createElement('div');
+    navspace.id = 'navspace';
+    document.body.prepend(navspace);
 })
