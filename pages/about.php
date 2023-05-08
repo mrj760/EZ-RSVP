@@ -11,7 +11,7 @@ and links to create an account or login. -->
 
 <body>
 
-<div class = "row">
+<div class = "box">
     <div class = "column1">
     <p>Welcome to EZ-RSVP! EZ-RSVP is an event reservation website that aims to make your event planning go smoothly.
 

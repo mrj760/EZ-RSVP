@@ -145,7 +145,15 @@ button:hover,
 }
 
 #img {
-  text-align: left;
+  text-align: right;
   border: none;
   height: 96px;
+}
+
+p {
+  text-align: left;
+}
+
+.box {
+  margin: 50px;
 }/*# sourceMappingURL=about.css.map */
