@@ -22,11 +22,11 @@ through a questionare, and host your event publicly on the website.
 We understand that planning an event can be overwhelming, which is why we've designed our website to provide all the 
 logistics you need in one place. From detailed event descriptions and photos to questionares asked with every
 reservation, our site offers everything you need to take your event to the next level. 
-<img id = "img" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px"></p>
+</p>
 
     </div>
     <div class = "image">
-    <img id = "i" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg">
+    
     </div>
 </body>
 
