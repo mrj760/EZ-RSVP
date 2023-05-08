@@ -4,7 +4,7 @@
 session_start();
 
 // Validate request
-if (!isset($_SESSION['userID']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
+if (!isset($_COOKIE['email']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
     http_response_code(400);
     echo json_encode(array("message" => "Content can not be empty!"));
     exit;
@@ -12,7 +12,7 @@ if (!isset($_SESSION['userID']) ||!isset($_POST['eventName']) || !isset($_POST['
 
 //Create event array of required details
 $EVENT = array(
-    $_SESSION['userID'],
+    $_COOKIE['email'],
     $_POST['eventName'],
     $_POST['eventPhotoURL'],
     $_POST['eventDetails'],
