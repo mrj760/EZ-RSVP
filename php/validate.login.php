@@ -4,7 +4,7 @@ require_once("../php/db.config.php");
 session_start();
 $_SESSION = array();
            
-if isset($_POST["username"] && isset($_POST["userPassword"])) {
+if (isset($_POST["username"]) && isset($_POST["userPassword"])) {
     $username = $_POST["username"];
     $password = sha1($_POST["userPassword"]);
 
