@@ -152,8 +152,14 @@ button:hover,
 
 .text {
   width: 50%;
-  height: 400px; /* or height: 50vh; */
+  height: 95%; /* or height: 95vh; */
   background-color: lightseagreen;
+}
+
+.image {
+  width: 50%;
+  height: 95%; /* or height: 95vh; */
+  background-color: lightslategrey;
 }
 
 p {
