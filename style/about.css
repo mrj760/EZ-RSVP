@@ -143,5 +143,7 @@ button:hover,
 
 
 img{
-  float:right;
+  text-align: left;
+  border: none;
+  height: 96px;
 }
