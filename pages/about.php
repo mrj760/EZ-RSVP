@@ -11,7 +11,7 @@ and links to create an account or login. -->
 
 <body>
 
-<div class = "box">
+
     <div class = "text">
     <p>Welcome to EZ-RSVP! EZ-RSVP is an event reservation website that aims to make your event planning go smoothly.
 
@@ -26,9 +26,8 @@ reservation, our site offers everything you need to take your event to the next 
 
     </div>
     <div class = "image">
-    <img id = "img" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px">
+    <img src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px">
     </div>
-</div>
 </body>
 
 </html>
