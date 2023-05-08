@@ -11,7 +11,7 @@
 <body>
     <div class="background">
         <h1>Create Event</h1>
-        <form action="../php/create_event.php" method="post">
+        <form action="../php/create.event.php" method="post">
             <div>
                 <label class="default">Event name:<br>
                     <input id="eventName" type="text" name="eventName" required="required">
