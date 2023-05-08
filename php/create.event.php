@@ -6,7 +6,7 @@ session_start();
 // Validate request
 if (!isset($_COOKIE['email']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
     http_response_code(400);
-    echo json_encode(array("message" => {$_COOKIE['email']}));
+    echo json_encode(array("message" => '{$_COOKIE['email']}'));
     exit;
 }
 
