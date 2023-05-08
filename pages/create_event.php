@@ -11,7 +11,7 @@
 <body>
     <div class="background">
         <h1>Create Event</h1>
-        <form action="../php/create.event.php" method="post">
+        <form action="../php/create.event.php" method="POST">
             <div>
                 <label class="default">Event name:<br>
                     <input id="eventName" type="text" name="eventName" required="required">
@@ -23,8 +23,18 @@
                 </label>
             </div>
             <div>
+                <label class="default">Event Photo URL:<br>
+                    <input id="eventPhotoURL" type="text" name="eventPhotoURL" required="required">
+                </label>
+            </div>
+            <div>
                 <label class="default">Date:<br>
                     <input id="eventDate" type="date" name="eventDate" required="required">
+                </label>
+            </div>
+            <div>
+                <label class="default">Time:<br>
+                    <input id="eventTime" type="text" name="eventTime" required="required">
                 </label>
             </div>
             <div>

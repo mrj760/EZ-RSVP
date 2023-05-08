@@ -4,7 +4,7 @@
 session_start();
 
 // Validate request
-if (!isset($_SESSION['userID']) ||!isset($_POST['name']) || !isset($_POST['photoURL']) || !isset($_POST['details']) || !isset($_POST['date']) || !isset($_POST['time']) || !isset($_POST['location'])) {
+if (!isset($_SESSION['userID']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
     http_response_code(400);
     echo json_encode(array("message" => "Content can not be empty!"));
     exit;
@@ -13,12 +13,12 @@ if (!isset($_SESSION['userID']) ||!isset($_POST['name']) || !isset($_POST['photo
 //Create event array of required details
 $EVENT = array(
     $_SESSION['userID'],
-    $_POST['name'],
-    $_POST['photoURL'],
-    $_POST['details'],
-    $_POST['date'],
-    $_POST['time'],
-    $_POST['location']
+    $_POST['eventName'],
+    $_POST['eventPhotoURL'],
+    $_POST['eventDetails'],
+    $_POST['eventDate'],
+    $_POST['eventTime'],
+    $_POST['eventLocation']
 );
 
 // Prepare a SQL statement to insert the event into the database
