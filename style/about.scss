@@ -1,10 +1,10 @@
 @import './_global.scss';
 
 #img{
-    text-align: right;
-    border: none;
-    height: 96px;
-  }
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
 
   p{
     text-align: left;
