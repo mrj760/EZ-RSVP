@@ -142,4 +142,10 @@ button:hover,
 
 #navspace {
   margin-bottom: 50px;
+}
+
+#img {
+  text-align: left;
+  border: none;
+  height: 96px;
 }/*# sourceMappingURL=about.css.map */
