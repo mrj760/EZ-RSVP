@@ -18,6 +18,9 @@
     background-image: url("https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg");
     width: 50%;
     height: 95%; /* or height: 95vh; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     float: right;
 }
 
