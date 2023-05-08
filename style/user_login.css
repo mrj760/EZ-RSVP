@@ -142,4 +142,8 @@ button:hover,
 
 #navspace {
   margin-bottom: 50px;
+}
+
+#loginError {
+  color: red;
 }/*# sourceMappingURL=user_login.css.map */

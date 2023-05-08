@@ -59,15 +59,25 @@ window.addEventListener("load", function () {
     leftdiv.appendChild(aboutli);
 
     let about = document.createElement('a');
-    about.classList.add( 'nav-link');
+    about.classList.add('nav-link');
     about.href = 'about.php';
     about.innerHTML = ' About';
     aboutli.appendChild(about);
 
-    let abouticon = document.createElement('i');
-    abouticon.classList.add('fa-solid');
-    abouticon.classList.add('fa-table-columns');
-    about.prepend(abouticon);
+    let dashboardli = document.createElement('li');
+    dashboardli.classList.add('nav-item');
+    leftdiv.appendChild(dashboardli);
+
+    let dashboard = document.createElement('a');
+    dashboard.classList.add('nav-link');
+    dashboard.href = 'user_dashboard.php';
+    dashboard.innerHTML = ' User Dashboard';
+    dashboardli.appendChild(dashboard);
+
+    let dashboardicon = document.createElement('i');
+    dashboardicon.classList.add('fa-solid');
+    dashboardicon.classList.add('fa-table-columns');
+    dashboard.prepend(dashboardicon);
 
     let rightdiv = document.createElement('div');
     rightdiv.id = 'rightdiv';

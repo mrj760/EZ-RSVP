@@ -80,13 +80,13 @@ Also contains a link to the login page. -->
             <!--Username-->
             <label for="username" class="lable">Username</label>
             <br>
-            <input type="name" id="username" name="username" placeholder="Enter Username" value="<?php echo $username; ?>" required autofocus>
+            <input type="name" id="username" name="username" placeholder="Enter Username" value="<?= $username; ?>" required autofocus>
             <p id="usernameError"><?= $usernameTaken ? "Username taken... Retry" : ""; ?></p>
 
             <!--Email-->
             <label for="email">Email</label>
             <br>
-            <input type="email" id="email" name="email" placeholder="Enter Email" value="<?php echo $email; ?>" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email" value="<?= $email; ?>" required>
             <p id="emailError"><?= $emailTaken ? "Email taken... Retry" : ""; ?></p>
 
             <!--User Password-->

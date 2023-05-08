@@ -143,17 +143,3 @@ button:hover,
 #navspace {
   margin-bottom: 50px;
 }/*# sourceMappingURL=about.css.map */
-
-#img{
-  height:96px;
-  display:none;
-}
-
-.row {
-  display: flex;
-}
-
-.column {
-  flex: 20.00%;
-  padding: 5px;
-}
