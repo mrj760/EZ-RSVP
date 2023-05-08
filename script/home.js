@@ -13,10 +13,12 @@ window.addEventListener('scroll', function () {
     if (scrolledDown) {
         if (currentDivIdx === fullscreenDivs.length - 1)
             return;
-        fullscreenDivs[++currentDivIdx].scrollIntoView();
+        fullscreenDivs[++currentDivIdx].scrollIntoView({'behavior':'smooth'});
     } else /* scrolled up */ {
         if (currentDivIdx === 0)
             return;
-        fullscreenDivs[--currentDivIdx].scrollIntoView();
+        // fullscreenDivs[--currentDivIdx].scrollIntoView();
+        this.window.scrollTo(0,0);
+        currentDivIdx--;
     }
 })
