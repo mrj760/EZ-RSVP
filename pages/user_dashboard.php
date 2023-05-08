@@ -9,7 +9,7 @@ if (!isset($_COOKIE['email'] || $_COOKIE['loggedin']) || $_COOKIE['loggedin'] ==
     }
 
 // Send a GET request to retrieve all events for user
-$SQL = "SELECT * FROM events WHERE owner = '" . $_COOKIE['email']] . "'";
+$SQL = "SELECT * FROM events WHERE owner = '" . $_COOKIE['email'] . "'";
 $result = pg_query($CONNECTION, $SQL);
 
 // Check if the request was successful
