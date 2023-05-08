@@ -9,12 +9,14 @@
     .text {
         width: 50%;
         height: 95%; /* or height: 95vh; */
+        float: left;
         background-color: lightseagreen;
       }
-      
+
       .image {
         width: 50%;
         height: 95%; /* or height: 95vh; */
+        float: right;
         background-color: lightslategrey;
       }
 
