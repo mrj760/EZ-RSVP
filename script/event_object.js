@@ -23,3 +23,5 @@ class Event {
         this.datetime = str[4];
     }
 }
+
+export {Event};

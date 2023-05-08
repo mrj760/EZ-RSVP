@@ -32,10 +32,18 @@ Also contains a link to the registration page. -->
                 $result = pg_prepare(
                     $CONNECTION,
                     "check_credentials",
-                    "SELECT username, password FROM users WHERE username=$1 OR email=$1"
+                    "SELECT username, email, password FROM users WHERE username=$1 OR email=$1"
                 );
                 $params = array($username);
                 $result = pg_execute($CONNECTION, "check_credentials", $params);
+                pg_close();
+
+                if (!$result) {
+                    http_response_code(400);
+                    echo json_encode(array("message" => "User creation failed!"));
+                    exit;
+                }
+
                 $numUsers = pg_num_rows($result);
                 $userExists = $numUsers > 0;
 
@@ -43,11 +51,13 @@ Also contains a link to the registration page. -->
 
                     $row = pg_fetch_row($result);
 
-                    $passwordCorrect = password_verify($password, $row[1]);
+                    $passwordCorrect = password_verify($password, $row[2]);
 
                     if ($passwordCorrect) {
-                        setcookie('username', $row[0], time() + (86400) * 30);
-                        setcookie("loggedin", true, time() + (86400) * 30);
+                        $expirationIn30Days = time() + 86400 * 30;
+                        setcookie('username', $row[0], $expirationIn30Days);
+                        setcookie('email', $row[1], $expirationIn30Days);
+                        setcookie("loggedin", true, $expirationIn30Days);
                         header("Location: user_dashboard.php");
                     } else {
                         $login_error = "There was an error with your login credentials.";
@@ -63,8 +73,7 @@ Also contains a link to the registration page. -->
             <!--Username-->
             <label for="username">Username</label>
             <br>
-            <input type="name" id="username" name="username" placeholder="Enter Username or Email"
-                value="<?= $username ?>" required autofocus>
+            <input type="name" id="username" name="username" placeholder="Enter Username or Email" value="<?= $username ?>" required autofocus>
             <br>
             <!--User Password-->
             <label for="userPassword">Password</label>

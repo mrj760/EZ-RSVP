@@ -10,14 +10,26 @@
 
 <body>
     <?php
+    require_once('../php/db.config.php');
+
     if (!isset($_COOKIE['loggedin']) || $_COOKIE['loggedin'] == false) {
-        // echo "ay yo?";
         header("Location: user_login.php");
     }
-    else {
-        echo "<br><h1 style='margin-left: 20px'>Hello " . $_COOKIE['username'] . "!</h1>";
-    }
+    pg_prepare(
+        $CONNECTION,
+        "get_events",
+        "SELECT * FROM events WHERE owner=$1"
+    );
+    $params = array($_COOKIE['email']);
+    $result = pg_execute($CONNECTION, "get_events", $params);
+    $events = pg_fetch_all($result);
     ?>
+    <script type="text/javascript">
+        let events = <?= json_encode($events)?>;
+        localStorage.setItem('events', events);
+    </script>
+    <br>
+    <h1 id="greeting"><?= 'Hello ' . $_COOKIE['username'] . '!' ?></h1>
     <a href="./rsvp.php"><button type="button" class="button">RSVP</button></a>
     <a href="./create_event.php"><button type="button" class="button">Create Event</button></a>
     <a href="./create_event_rsvp.php"><button type="button" class="button">Create Event RSVP</button></a>

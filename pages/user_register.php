@@ -62,14 +62,14 @@ Also contains a link to the login page. -->
                         http_response_code(400);
                         echo json_encode(array("message" => "User creation failed!"));
                         exit;
-                    } else {
-                        setcookie("loggedin", true, time() + (86400) * 30);
-                        setcookie("username", $username, time() + (86400) * 30);
-                        header("Location: user_dashboard.php");
                     }
+                    $expirationIn30Days = time() + 86400 * 30;
+                    setcookie("loggedin", true, $expirationIn30Days);
+                    setcookie("username", $username, $expirationIn30Days);
+                    setcookie('email', $email, $expirationIn30Days);
+                    header("Location: user_dashboard.php");
                 }
-            }
-            else {
+            } else {
                 $username = "";
                 $email = "";
                 $usernameTaken = false;

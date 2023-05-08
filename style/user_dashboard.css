@@ -196,6 +196,10 @@ a:hover {
   text-align: center;
 }
 
+#greeting {
+  margin-left: 20px;
+}
+
 #userEventsDiv {
   width: 80%;
   margin-left: 5%;
