@@ -1,7 +1,29 @@
-@import './_global.scss';
+@import "./_global.scss";
 
-#img{
+#img {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.text {
+    width: 50%;
+    height: 95%; /* or height: 95vh; */
+    float: left;
+    background-color: lightseagreen;
+}
+
+.image {
+    width: 50%;
+    height: 95%; /* or height: 95vh; */
+    float: right;
+    background-color: lightslategrey;
+}
+
+p {
     text-align: left;
-    border: none;
-    height: 96px;
-  }
+}
+
+.box {
+    margin: 50px;
+}

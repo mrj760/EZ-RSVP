@@ -11,19 +11,23 @@ and links to create an account or login. -->
 
 <body>
 
-<div class = "row">
-    <div class = "column1">
-    <p>EZ-RSVP aims to make your event run more smoothly by tracking reservations, guest logistics, and more! </p>
-    <p>1. Create an account.</P>
-    <p>2. Create your dream event in minutes.</P>
-    <p>3. Invite attendees to rsvp with a link.</P>
-    <p>4. Collect responses from attendees with rsvp form.</P>
+
+    <div class = "text">
+    <p>Welcome to EZ-RSVP! EZ-RSVP is an event reservation website that aims to make your event planning go smoothly.
+
+Whether you're planning a small gathering with friends or a corporate conference, you can easily invite people you know
+with a link.  With a user friendly interface, you can easily keep track of reservations, collect important information 
+through a questionare, and host your event publicly on the website.
+
+We understand that planning an event can be overwhelming, which is why we've designed our website to provide all the 
+logistics you need in one place. From detailed event descriptions and photos to questionares asked with every
+reservation, our site offers everything you need to take your event to the next level. 
+<img id = "img" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px"></p>
+
     </div>
-    
-    <div class = "column2">
-    <img id = "img" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px">
+    <div class = "image">
+    <img src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px">
     </div>
-</div>
 </body>
 
 </html>
