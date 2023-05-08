@@ -44,7 +44,7 @@
                 </label>
             </div>
             <div id="buttons">
-                <input type="submit" value="Create" class="button" onclick="saveCreatedEvent()">
+                <input type="submit" value="Create" class="button" >
                 <input type="reset" value="Reset" class="secondaryButton">
             </div>
         </form>
