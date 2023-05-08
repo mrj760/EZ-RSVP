@@ -140,7 +140,7 @@ button:hover,
   padding-bottom: min(20px, 3vh);
 }
 
-p{
+.column1{
   float:left;
 }
 
