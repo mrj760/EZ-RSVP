@@ -4,7 +4,7 @@ require_once('../php/db.config.php');
 // Start php session to store local data to be passed to next php pages
 session_start();
 
-if (!isset($_COOKIE['email'] || $_COOKIE['loggedin']) || $_COOKIE['loggedin'] == false) {
+if (!isset($_COOKIE['email']) || !isset($_COOKIE['loggedin']) || $_COOKIE['loggedin'] == false) {
         header("Location: user_login.php");
     }
 
