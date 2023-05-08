@@ -12,7 +12,7 @@ and links to create an account or login. -->
 <body>
 
 <div class = "row">
-    <div class = "column">
+    <div class = "column1">
     <p>EZ-RSVP aims to make your event run more smoothly by tracking reservations, guest logistics, and more! </p>
     <p>1. Create an account.</P>
     <p>2. Create your dream event in minutes.</P>
@@ -20,7 +20,7 @@ and links to create an account or login. -->
     <p>4. Collect responses from attendees with rsvp form.</P>
     </div>
     
-    <div class = "column">
+    <div class = "column2">
     <img id = "img" src = "https://thumbnails.production.thenounproject.com/7lYDhxRfPTPpF9SpchnvqrGStyo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/C30D2809-9294-4B11-A2AE-A405A00A9893.jpg" width = "96px">
     </div>
 </div>
