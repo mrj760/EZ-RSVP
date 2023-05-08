@@ -21,9 +21,6 @@ if (!$result) {
 
 // Fetch all events as an array
 $events = pg_fetch_all($result);
-
-// Close the database connection
-pg_close($CONNECTION);
 ?>
 
 <!DOCTYPE html>
@@ -89,3 +86,8 @@ pg_close($CONNECTION);
 </body>
 
 </html>
+<?php
+// Close the database connection
+pg_close($CONNECTION);
+?>
+?>
