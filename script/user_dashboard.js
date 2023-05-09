@@ -1,6 +1,3 @@
-import { getCookie, setCookie } from "./cookie_functions";
-
-
 window.addEventListener("load", function () {
     displayDashboardEvent();
 });
@@ -10,8 +7,8 @@ window.addEventListener("load", function () {
 function displayDashboardEvent() {
 
     let userEventsDiv = document.getElementById('userEventsDiv');
-
-    let events = localStorage.getItem('events');
+    
+    let events = COOKIE['events'];
 
     for (let i = 0; i < events.length; i++) {
 
