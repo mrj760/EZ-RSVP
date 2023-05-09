@@ -1,5 +1,8 @@
 @import "./_global.scss";
 
+h2{
+    text-align: center;
+}
 
 .container{
     display:flex;
@@ -22,8 +25,7 @@ img{
 }
 
 .icons{
-    margin-left: 50px;
-    margin-right: 50px;
+    padding: 50px;
     display:flex;
     flex-direction: row;
     width: 100%;

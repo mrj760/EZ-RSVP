@@ -144,6 +144,10 @@ button:hover,
   margin-bottom: 50px;
 }
 
+h2 {
+  text-align: center;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -163,8 +167,7 @@ img {
 }
 
 .icons {
-  margin-left: 50px;
-  margin-right: 50px;
+  padding: 50px;
   display: flex;
   flex-direction: row;
   width: 100%;
