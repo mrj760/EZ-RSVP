@@ -162,6 +162,24 @@ img {
   width: 100%;
 }
 
+.icons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.create {
+  flex: 1;
+}
+
+.invite {
+  flex: 1;
+}
+
+.collect {
+  flex: 1;
+}
+
 p {
   text-align: left;
 }/*# sourceMappingURL=about.css.map */

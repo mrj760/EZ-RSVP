@@ -11,6 +11,8 @@ and links to create an account or login. -->
 
 <body>
 
+<h2>Online Event Reservation Management</h2>
+
 <div class = "container">
     <div class = "text">
     <p>Welcome to EZ-RSVP! EZ-RSVP is an event reservation website that aims to make your event planning go smoothly.
@@ -22,11 +24,32 @@ and links to create an account or login. -->
     We understand that planning an event can be overwhelming, which is why we've designed our website to provide all the 
     logistics you need in one place. From detailed event descriptions and photos to questionares asked with every
     reservation, our site offers everything you need to take your event to the next level. 
+
+    1.Create
+    2.Invite.
+    3.Collect Custom Data.
     </p>
     </div>
     
     <div class = "image">
     <img src = "https://thumbnails.production.thenounproject.com/zG8k1Olr0FHJWTRQd2l_DNi5FH4=/fit-in/1000x1000/photos.production.thenounproject.com/photos/9DA0BF36-E349-4ACC-99B0-60DE0CA135B1.jpg">
+    </div>
+</div>
+
+<div class = "icons">
+    <div class = "create">
+        <p>1. Create </p>
+        <img src = "https://thenounproject.com/api/private/icons/4476317/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkWeNjwh6jnvhpbDL9qmvJLQGJDmTcY0bNacVNMhLcJqyKA8-jNh3LzyBtg_y1vkZSahr2KIpDJ6yWrGuW21zazQkS1Q%3D%3D">
+    </div>
+
+    <div class = "invite">
+        <p>2. Invite </p>
+        <img src = "https://thenounproject.com/api/private/icons/3606737/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkWeNjwh6jnvhpbDL9qmvJLQGJDmTcY0bNacVNMhLcJqyKA8-jNh3LzyBtg_y1vkZSahr2KIpDJ6yWrGuW21zazQkS1Q%3D%3D">
+    </div>
+
+    <div class = "collect">
+        <p>3. Collect Data </p>
+        <img src = "https://thenounproject.com/api/private/icons/4918455/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkWeNjwh6jnvhpbDL9qmvJLQGJDmTcY0bNacVNMhLcJqyKA8-jNh3LzyBtg_y1vkZSahr2KIpDJ6yWrGuW21zazQkS1Q%3D%3D">
     </div>
 </div>
 </body>
