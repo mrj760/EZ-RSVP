@@ -26,11 +26,12 @@
         exit;
     }
     $events = pg_fetch_all($result);
+    console.log($events);
     pg_close($CONNECTION);
     ?>
     <script type="text/javascript">
         let events = <?= json_encode($events)?>;
-        setCookie('events', events, 2);
+        localStorage.setCookie('events', events, 2);
     </script>
     <br>
     <h1 id="greeting"><?= 'Hello ' . $_COOKIE['username'] . '!' ?></h1>
