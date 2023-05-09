@@ -8,6 +8,20 @@
 </head>
 
 <body>
+    <?php 
+    // print_r($_GET['id']);
+    require_once('../php/db.config.php');
+    $id = $_GET['id'];
+    $result = pg_query(
+        $CONNECTION,
+        "SELECT * FROM events WHERE id=$id" );
+    $event = pg_fetch_all($result)[0];
+    ?>
+    <script>
+        let event = <?=json_encode($event)?>;
+        console.log(event);
+        localStorage.setItem('event', JSON.stringify(event));
+    </script>
     <div class="background">
         <div id="eventName" class="infoDiv"></div>
         <div id="outerEventCoverPhotoDiv">
