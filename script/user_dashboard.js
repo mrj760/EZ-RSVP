@@ -1,5 +1,5 @@
 import { getCookie, setCookie } from "./cookie_functions";
-import { Event } from "./event_object";
+
 
 window.addEventListener("load", function () {
     displayDashboardEvent();
