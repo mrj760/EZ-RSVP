@@ -31,7 +31,7 @@ function displayDashboardEvent() {
 
     let userEventsDiv = document.getElementById('userEventsDiv');
     
-    let events = getCookie('events');
+    let events = localStorage.getCookie('events');
 
     for (let i = 0; i < events.length; i++) {
 
