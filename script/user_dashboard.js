@@ -9,7 +9,7 @@ function displayDashboardEvent() {
     let userEventsDiv = document.getElementById('userEventsDiv');
     
     let events = JSON.parse(localStorage.getItem('events'));
-    console.log(events);
+    console.log(events.length);
 
     for (let i = 0; i < events.length; i++) {
 
