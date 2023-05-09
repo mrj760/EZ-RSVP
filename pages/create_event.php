@@ -21,24 +21,16 @@
             <?php
             require_once("../php/db.config.php");
             session_start();
-            
-            // if (!isset($_COOKIE['email']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
-            //     http_response_code(400);
-            //     echo ($_COOKIE['email']);
-            //     print_r($_COOKIE);
-            //     echo json_encode(array("message" => 'You should fill up required values'));
-            //     exit;
-            // }
 
-            if (isset($_COOKIE['email']) || isset($_POST['eventName']) || isset($_POST['eventPhotoURL']) || isset($_POST['eventDetails']) || isset($_POST['eventDate']) || isset($_POST['eventTime']) || isset($_POST['eventLocation'])){
+            if (isset($_COOKIE['email']) || isset($_POST['eventname']) || isset($_POST['eventphoto']) || isset($_POST['eventdetails']) || isset($_POST['eventdate']) || isset($_POST['eventtime']) || isset($_POST['eventlocation'])){
                 $EVENT = array(
                     $_COOKIE['email'],
-                    $_POST['eventName'],
-                    $_POST['eventPhotoURL'],
-                    $_POST['eventDetails'],
-                    $_POST['eventDate'],
-                    $_POST['eventTime'],
-                    $_POST['eventLocation']
+                    $_POST['eventname'],
+                    $_POST['eventphoto'],
+                    $_POST['eventdetails'],
+                    $_POST['eventdate'],
+                    $_POST['eventtime'],
+                    $_POST['eventlocation']
                 );
                 
                 $SQL = "INSERT INTO events (owner, name, \"photoURL\", details, date, time, location) VALUES ($1, $2, $3, $4, $5, $6, $7)";
@@ -60,33 +52,33 @@
             ?>
             <div>
                 <label class="default">Event name:<br>
-                    <input id="eventName" type="text" name="eventName" required="required">
+                    <input id="eventname" type="text" name="eventname" required="required">
                 </label>
             </div>
             <div>
                 <label class="default">Location:<br>
-                    <input id="eventLocation" type="text" name="eventLocation" required="required">
+                    <input id="eventlocation" type="text" name="eventlocation" required="required">
                 </label>
             </div>
             <div>
                 <label class="default">Event Photo URL:<br>
-                    <input id="eventPhotoURL" type="text" name="eventPhotoURL" required="required">
+                    <input id="eventphoto" type="text" name="eventphoto" required="required">
                 </label>
             </div>
             <div>
                 <label class="default">Date:<br>
-                    <input id="eventDate" type="date" name="eventDate" required="required">
+                    <input id="eventdate" type="date" name="eventdate" required="required">
                 </label>
             </div>
             <div>
                 <label class="default">Time:<br>
-                    <input id="eventTime" type="text" name="eventTime" required="required">
+                    <input id="eventtime" type="text" name="eventtime" required="required">
                 </label>
             </div>
             <div>
                 <label class="">Event Details
                     <br>
-                    <textarea id="eventDetails" name="eventDetails" wrap="hard" rows="3" cols="30" required="required"></textarea>
+                    <textarea id="eventdetails" name="eventdetails" wrap="hard" rows="3" cols="30" required="required"></textarea>
                 </label>
             </div>
             <div id="buttons">
