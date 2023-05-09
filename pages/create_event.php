@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) {
+        unset($_COOKIE['loggedin']);
+        setcookie('loggedin', null, -1);
+        unset($_COOKIE['username']);
+        setcookie('username', null, -1);
+    }
+    ?>
     <div class="background">
         <h1>Create Event</h1>
         <form action="create_event.php?" method="POST">
