@@ -9,7 +9,7 @@ function displayDashboardEvent() {
     let userEventsDiv = document.getElementById('userEventsDiv');
     
     let events = JSON.parse(localStorage.getItem('events'));
-    console.log(events.length);
+    // console.log(events.length);
 
     for (let i = 0; i < events.length; i++) {
 
@@ -17,7 +17,7 @@ function displayDashboardEvent() {
         
         let linkToEventDetails = document.createElement('a');
         linkToEventDetails.classList.add('userEvent');
-        linkToEventDetails.href = "./event_details.php";
+        linkToEventDetails.href = "./event_details.php?id=" + events[i].id;
 
         let eventDiv = document.createElement('div');
         let photoDiv = document.createElement('div');
