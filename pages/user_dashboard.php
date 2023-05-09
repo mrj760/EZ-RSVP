@@ -31,7 +31,7 @@
     ?>
     <script type="text/javascript">
         let events = <?= json_encode($events)?>;
-        localStorage.setItem('events', events);
+        localStorage.setItem('events', JSON.stringify(events));
     </script>
     <br>
     <h1 id="greeting"><?= 'Hello ' . $_COOKIE['username'] . '!' ?></h1>
