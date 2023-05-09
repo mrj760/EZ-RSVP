@@ -145,7 +145,6 @@ button:hover,
 }
 
 .container {
-  margin: 0px;
   display: flex;
   flex-direction: row;
   width: 100%;
