@@ -26,7 +26,7 @@
             
             if (!isset($_COOKIE['email']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
                 http_response_code(400);
-                echo ($_COOKIE['username']);
+                echo ($_COOKIE['email']);
                 print_r($_COOKIE);
                 echo json_encode(array("message" => 'You should fill up required values'));
                 exit;
