@@ -1,10 +1,11 @@
 class Event {
-    constructor(name, photoURL, details, location, datetime) {
+    constructor(name, photoURL, details, location, date, time) {
         this.name = name;
         this.photoURL = photoURL;
         this.details = details;
         this.location = location;
-        this.datetime = datetime;
+        this.date = date;
+        this.time = time;
         this.parseSplitter = "sdfuynf9s87dfy9 23807r32 98psDFsdf8s76dfSDFASDAF8G8GA"
     }
 
