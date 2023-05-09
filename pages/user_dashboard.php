@@ -25,11 +25,11 @@
         exit;
     }
     $events = pg_fetch_all($result);
-    setcookie('events', $events, time() + 86400);
     pg_close($CONNECTION);
     ?>
     <script type="text/javascript">
-        
+        let events = <?= json_encode($events)?>;
+        setCookie('events', events, time() + 90000 );
     </script>
     <br>
     <h1 id="greeting"><?= 'Hello ' . $_COOKIE['username'] . '!' ?></h1>
@@ -42,8 +42,3 @@
 </body>
 
 </html>
-
-<?php
-// Close the database connection
-
-?>
