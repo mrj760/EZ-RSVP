@@ -22,37 +22,41 @@
             require_once("../php/db.config.php");
             session_start();
             
-            if (!isset($_COOKIE['email']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
-                http_response_code(400);
-                echo ($_COOKIE['email']);
-                print_r($_COOKIE);
-                echo json_encode(array("message" => 'You should fill up required values'));
-                exit;
+            // if (!isset($_COOKIE['email']) ||!isset($_POST['eventName']) || !isset($_POST['eventPhotoURL']) || !isset($_POST['eventDetails']) || !isset($_POST['eventDate']) || !isset($_POST['eventTime']) || !isset($_POST['eventLocation'])) {
+            //     http_response_code(400);
+            //     echo ($_COOKIE['email']);
+            //     print_r($_COOKIE);
+            //     echo json_encode(array("message" => 'You should fill up required values'));
+            //     exit;
+            // }
+
+            if (isset($_COOKIE['email']) || isset($_POST['eventName']) || isset($_POST['eventPhotoURL']) || isset($_POST['eventDetails']) || isset($_POST['eventDate']) || isset($_POST['eventTime']) || isset($_POST['eventLocation'])){
+                $EVENT = array(
+                    $_COOKIE['email'],
+                    $_POST['eventName'],
+                    $_POST['eventPhotoURL'],
+                    $_POST['eventDetails'],
+                    $_POST['eventDate'],
+                    $_POST['eventTime'],
+                    $_POST['eventLocation']
+                );
+                
+                $SQL = "INSERT INTO events (owner, name, \"photoURL\", details, date, time, location) VALUES ($1, $2, $3, $4, $5, $6, $7)";
+
+                $result = pg_query_params($CONNECTION, $SQL, $EVENT);
+    
+                if (!$result) {
+                http_response_code(500);
+                echo json_encode(array("message" => "Error occurred while creating event: " . pg_last_error($CONNECTION)));
+                }
+    
+                pg_close($CONNECTION);
+    
+                header("Location: dashboard.php");
+                exit();
+            } else {
+                $Event = array("","","","","","","");
             }
-
-            $EVENT = array(
-                $_COOKIE['email'],
-                $_POST['eventName'],
-                $_POST['eventPhotoURL'],
-                $_POST['eventDetails'],
-                $_POST['eventDate'],
-                $_POST['eventTime'],
-                $_POST['eventLocation']
-            );
-
-            $SQL = "INSERT INTO events (owner, name, \"photoURL\", details, date, time, location) VALUES ($1, $2, $3, $4, $5, $6, $7)";
-
-            $result = pg_query_params($CONNECTION, $SQL, $EVENT);
-
-            if (!$result) {
-            http_response_code(500);
-            echo json_encode(array("message" => "Error occurred while creating event: " . pg_last_error($CONNECTION)));
-            }
-
-            pg_close($CONNECTION);
-
-            header("Location: dashboard.php");
-            exit();
             ?>
             <div>
                 <label class="default">Event name:<br>
