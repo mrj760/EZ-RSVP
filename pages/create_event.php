@@ -10,11 +10,9 @@
 
 <body>
     <?php
-    if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) {
-        unset($_COOKIE['loggedin']);
-        setcookie('loggedin', null, -1);
-        unset($_COOKIE['username']);
-        setcookie('username', null, -1);
+    // exit user if they are not logged in
+    if (!isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == false){
+        exit("You should log in to create event.");
     }
     ?>
     <div class="background">
