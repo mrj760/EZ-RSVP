@@ -144,6 +144,10 @@ button:hover,
   margin-bottom: 50px;
 }
 
+body {
+  padding: 0px;
+}
+
 .container {
   margin: 0px;
   display: flex;
