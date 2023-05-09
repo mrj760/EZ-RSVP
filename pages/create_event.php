@@ -22,7 +22,7 @@
             require_once("../php/db.config.php");
             session_start();
 
-            if (isset($_COOKIE['email']) || isset($_POST['eventname']) || isset($_POST['eventphoto']) || isset($_POST['eventdetails']) || isset($_POST['eventdate']) || isset($_POST['eventtime']) || isset($_POST['eventlocation'])){
+            if (isset($_COOKIE['email']) && isset($_POST['eventname']) && isset($_POST['eventphoto']) && isset($_POST['eventdetails']) && isset($_POST['eventdate']) && isset($_POST['eventtime']) && isset($_POST['eventlocation'])){
                 $EVENT = array(
                     $_COOKIE['email'],
                     $_POST['eventname'],
