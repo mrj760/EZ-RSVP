@@ -8,7 +8,7 @@ function displayDashboardEvent() {
 
     let userEventsDiv = document.getElementById('userEventsDiv');
     
-    let events = localStorage.getItem('events');
+    let events = JSON.parse(localStorage.getItem('events'));
 
     for (let i = 0; i < events.length; i++) {
 
