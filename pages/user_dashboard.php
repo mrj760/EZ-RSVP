@@ -5,6 +5,7 @@
     <title>Event Dashboard</title>
     <link rel="stylesheet" type="text/css" href="../style/_global.css?<?= filesize('../style/_global.css'); ?>" />
     <script src="../script/_global.js?<?= filesize('../script/_global.js'); ?>"></script>
+    <script src="../script/user_dashboard.js"></script>
 </head>
 
 <body>
