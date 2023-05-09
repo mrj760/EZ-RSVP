@@ -30,7 +30,7 @@
     ?>
     <script type="text/javascript">
         let events = <?= json_encode($events)?>;
-        setCookie('events', events, time() + 90000 );
+        setCookie('events', events, 2);
     </script>
     <br>
     <h1 id="greeting"><?= 'Hello ' . $_COOKIE['username'] . '!' ?></h1>
