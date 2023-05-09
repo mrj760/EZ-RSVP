@@ -26,7 +26,7 @@ and links to create an account or login. -->
     </div>
     
     <div class = "image">
-    <img src = "https://thumbnails.production.thenounproject.com/vPVB90xHMuUVCI1G9ewJ49rdQoY=/fit-in/1000x1000/photos.production.thenounproject.com/photos/back_view_of_camera_man_shooting_at_a_concert-scopio-63bac951-4f02-419f-aa08-d1200abc3d2e.jpg">
+    <img src = "https://thumbnails.production.thenounproject.com/zG8k1Olr0FHJWTRQd2l_DNi5FH4=/fit-in/1000x1000/photos.production.thenounproject.com/photos/9DA0BF36-E349-4ACC-99B0-60DE0CA135B1.jpg">
     </div>
 </div>
 </body>
