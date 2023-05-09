@@ -26,7 +26,7 @@
         exit;
     }
     $events = pg_fetch_all($result);
-    console.log($events);
+    var_dump($events);
     pg_close($CONNECTION);
     ?>
     <script type="text/javascript">
