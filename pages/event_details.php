@@ -7,22 +7,23 @@ if (!isset($_GET['id'])) {
     exit;
 }
 $eventID = $_GET['id'];
-$SQL = "SELECT * FROM events WHERE id=" . $eventID;
-$result = pg_query($CONNECTION, $SQL);
-$event = pg_fetch_all($result);
+$params = array($eventID);
+$SQL = "SELECT * FROM events WHERE id=$1";
+pg_prepare($CONNECTION, 'get_event', $SQL);
+$result = pg_execute($CONNECTION, 'get_event', $params);
+$event = pg_fetch_all($result)[0];
 ?>
 <script>
-    function confirmSubmit() {
-        return confirm("Are you sure you want to Delete this Event?");
-    }
-    
+    // send event from query to js to display on page
     let event = <?=json_encode($event)?>;
     localStorage.setItem('event', JSON.stringify(event));
 </script>
 <?php
 if (isset($_POST['delete'])) {
-    $SQL = "DELETE FROM events WHERE id = " . $eventID;
-    $result = pg_query($CONNECTION, $SQL);
+
+    $SQL = "DELETE FROM events WHERE id = $1";
+    pg_prepare($CONNECTION, 'delete_event', $SQL);
+    $result = pg_execute($CONNECTION, 'delete_event', $params);
 
     if (!$result) {
         echo "Error deleting event: " . pg_last_error($CONNECTION);
@@ -54,6 +55,11 @@ if (isset($_POST['delete'])) {
         <div id="eventLocation" class="infoDiv"></div>
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="buttons"></div>
+        <script>
+            function confirmSubmit() {
+                return confirm("Are you sure you want to Delete this Event?");
+            }
+        </script>
         <form method="POST" action="" onsubmit="return confirmSubmit()">
             <button type="submit" name="delete" class="button" style="margin:auto; display:block;">Delete Event</button>
         </form>
