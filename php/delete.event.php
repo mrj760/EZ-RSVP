@@ -2,17 +2,15 @@
 require_once('db.config.php');
 
 
-if (!isset($_GET['event'] || $_COOKIE['loggedin'] == false)) {
+if (!isset($_GET['eventID'])) {
     http_response_code(400);
     echo json_encode(array("message" => "eventID not set!"));
     exit;
 }
 
-// $eventID = $_GET['eventID'];
+$eventID = $_GET['eventID'];
 
-$event = $_GET['event'];
-
-$SQL = "DELETE FROM events WHERE name = "$event['name'];
+$SQL = "DELETE FROM events WHERE id = " . $eventID;
 $result = pg_query($CONNECTION, $SQL);
 
 if (!$result) {
