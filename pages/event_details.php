@@ -1,3 +1,40 @@
+<?php
+require_once('db.config.php');
+
+if (!isset($_GET['id'])) {
+    http_response_code(400);
+    echo json_encode(array("message" => "eventID not set!"));
+    exit;
+}
+$eventID = $_GET['id'];
+$SQL = "SELECT * FROM events WHERE id=" . $eventID;
+$result = pg_query($CONNECTION, $SQL);
+$event = pg_fetch_all($result);
+?>
+<script>
+    function confirmSubmit() {
+        return confirm("Are you sure you want to Delete this Event?");
+    }
+    
+    let event = <?=json_encode($event)?>;
+    localStorage.setItem('event', JSON.stringify(event));
+</script>
+<?php
+if (isset($_POST['delete'])) {
+    $SQL = "DELETE FROM events WHERE id = " . $eventID;
+    $result = pg_query($CONNECTION, $SQL);
+
+    if (!$result) {
+        echo "Error deleting event: " . pg_last_error($CONNECTION);
+        exit();
+    }
+
+    pg_close($CONNECTION);
+
+    header("Location: dashboard.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,44 +45,6 @@
 </head>
 
 <body>
-    <?php 
-    // print_r($_GET['id']);
-    require_once('../php/db.config.php');
-    $id = $_GET['id'];
-    $result = pg_query(
-        $CONNECTION,
-        "SELECT * FROM events WHERE id=$id" );
-    $event = pg_fetch_all($result)[0];
-    
-    function deleteEvent(){ 
-    if (!isset($_GET['event'] || $_COOKIE['loggedin'] == false)) {
-        http_response_code(400);
-        echo json_encode(array("message" => "eventID not set!"));
-        exit;
-    }
-    
-        $eventID = $_GET['eventID'];
-
-        $SQL = "DELETE FROM events WHERE name = "$eventID;
-        $result = pg_query($CONNECTION, $SQL);
-    
-        if (!$result) {
-            echo "Error deleting event: " . pg_last_error($CONNECTION);
-            exit();
-        }
-    
-        pg_close($CONNECTION);
-    
-        header("Location: dashboard.php");
-        exit();
-    }
-    
-    ?>
-    <script>
-        let event = <?=json_encode($event)?>;
-        console.log(event);
-        localStorage.setItem('event', JSON.stringify(event));
-    </script>
     <div class="background">
         <div id="eventName" class="infoDiv"></div>
         <div id="outerEventCoverPhotoDiv">
@@ -55,12 +54,9 @@
         <div id="eventLocation" class="infoDiv"></div>
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="buttons"></div>
-        <?php
-        // check user log in
-        if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) { 
-        ?>
-        <button type="button" class="button" style="margin:auto; display:block;" onclick="">Delete Event</button>
-        <?php } ?>
+        <form method="POST" action="" onsubmit="return confirmSubmit()">
+            <button type="submit" name="delete" class="button" style="margin:auto; display:block;">Delete Event</button>
+        </form>
     </div>
 </body>
 
