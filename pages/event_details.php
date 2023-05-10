@@ -53,8 +53,7 @@ if (isset($_POST['edit'])) {
         <div id="eventCoverPhoto" class="infoDiv"></div>
         <div id="eventName" class="infoDiv"></div>
         <div id="eventLocation" class="infoDiv"></div>
-        <div id="eventDate" class="infoDiv"></div>
-        <div id="eventTime" class="infoDiv"></div>
+        <div id="eventDatetime" class="infoDiv"></div>
         <div id="eventDetails" class="infoDiv"></div>
         <div id="buttons">
             <button type="submit" name="edit" onclick="editEvent()">Edit Event</button>
