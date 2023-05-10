@@ -16,6 +16,8 @@ Also contains a link to the registration page. -->
         setcookie('loggedin', null, -1);
         unset($_COOKIE['username']);
         setcookie('username', null, -1);
+        unset($_COOKIE['email']);
+        setcookie('email', null, -1);
     }
     ?>
     <div class="background">
@@ -88,7 +90,7 @@ Also contains a link to the registration page. -->
             <br>
             <a href="#">Forgot Password</a>
             <br>
-            <a href="user_register.html">Don't have an account? Signup here</a>
+            <a href="user_register.php">Don't have an account? Signup here</a>
         </form>
     </div>
 </body>

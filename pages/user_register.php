@@ -15,6 +15,12 @@ Also contains a link to the login page. -->
         <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
 
             <?php
+
+            if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true)
+            {
+                header("Location: user_dashboard.php");
+            }
+
             require_once("../php/db.config.php");
             session_start();
 

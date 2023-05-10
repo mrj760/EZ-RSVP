@@ -9,6 +9,11 @@
 
 <body>
     <?php
+    if (!isset($_COOKIE['loggedin']) || $_COOKIE['loggedin'] == false)
+    {
+        header("Location: user_login.php");
+    }
+
     require_once('../php/db.config.php');
 
     pg_prepare(
