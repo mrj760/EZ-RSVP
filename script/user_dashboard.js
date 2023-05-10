@@ -12,8 +12,6 @@ function displayDashboardEvent() {
     // console.log(events.length);
 
     for (let i = 0; i < events.length; i++) {
-
-        console.log(events[i]);
         
         let linkToEventDetails = document.createElement('a');
         linkToEventDetails.classList.add('userEvent');
