@@ -37,14 +37,14 @@
         // check user log in
         if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) { 
         ?>
+        <button type="button" class="button" style="margin:auto; display:block;" onclick="delete_eventname()">Delete Event</button>
         <script>
-            function delete_event(){
+            function delete_eventname(){
                 if (confirm("Are you sure to delete event?")){
                     window.location = "../delete.event.php?eventname=<?=json_encode($event)?>";
                 }
             }
         </script>
-        <button type="button" class="button" style="margin: auto; display: block;" onclick="delete_event()">Delete Event</button>
         <?php } ?>
         
     </div>
