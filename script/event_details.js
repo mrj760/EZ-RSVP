@@ -18,7 +18,7 @@ function displayEvent(event) {
     
     appendElmtToDiv(detailsDiv, event.details);
     appendElmtToDiv(locationDiv, "Location: " + event.location);
-    appendElmtToDiv(datetimeDiv, "Date: " + event.datetime);
+    appendElmtToDiv(datetimeDiv, "Date: " + event.date + ' ' + event.time);
 }
 
 function appendElmtToDiv(divNode, value, elmt='p') {
