@@ -1,5 +1,5 @@
 <?php
-require_once('db.config.php');
+require_once('../php/db.config.php');
 
 if (!isset($_GET['id'])) {
     http_response_code(400);
