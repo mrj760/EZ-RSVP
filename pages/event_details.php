@@ -37,7 +37,6 @@
         // check user log in
         if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) { 
         ?>
-        <button type="button" class="button" onclick="delete_event();">Delete Event</button>
         <script>
             function delete_event(){
                 if (confirm("Are you sure to delete event?")){
@@ -45,6 +44,7 @@
                 }
             }
         </script>
+        <button type="button" class="button" onclick="delete_event();">Delete Event</button>
         <?php } ?>
         
     </div>
