@@ -26,11 +26,3 @@ function appendElmtToDiv(divNode, value, elmt='p') {
     child.innerHTML = value;
     divNode.appendChild(child);
 }
-
-function delete_eventname(event){
-    if (confirm("Are you sure to delete event?")){
-        // not sure about this part!!!!!!
-        let eventname = event.name;
-        window.location = '../delete.event.php?eventname=${eventname}';
-    }
-}
