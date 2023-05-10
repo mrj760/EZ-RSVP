@@ -39,17 +39,17 @@ and links to create an account or login. -->
 <div class = "icons">
     <div class = "create">
         <p>1. Create </p>
-        <img src = "https://thenounproject.com/api/private/icons/4476317/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkWeNjwh6jnvhpbDL9qmvJLQGJDmTcY0bNacVNMhLcJqyKA8-jNh3LzyBtg_y1vkZSahr2KIpDJ6yWrGuW21zazQkS1Q%3D%3D">
+        <img src = "https://static.thenounproject.com/attribution/4476317-600.png">
     </div>
 
     <div class = "invite">
         <p>2. Invite </p>
-        <img src = "https://thenounproject.com/api/private/icons/3606737/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkWeNjwh6jnvhpbDL9qmvJLQGJDmTcY0bNacVNMhLcJqyKA8-jNh3LzyBtg_y1vkZSahr2KIpDJ6yWrGuW21zazQkS1Q%3D%3D">
+        <img src = "https://static.thenounproject.com/attribution/3606737-600.png">
     </div>
 
     <div class = "collect">
         <p>3. Collect Data </p>
-        <img src = "https://thenounproject.com/api/private/icons/4918455/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkWeNjwh6jnvhpbDL9qmvJLQGJDmTcY0bNacVNMhLcJqyKA8-jNh3LzyBtg_y1vkZSahr2KIpDJ6yWrGuW21zazQkS1Q%3D%3D">
+        <img src = "https://thenounproject.com/api/private/icons/4918455/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkWxrIaykMtQiJQlksKTL4Ty_flBX_iA-quagye8rHZX8M3fw3D7YuIYr7UUr8Psqo6TaSfRWhL_ieXetgePD6d6d1Gw%3D%3D">
     </div>
 </div>
 </body>
