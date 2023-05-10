@@ -16,6 +16,10 @@ $event = pg_fetch_all($result);
         return confirm("Are you sure you want to Delete this Event?");
     }
     
+    function editEvent() {
+        return "";
+    }
+    
     let event = <?=json_encode($event)?>;
     localStorage.setItem('event', JSON.stringify(event));
 </script>
@@ -33,10 +37,6 @@ if (isset($_POST['delete'])) {
 
     header("Location: user_dashboard.php");
     exit();
-}
-        
-if (isset($_POST['edit'])) {
-    
 }
 ?>
 <!DOCTYPE html>
