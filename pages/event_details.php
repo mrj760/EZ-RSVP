@@ -42,7 +42,7 @@
         <script>
             function delete_event(){
                 if (confirm("Are you sure to delete event?")){
-                    let event = <?=json_encode($event)?>;
+                    let event = <?=json_encode($event)?>
                     window.location = "../delete.event.php?eventname=<?=$event. ?>"
                 }
             }
