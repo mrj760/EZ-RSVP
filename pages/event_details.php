@@ -16,6 +16,30 @@
         $CONNECTION,
         "SELECT * FROM events WHERE id=$id" );
     $event = pg_fetch_all($result)[0];
+    
+    function deleteEvent(){ 
+    if (!isset($_GET['event'] || $_COOKIE['loggedin'] == false)) {
+        http_response_code(400);
+        echo json_encode(array("message" => "eventID not set!"));
+        exit;
+    }
+    
+    $eventID = $_GET['eventID'];
+
+    $SQL = "DELETE FROM events WHERE name = "$eventID;
+    $result = pg_query($CONNECTION, $SQL);
+    
+    if (!$result) {
+        echo "Error deleting event: " . pg_last_error($CONNECTION);
+        exit();
+    }
+    
+    pg_close($CONNECTION);
+    
+    header("Location: dashboard.php");
+    exit();
+    }
+    
     ?>
     <script>
         let event = <?=json_encode($event)?>;
@@ -31,15 +55,12 @@
         <div id="eventLocation" class="infoDiv"></div>
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="buttons"></div>
-    </div>
-    <div>
         <?php
         // check user log in
         if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) { 
         ?>
-        <button type="button" class="button" style="margin:auto; display:block;" onclick="delete_eventname()">Delete Event</button>
+        <button type="button" class="button" style="margin:auto; display:block;" onclick="">Delete Event</button>
         <?php } ?>
-        
     </div>
 </body>
 
