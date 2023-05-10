@@ -52,6 +52,11 @@ and links to create an account or login. -->
         <p>3. Collect Data </p>
         <i class="fa-solid fa-magnifying-glass-chart fa-2xl" style="color: #ffffff;"></i>
     </div>
+
+    <div class = "celebrate">
+        <P>4. Celebrate</p>
+        <i class="fa-solid fa-champagne-glasses fa-2xl" style="color: #ffffff;"></i>
+    </div>
 </div>
 </body>
 
