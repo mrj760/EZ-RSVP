@@ -31,7 +31,7 @@ if (isset($_POST['delete'])) {
 
     pg_close($CONNECTION);
 
-    header("Location: dashboard.php");
+    header("Location: user_dashboard.php");
     exit();
 }
 ?>
