@@ -8,7 +8,7 @@ function displayEvent(event) {
     coverPhotoDiv = document.getElementById("eventCoverPhoto");
     detailsDiv = document.getElementById("eventDetails");
     locationDiv = document.getElementById("eventLocation");
-    dateDiv = document.getElementById("eventDate");
+    datetimeDiv = document.getElementById("eventDatetime");
     dateTime = document.getElementById("eventTime");
 
     appendElmtToDiv(nameDiv, event.name, 'h1');
