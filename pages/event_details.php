@@ -44,7 +44,7 @@
                 }
             }
         </script>
-        <button type="button" class="button" onclick="delete_event();">Delete Event</button>
+        <button type="button" class="button" onclick="delete_event()">Delete Event</button>
         <?php } ?>
         
     </div>
