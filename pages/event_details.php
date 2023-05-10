@@ -34,6 +34,10 @@ if (isset($_POST['delete'])) {
     header("Location: user_dashboard.php");
     exit();
 }
+        
+if (isset($_POST['edit'])) {
+    
+}
 ?>
 <!DOCTYPE html>
 
@@ -46,17 +50,18 @@ if (isset($_POST['delete'])) {
 
 <body>
     <div class="background">
+        <div id="eventCoverPhoto" class="infoDiv"></div>
         <div id="eventName" class="infoDiv"></div>
-        <div id="outerEventCoverPhotoDiv">
-            <div id="eventCoverPhoto" class="infoDiv"></div>
-        </div>
-        <div id="eventDetails" class="infoDiv"></div>
         <div id="eventLocation" class="infoDiv"></div>
-        <div id="eventDatetime" class="infoDiv"></div>
-        <div id="buttons"></div>
-        <form method="POST" action="" onsubmit="return confirmSubmit()">
-            <button type="submit" name="delete" class="button" style="margin:auto; display:block;">Delete Event</button>
-        </form>
+        <div id="eventDate" class="infoDiv"></div>
+        <div id="eventTime" class="infoDiv"></div>
+        <div id="eventDetails" class="infoDiv"></div>
+        <div id="buttons">
+            <button type="submit" name="edit" onclick="editEvent()">Edit Event</button>
+            <form method="POST" action="" onsubmit="return confirmSubmit()">
+                <button type="submit" name="delete" class="secondaryButton">Delete Event</button>
+            </form>
+        </div>
     </div>
 </body>
 
