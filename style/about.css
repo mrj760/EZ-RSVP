@@ -171,8 +171,7 @@ img {
 .icons {
   padding: 50px;
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  justify-content: center;
 }
 
 .create {
