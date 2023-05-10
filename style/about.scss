@@ -29,19 +29,25 @@ img{
     padding: 50px;
     display:flex;
     flex-direction: row;
-    width: 50%;
+    width: 100%;
 }
 
 .create{
     flex: 1;
+    border: 2px solid;
+    border-color: whitesmoke;
 }
 
 .invite{
     flex: 1;
+    border: 2px solid;
+    border-color: whitesmoke;
 }
 
 .collect{
     flex: 1;
+    border: 2px solid;
+    border-color: whitesmoke;
 }
 
 p {
