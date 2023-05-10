@@ -14,12 +14,12 @@ body {
 button,
 .button {
   background-color: #5a5b66;
-  background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.6), rgba(255, 165, 0, 0.3));
+  background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.9), rgba(255, 165, 0, 0.5));
   height: 40px;
   width: min(200px, 25vw);
-  border: groove min(3px, 1vw) #d3d3d6;
+  border: groove min(3px, 1vw) #f7e5c4;
   border-radius: 0.2em;
-  color: #f4f4f5;
+  color: #ebebeb;
   text-align: center;
   font-weight: bold;
   font-size: min(18px, max(2.1vw, 2.1vh));
@@ -27,7 +27,7 @@ button,
 }
 button:hover,
 .button:hover {
-  background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.4), rgba(255, 165, 0, 0.05));
+  background-image: linear-gradient(180deg, rgba(255, 165, 0, 0.5), rgba(255, 165, 0, 0.06));
 }
 
 .background {

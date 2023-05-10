@@ -29,16 +29,17 @@ body {
 button,
 .button {
     background-color: mix($dark-purple, $light-gray, 70%);
-    background-image: linear-gradient(180deg, rgba($marigold, 0.6), rgba($marigold, 0.3));
+    background-image: linear-gradient(180deg, rgba($marigold, 0.9), rgba($marigold, 0.5));
     // background-image: linear-gradient(180deg, rgba($marigold, 1), rgba($marigold, .4));
 
     height: 40px;
     width: min(200px, 25vw);
 
-    border: groove min(3px, 1vw) mix($dark-purple, white, 20%);
+    //border: groove min(3px, 1vw) mix($dark-purple, whitesmoke, 20%);
+    border: groove min(3px, 1vw) mix($marigold, whitesmoke, 20%);
     border-radius: 0.2em;
 
-    color: mix($dark-purple, white, 5%);
+    color: mix($dark-purple, whitesmoke, 5%);
     text-align: center;
     font-weight: bold;
     font-size: min(18px, max(2.1vw, 2.1vh));
@@ -47,7 +48,7 @@ button,
     margin: 1em 1em;
 
     &:hover {
-        background-image: linear-gradient(180deg, rgba($marigold, 0.4), rgba($marigold, 0.05));
+        background-image: linear-gradient(180deg, rgba($marigold, 0.5), rgba($marigold, 0.06));
     }
 }
 
