@@ -28,14 +28,15 @@ body {
 
 button,
 .button {
-    //background-color: mix($dark-purple, $light-gray, 70%);
+    background-color: mix($dark-purple, $light-gray, 70%);
     background-image: linear-gradient(180deg, rgba($marigold, 0.9), rgba($marigold, 0.5));
     // background-image: linear-gradient(180deg, rgba($marigold, 1), rgba($marigold, .4));
 
     height: 40px;
     width: min(200px, 25vw);
 
-    border: groove min(3px, 1vw) mix($dark-purple, whitesmoke, 20%);
+    //border: groove min(3px, 1vw) mix($dark-purple, whitesmoke, 20%);
+    border: groove min(3px, 1vw) mix($marigold, whitesmoke, 20%);
     border-radius: 0.2em;
 
     color: mix($dark-purple, whitesmoke, 5%);
