@@ -16,6 +16,10 @@ $event = pg_fetch_all($result);
         return confirm("Are you sure you want to Delete this Event?");
     }
     
+    function editEvent() {
+        return "";
+    }
+    
     let event = <?=json_encode($event)?>;
     localStorage.setItem('event', JSON.stringify(event));
 </script>
@@ -46,17 +50,17 @@ if (isset($_POST['delete'])) {
 
 <body>
     <div class="background">
+        <div id="eventCoverPhoto" class="infoDiv"></div>
         <div id="eventName" class="infoDiv"></div>
-        <div id="outerEventCoverPhotoDiv">
-            <div id="eventCoverPhoto" class="infoDiv"></div>
-        </div>
-        <div id="eventDetails" class="infoDiv"></div>
         <div id="eventLocation" class="infoDiv"></div>
         <div id="eventDatetime" class="infoDiv"></div>
-        <div id="buttons"></div>
-        <form method="POST" action="" onsubmit="return confirmSubmit()">
-            <button type="submit" name="delete" class="button" style="margin:auto; display:block;">Delete Event</button>
-        </form>
+        <div id="eventDetails" class="infoDiv"></div>
+        <div id="buttons">
+            <button type="submit" name="edit" onclick="editEvent()">Edit Event</button>
+            <form method="POST" action="" onsubmit="return confirmSubmit()">
+                <button type="submit" name="delete" class="secondaryButton">Delete Event</button>
+            </form>
+        </div>
     </div>
 </body>
 

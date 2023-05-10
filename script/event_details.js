@@ -3,12 +3,13 @@ window.addEventListener("load", function() {
 });
 
 function displayEvent(event) {
-
+    console.log(event);
     nameDiv = document.getElementById("eventName");
     coverPhotoDiv = document.getElementById("eventCoverPhoto");
     detailsDiv = document.getElementById("eventDetails");
     locationDiv = document.getElementById("eventLocation");
     datetimeDiv = document.getElementById("eventDatetime");
+    dateTime = document.getElementById("eventTime");
 
     appendElmtToDiv(nameDiv, event.name, 'h1');
     
