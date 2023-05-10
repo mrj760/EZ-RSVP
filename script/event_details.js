@@ -6,6 +6,7 @@ function displayEvent() {
     
     let event = JSON.parse(localStorage.getItem('event'))[0];
     
+    console.log(event);
     nameDiv = document.getElementById("eventName");
     coverPhotoDiv = document.getElementById("eventCoverPhoto");
     detailsDiv = document.getElementById("eventDetails");
