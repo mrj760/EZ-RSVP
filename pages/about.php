@@ -40,17 +40,17 @@ and links to create an account or login. -->
 <div class = "icons">
     <div class = "create">
         <p>1. Create </p>
-        <i class="fa-solid fa-calendar-plus" style="color: #ffffff;"></i>
+        <i class="fa-solid fa-calendar-plus fa-2xl" style="color: #ffffff;"></i>
     </div>
 
     <div class = "invite">
         <p>2. Invite </p>
-        <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+        <i class="fa-solid fa-user-plus fa-2xl" style="color: #ffffff;"></i>
     </div>
 
     <div class = "collect">
         <p>3. Collect Data </p>
-        <i class="fa-solid fa-magnifying-glass-chart" style="color: #ffffff;"></i>
+        <i class="fa-solid fa-magnifying-glass-chart fa-2xl" style="color: #ffffff;"></i>
     </div>
 </div>
 </body>
