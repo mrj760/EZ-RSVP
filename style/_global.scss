@@ -35,7 +35,7 @@ button,
     height: 40px;
     width: min(200px, 25vw);
 
-    border: groove min(3px, 1vw) mix($dark-purple, white, 20%);
+    border: groove min(3px, 1vw) mix($dark-purple, whitesmoke, 20%);
     border-radius: 0.2em;
 
     color: mix($dark-purple, white, 5%);
@@ -47,7 +47,7 @@ button,
     margin: 1em 1em;
 
     &:hover {
-        background-image: linear-gradient(180deg, rgba($marigold, 0.4), rgba($marigold, 0.05));
+        background-image: linear-gradient(180deg, rgba($marigold, 0.5), rgba($marigold, 0.06));
     }
 }
 
