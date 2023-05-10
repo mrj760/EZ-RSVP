@@ -19,6 +19,7 @@
     ?>
     <script>
         let event = <?=json_encode($event)?>;
+        let testevent = <?=$event?>;
         console.log(event);
         localStorage.setItem('event', JSON.stringify(event));
     </script>
@@ -31,6 +32,23 @@
         <div id="eventLocation" class="infoDiv"></div>
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="buttons"></div>
+    </div>
+    <div>
+        <?php
+        // check user log in
+        if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) { 
+        ?>
+        <button type="button" class="button" onclick="delete_event();">Delete Event</button>
+        <script>
+            function delete_event(){
+                if (confirm("Are you sure to delete event?")){
+                    let event = <?=json_encode($event)?>;
+                    window.location = "../delete.event.php?eventname=<?=$event. ?>"
+                }
+            }
+        </script>
+        <?php } ?>
+        
     </div>
 </body>
 
