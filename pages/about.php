@@ -12,7 +12,7 @@ and links to create an account or login. -->
 
 <body>
 
-<h2>Online Event Reservation Management</h2>
+<h1>Online Event Reservation Management</h1>
 
 <div class = "container">
     <div class = "text">
@@ -25,10 +25,6 @@ and links to create an account or login. -->
     We understand that planning an event can be overwhelming, which is why we've designed our website to provide all the 
     logistics you need in one place. From detailed event descriptions and photos to questionares asked with every
     reservation, our site offers everything you need to take your event to the next level. 
-
-    1.Create
-    2.Invite.
-    3.Collect Custom Data.
     </p>
     </div>
     
