@@ -24,20 +24,20 @@
         exit;
     }
     
-    $eventID = $_GET['eventID'];
+        $eventID = $_GET['eventID'];
 
-    $SQL = "DELETE FROM events WHERE name = "$eventID;
-    $result = pg_query($CONNECTION, $SQL);
+        $SQL = "DELETE FROM events WHERE name = "$eventID;
+        $result = pg_query($CONNECTION, $SQL);
     
-    if (!$result) {
-        echo "Error deleting event: " . pg_last_error($CONNECTION);
+        if (!$result) {
+            echo "Error deleting event: " . pg_last_error($CONNECTION);
+            exit();
+        }
+    
+        pg_close($CONNECTION);
+    
+        header("Location: dashboard.php");
         exit();
-    }
-    
-    pg_close($CONNECTION);
-    
-    header("Location: dashboard.php");
-    exit();
     }
     
     ?>
