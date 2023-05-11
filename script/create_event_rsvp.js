@@ -57,8 +57,7 @@ class Question {
         });
         this.newOptionButton.addEventListener("click", function () {
             let optionNum = me.answerOptions.length + 1;
-            console.log(optionNum);
-            me.answerOptions.push(new AnswerOption(questionNumber, optionNum));
+            me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
             me.fillOptions();
         })
 
