@@ -1,8 +1,15 @@
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 let questions = [];
 
 class Question {
 
-    constructor() {
+    constructor(questionNumber) {
 
         const me = this; // important for event listeners
 
@@ -19,21 +26,22 @@ class Question {
         this.label = document.createElement("label");
         // label set via `set number()`
 
-        this.deleteButton = document.createElement("i");
-        this.deleteButton.classList.add("fa-solid");
-        this.deleteButton.classList.add("fa-xmark");
-        this.deleteButton.addEventListener("click", function () {
-            me.div.remove();
-            questions.splice(me.number, 1); // remove from list
-            fillQuestions();
-        });
-        this.rightDiv.appendChild(this.deleteButton);
+        // this.deleteButton = document.createElement("i");
+        // this.deleteButton.classList.add("fa-solid");
+        // this.deleteButton.classList.add("fa-xmark");
+        // this.deleteButton.addEventListener("click", function () {
+        //     me.div.remove();
+        //     questions.splice(me.number, 1); // remove from list
+        //     fillQuestions();
+        // });
+        // this.rightDiv.appendChild(this.deleteButton);
 
 
         this.text = document.createElement('input');
         this.text.type = "text";
+        this.text.name = 'question' + questionNumber;
 
-        this.answerOptions = [new AnswerOption()];
+        this.answerOptions = [new AnswerOption(questionNumber, 1)];
         this.select = document.createElement("select");
         this.offerQuestionType('text', 'Text');
         this.offerQuestionType('singlepick', 'Single Pick');
@@ -47,7 +55,8 @@ class Question {
             me.fillOptions();
         });
         this.newOptionButton.addEventListener("click", function () {
-            me.answerOptions.push(new AnswerOption());
+            let optionNum = me.answerOptions.length + 1;
+            me.answerOptions.push(new AnswerOption(questionNumber, optionNum));
             me.fillOptions();
         })
 
@@ -63,6 +72,8 @@ class Question {
         this.div.appendChild(this.leftDiv);
         this.div.appendChild(this.rightDiv);
         this.div.appendChild(document.createElement('br'));
+
+        setCookie('numQuestions', questionNumber);
     }
 
     offerQuestionType(value, text) {
@@ -99,18 +110,22 @@ class Question {
 
 class AnswerOption {
 
-    constructor(type = 'radio') {
+    constructor(type = 'radio', questionNumber, optionNumber) {
         this.div = document.createElement('div');
         this.div.classList.add('optionDiv');
 
         this.clickable = document.createElement('input');
+        this.clickable.name = 'question' + questionNumber + '-option' + optionNumber;
         this.clickable.type = type;
 
         this.description = document.createElement('input');
+        this.description.name = 'question1' + questionNumber + '-desc' + optionNumber;
         this.description.type = 'text';
 
         this.div.appendChild(this.clickable);
         this.div.appendChild(this.description);
+        
+        setCookie('question' + questionNumber + '-numOptions', optionNumber);
     }
 
     set type(type) {
@@ -135,7 +150,7 @@ window.addEventListener("load", function () {
     backButton = document.getElementById("backButton");
 
     newQuestionButton.addEventListener("click", function () {
-        let question = new Question(questions.length);
+        let question = new Question(questions.length + 1);
         questions.push(question);
         fillQuestions();
     });
