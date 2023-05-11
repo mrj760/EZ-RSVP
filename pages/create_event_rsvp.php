@@ -18,8 +18,8 @@ if (isset($_POST['save'])) {
         $numQuestions = $_COOKIE['numQuestions'];
         echo $numQuestions;
         for ($i = 1; $i <= $numQuestions; $i++) {
-            if (isset($_COOKIE['question'.$i.'numOptions'])) {
-                $numOptions = $_COOKIE['question'.$i.'numOptions'];
+            if (isset($_COOKIE['question'.$i.'-numOptions'])) {
+                $numOptions = $_COOKIE['question'.$i.'-numOptions'];
                 echo $numOptions;
             } else {
                 echo "Error: Number of options not set";
