@@ -68,7 +68,6 @@ if (isset($_POST['delete'])) {
 
         #guestListPopup {
             position: absolute;
-            text-align: center;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -94,7 +93,7 @@ if (isset($_POST['delete'])) {
         }
         
         #guestHeader {
-            width: 100%;
+            text-align: center;
         }
         
     </style>
