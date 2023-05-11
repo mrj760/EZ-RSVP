@@ -19,7 +19,7 @@ $event = pg_fetch_all($result)[0];
     }
     
     function editEvent() {
-        return "";
+        window.location.assign("create_event.php?id=" + <?=$eventID?>);
     }
     
     let event = <?=json_encode($event)?>;
