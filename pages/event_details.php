@@ -107,8 +107,8 @@ if (isset($_POST['delete'])) {
           <div id="guestListPopup">
             <span id="closeButton">&times;</span>
             <h2 id="guestHeader">Guest List</h2>
-            <ul class="list-group">
-                 <li class="list-group-item">
+            <ul class="test-list-group">
+                 <li class="test-list-group-item">
                      <p>test</p>
                  </li>
             </ul>
