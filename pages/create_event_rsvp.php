@@ -1,3 +1,17 @@
+<?php
+require_once('../php/db.config.php');
+
+$eventID = 30;
+$params = array($eventID);
+$SQL = "SELECT * FROM events WHERE id=$1";
+pg_prepare($CONNECTION, 'get_event', $SQL);
+$result = pg_execute($CONNECTION, 'get_event', $params);
+$event = pg_fetch_all($result);
+?>
+<script>
+    let event = <?=json_encode($event)?>;
+    localStorage.setItem('event', JSON.stringify(event));
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <!-- This page is a form that the event creator can customize 
@@ -34,7 +48,9 @@
             <br>
             <button id="newQuestionButton" class="button" type="button">New Question</button>
             <br>
-            <button id="saveButton" class="button" type="button">Save</button>
+            <form action="" method="POST">
+                <button id="saveButton" class="button" type="submit">Save</button>
+            </form>
             <button id="backButton" class="secondaryButton" type="button">Back</button>
         </div>
     </div>
