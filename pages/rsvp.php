@@ -30,16 +30,18 @@
                 // put name & email to array
                 $params = array($respondName, $respondEmail);
 
-                echo $params;
+                // // Insert respondent name & email
+                // $result = pg_prepare(
+                //     $CONNECTION,
+                //     "create_respondent",
+                //     "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)"
+                // );
+                // $result = pg_execute($CONNECTION, "create_respondent", $params);
+                // pg_close();
 
-                // Insert respondent name & email
-                $result = pg_prepare(
-                    $CONNECTION,
-                    "create_respondent",
-                    "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)"
-                );
-                $result = pg_execute($CONNECTION, "create_respondent", $params);
-                pg_close();
+                $sql = "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)";
+
+                $result = pg_query_params($CONNECTION, $sql, $params);
 
                 // error: fail to respond
                 if (!$result){
