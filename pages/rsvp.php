@@ -12,14 +12,44 @@
 <body>
 
     <div class="center">
-
-
         <!-- Add additional details here via JS.
             These are details laid out by the event creator. -->
-
         <div id="inputContainer" class="background">
 
             <h1>RSVP for: &ltEvent Name&gt </h1>
+            <from action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+
+            <?php
+            require_once("../php/db.config.php");
+            
+            if (isset($POST["name"]) && isset($_POST["email"])){
+
+                $respondName= $_POST["name"];
+                $respondEmail = $_POST["email"];
+                
+                // put name & email to array
+                $params = array($respondName, $respondEmail);
+
+                // Insert respondent name & email
+                $result = pg_prepare(
+                    $CONNECTION,
+                    "create_respondent",
+                    "INSERT INTO response VALUES ($1, $2)"
+                );
+                $result = pg_execute($CONNECTION, "create_respondent", $params);
+                pg_close();
+
+                // error: fail to respond
+                if (!$result){
+                    http_reponse_code(400);
+                    echo json_encode(arrary("message" => "Response failed!"));
+                    exit;
+                }
+                // success: redirect to confirmation page
+                header("Location : rsvp_confirmation.php");
+            }
+
+            ?>
 
             <label for="name">Name</label><br>
             <input id="nameTextBox" class="textBox" type="text" name="name" title="name" placeholder="John Smith" />
@@ -41,14 +71,14 @@
                 <button id="submitButton" class="secondaryButton" type="button">Submit Captcha</button>
                 <button id="refreshButton" class="secondaryButton" type="button">Refresh Captcha</button>
                 <br>
-                <button id="confirmButton" class="button" type="button">Confirm</button>
+                <button id="confirmButton" name="confirm" class="button" type="button">Confirm</button>
 
             </div>
 
             <div id="captchaOutput"></div>
 
         </div>
-
+    </form>
 
     </div>
 
