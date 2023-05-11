@@ -42,7 +42,7 @@
                 // error: fail to respond
                 if (!$result){
                     http_reponse_code(400);
-                    echo json_encode(arrary("message" => "Response failed!"));
+                    echo json_encode(array("message" => "Response failed!"));
                     exit;
                 }
                 // success: redirect to confirmation page
