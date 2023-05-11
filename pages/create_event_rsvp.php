@@ -22,6 +22,12 @@ if (isset($_POST['save'])) {
             if (isset($_POST['question'.$i])) {
                 $question = $_POST['question'.$i];
                 echo "Question#".$i." Value: ".$question;
+                if (isset($_COOKIE['question'.$i.'-type'])) {
+                    $questionType = $_COOKIE['question'.$i.'-type'];
+                    echo "Question#".$i."-type Value: ".$questionType;
+                } else { 
+                    echo "Failed to pull question type cookie!"; 
+                }
                 if (isset($_COOKIE['question'.$i.'-numOptions'])) {
                     $numOptions = $_COOKIE['question'.$i.'-numOptions'];
                     echo "NumO: " . $numOptions;
