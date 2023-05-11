@@ -58,7 +58,7 @@ if (isset($_POST['delete'])) {
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
         }
@@ -115,13 +115,16 @@ if (isset($_POST['delete'])) {
 </body>
 </html>
 <script>
-    var guestListPopup = document.getElementById('guestListPopup');
+    let popupBackground = document.getElementById('popupBackground');
+    let guestListPopup = document.getElementById('guestListPopup');
 
     function viewGuests() {
-      guestListPopup.style.display = 'block';
+      popupBackground.style.display = 'flex';
+      guestListPopup.style.display = 'flex';
     };
     
     function closePopup() {
+      popupBackground.style.display = 'none';
       guestListPopup.style.display = 'none';
     }
 </script>
