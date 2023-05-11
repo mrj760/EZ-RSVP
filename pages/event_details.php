@@ -74,7 +74,7 @@ if (isset($_POST['delete'])) {
             width: 40%;
             height: 65%;
             background-color: white;
-            border: 1px solid red;
+            border: 2px solid orange;
             border-radius: 15px;
             padding: 20px;
             overflow-y: auto;
