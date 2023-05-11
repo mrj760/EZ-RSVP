@@ -14,7 +14,39 @@ $event = pg_fetch_all($result);
 </script>
 <?php
 if (isset($_POST['save'])) {
-    
+    if (isset($_COOKIE['numQuestions'])) {
+        $numQuestions = $_COOKIE['numQuestions'];
+        echo "NumQ: " . $numQuestions; //remove later
+        for ($i = 1; $i <= $numQuestions; $i++) {
+            //Handles each question
+            if (isset($_POST['question'.$i])) {
+                $question = $_POST['question'.$i];
+                echo "Question#".$i." Value: ".$question;
+                if (isset($_COOKIE['question'.$i.'-type'])) {
+                    $questionType = $_COOKIE['question'.$i.'-type'];
+                    echo "Question#".$i."-type Value: ".$questionType;
+                } else { 
+                    echo "Failed to pull question type cookie!"; 
+                }
+                if (isset($_COOKIE['question'.$i.'-numOptions'])) {
+                    $numOptions = $_COOKIE['question'.$i.'-numOptions'];
+                    echo "NumO: " . $numOptions;
+                    for ($j = 1; $j <= $numOptions; $j++) {
+                        if (isset($_POST['question'.$i.'-option'.$j])) {
+                            $option = $_POST['question'.$i.'-option'.$j];
+                            echo "Question".$i."-Option".$j." Value: ".$option;
+                        }
+                    }
+                } else {
+                    echo "Error: Number of options not set";
+                }
+            } else {
+                echo "Question#".$i." not posted in form!";
+            }
+        }
+    } else {
+        echo "Error: Number of questions not set";
+    }
 }
 ?>
 <!DOCTYPE html>
