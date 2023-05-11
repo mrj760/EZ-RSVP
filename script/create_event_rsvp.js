@@ -138,6 +138,8 @@ window.addEventListener("load", function () {
         let question = new Question(questions.length);
         questions.push(question);
         fillQuestions();
+
+        console.log(questions);
     });
 });
 
