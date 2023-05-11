@@ -25,8 +25,8 @@
             if (isset($POST["name"]) && isset($_POST["email"])){
 
                $GUEST = array(
-                $_POST['name'];
-                $_POST['email'];
+                $_POST['name'],
+                $_POST['email']
                );
 
                 //Insert respondent name & email
