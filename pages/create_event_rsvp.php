@@ -1,11 +1,12 @@
 <script>
     let event = JSON.parse(localStorage.getItem('event'));
-    document.cookie = "selectedevent" + event;
+    console.log(event);
+    document.cookie = "selectedEvent" + event;
 </script>
 <?php
 require_once('../php/db.config.php');
 
-$event = $_COOKIE['selectedevent'];
+$event = $_COOKIE['selectedEvent'];
 echo "Event ID: " . $event.id;
 ?>
 
