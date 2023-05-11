@@ -25,7 +25,7 @@
             if (isset($_POST['name']) && isset($_POST['email'])){
 
                $GUEST = array(
-                $_GET['eventID'],
+                $_GET['id'],
                 $_POST['name'],
                 $_POST['email']
                );
