@@ -6,7 +6,8 @@
 <?php
 require_once('../php/db.config.php');
 
-$event = $_COOKIE['selectedEvent'];
+$selectedEvent = $_COOKIE['selectedEvent'];
+$event = json_decode($selectedEvent);
 echo "Event ID: " . $event.id;
 ?>
 
