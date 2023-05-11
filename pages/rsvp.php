@@ -18,10 +18,10 @@
 
             <h1>RSVP for: &ltEvent Name&gt </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
-
             <?php
             require_once("../php/db.config.php");
-            
+            session_start();
+
             if (isset($POST["name"]) && isset($_POST["email"])){
 
                $GUEST = array(
