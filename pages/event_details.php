@@ -17,7 +17,6 @@ $SQL = "SELECT * FROM guests WHERE eventID=$1";
 pg_prepare($CONNECTION, 'get_guests', $SQL);
 $guestResult = pg_execute($CONNECTION, 'get_guests', $params);
 $guests = pg_fetch_all($guestResult);
-var_dump($guests);
 ?>
 <script>
     function confirmSubmit() {
@@ -26,7 +25,6 @@ var_dump($guests);
     
     let event = <?=json_encode($event)?>;
     let guests = <?=json_encode($guests)?>;
-    console.log(guests);
     localStorage.setItem('event', JSON.stringify(event));
     localStorage.setItem('guests', JSON.stringify(guests));
 </script>
