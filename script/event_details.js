@@ -28,6 +28,7 @@ function displayEvent() {
         let guest = guests[i];
         let listElement = document.createElement('li');
         listElement.innerHTML = guest.guestname;
+        listElement.classList.add('list-group-item');
         guestList.appendChild(listElement);
     }
     
