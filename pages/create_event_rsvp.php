@@ -22,17 +22,20 @@ if (isset($_POST['save'])) {
             if (isset($_POST['question'.$i])) {
                 $question = $_POST['question'.$i];
                 echo "Question#".$i." Value: ".$question;
-            } else {
-                echo "Question Cookie not set!";
-            }
-            if (isset($_COOKIE['question'.$i.'-numOptions'])) {
-                $numOptions = $_COOKIE['question'.$i.'-numOptions'];
-                echo "NumO: " . $numOptions;
-                for ($i = 1; $i <= $numOptions; $i++) {
-                    //
+                if (isset($_COOKIE['question'.$i.'-numOptions'])) {
+                    $numOptions = $_COOKIE['question'.$i.'-numOptions'];
+                    echo "NumO: " . $numOptions;
+                    for ($j = 1; $j <= $numOptions; $j++) {
+                        if (isset($_POST['question'.$i.'-option'.$j])) {
+                            $option = $_POST['question'.$i.'-option'.$j];
+                            echo "Question".$i."-Option".$j." Value: ".$option;
+                        }
+                    }
+                } else {
+                    echo "Error: Number of options not set";
                 }
             } else {
-                echo "Error: Number of options not set";
+                echo "Question#".$i." not posted in form!";
             }
         }
     } else {
