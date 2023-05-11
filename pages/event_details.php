@@ -61,6 +61,7 @@ if (isset($_POST['delete'])) {
 
         #guestListPopup {
             position: absolute;
+            text-align: center;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -99,14 +100,16 @@ if (isset($_POST['delete'])) {
             </form>
         </div>
         <div id="popupBackground">
-        <div id="guestListPopup" style="display: none;">
+          <div id="guestListPopup">
             <span id="closeButton">&times;</span>
             <h2>Guest List</h2>
+            <br>
             <ul class="list-group">
                  <li class="list-group-item">
                      <p>test</p>
                  </li>
             </ul>
+          </div>
         </div>
     </div>
 </body>
