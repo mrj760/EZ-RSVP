@@ -22,22 +22,16 @@
             require_once("../php/db.config.php");
             session_start();
 
+           $eventid = 2;
+
             if (isset($_POST['name']) && isset($_POST['email'])){
 
                $GUEST = array(
-                $_GET['id'],
+                $eventid,
                 $_POST['name'],
                 $_POST['email']
                );
 
-                //Insert respondent name & email
-                // $result = pg_prepare(
-                //     $CONNECTION,
-                //     "create_respondent",
-                //     "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)"
-                // );
-                // $result = pg_execute($CONNECTION, "create_respondent", $params);
-                // pg_close();
 
                 $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3)";
 
