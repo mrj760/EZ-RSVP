@@ -22,7 +22,7 @@
             require_once("../php/db.config.php");
             session_start();
 
-           $eventid = 2;
+           $eventid = 30;
 
             if (isset($_POST['name']) && isset($_POST['email'])){
 
