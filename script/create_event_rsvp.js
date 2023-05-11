@@ -101,6 +101,7 @@ class Question {
 
     set number(num) {
         this.div.id = "question" + num;
+        setCookie('question' + num + '-type', this.type);
         this.label.innerHTML = "Custom Question #" + (num + 1);
     }
 
