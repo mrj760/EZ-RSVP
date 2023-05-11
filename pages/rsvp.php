@@ -24,13 +24,12 @@
             
             if (isset($POST["name"]) && isset($_POST["email"])){
 
-                $respondName= $_POST["name"];
-                $respondEmail = $_POST["email"];
-                
-                // put name & email to array
-                $params = array($respondName, $respondEmail);
+               $GUEST = array(
+                $_POST['name'];
+                $_POST['email'];
+               );
 
-                // // Insert respondent name & email
+                //Insert respondent name & email
                 // $result = pg_prepare(
                 //     $CONNECTION,
                 //     "create_respondent",
@@ -41,7 +40,7 @@
 
                 $sql = "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)";
 
-                $result = pg_query_params($CONNECTION, $sql, $params);
+                $result = pg_query_params($CONNECTION, $sql, $GUEST);
 
                 // error: fail to respond
                 if (!$result){
@@ -49,8 +48,12 @@
                     echo json_encode(array("message" => "Response failed!"));
                     exit;
                 }
+                
+                pg_close($CONNECTION);
+
                 // success: redirect to confirmation page
                 header("Location : rsvp_confirmation.php");
+                exit();
             }
 
             ?>
