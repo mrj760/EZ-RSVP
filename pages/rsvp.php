@@ -17,7 +17,7 @@
         <div id="inputContainer" class="background">
 
             <h1>RSVP for: &ltEvent Name&gt </h1>
-            <from action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
 
             <?php
             require_once("../php/db.config.php");
