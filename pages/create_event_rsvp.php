@@ -1,7 +1,7 @@
 <script>
-    let event = localStorage.getItem('event')[0];
+    let event = JSON.parse(localStorage.getItem('event'))[0];
     console.log(event);
-    document.cookie = "selectedEvent=" + event;
+    document.cookie = "selectedEvent=" + JSON.stringify(event);
 </script>
 <?php
 require_once('../php/db.config.php');
