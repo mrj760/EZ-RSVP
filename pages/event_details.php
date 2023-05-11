@@ -68,8 +68,8 @@ if (isset($_POST['delete'])) {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
+            width: 40%;
+            height: 65%;
             background-color: white;
             border: 1px solid red;
             border-radius: 15px;
