@@ -12,6 +12,11 @@ $event = pg_fetch_all($result);
     let event = <?=json_encode($event)?>;
     localStorage.setItem('event', JSON.stringify(event));
 </script>
+<?php
+if (isset($_POST['save'])) {
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- This page is a form that the event creator can customize 
@@ -41,18 +46,18 @@ $event = pg_fetch_all($result);
             <input type="name" name="name" placeholder="John Smith" disabled>
         </label>
         <br>
+        <form action="" method="POST">
+            <div id="customQuestionsDiv"></div>
 
-        <div id="customQuestionsDiv"></div>
-
-        <div id="buttons">
-            <br>
-            <button id="newQuestionButton" class="button" type="button">New Question</button>
-            <br>
-            <form action="" method="POST">
-                <button id="saveButton" class="button" type="submit">Save</button>
-            </form>
-            <button id="backButton" class="secondaryButton" type="button">Back</button>
-        </div>
+            <div id="buttons">
+                <br>
+                <button id="newQuestionButton" class="button" type="button">New Question</button>
+                <br>
+                <button id="saveButton" class="button" type="submit" name="save">Save</button>
+                <br>
+                <button id="backButton" class="secondaryButton" type="button">Back</button>
+            </div>
+        </form>
     </div>
 </body>
 
