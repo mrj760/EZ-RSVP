@@ -11,7 +11,7 @@ $params = array($eventID);
 $SQL = "SELECT * FROM events WHERE id=$1";
 pg_prepare($CONNECTION, 'get_event', $SQL);
 $result = pg_execute($CONNECTION, 'get_event', $params);
-$event = pg_fetch_all($result)[0];
+$event = pg_fetch_all($result);
 ?>
 <script>
     function confirmSubmit() {
