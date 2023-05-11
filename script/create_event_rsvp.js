@@ -46,6 +46,7 @@ class Question {
         this.offerQuestionType('singlepick', 'Single Pick');
         this.offerQuestionType('multipick', 'Multi Pick');
         this.type = this.select.value;
+        setCookie('question' + questionNumber + '-type', this.type);
         this.newOptionButton = document.createElement('button');
         this.newOptionButton.type = 'button';
         this.newOptionButton.classList.add("secondaryButton");
@@ -101,7 +102,6 @@ class Question {
 
     set number(num) {
         this.div.id = "question" + num;
-        setCookie('question' + num + '-type', this.type);
         this.label.innerHTML = "Custom Question #" + (num + 1);
     }
 
