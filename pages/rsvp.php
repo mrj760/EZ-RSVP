@@ -34,7 +34,7 @@
                 $result = pg_prepare(
                     $CONNECTION,
                     "create_respondent",
-                    "INSERT INTO response VALUES ($1, $2)"
+                    "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)"
                 );
                 $result = pg_execute($CONNECTION, "create_respondent", $params);
                 pg_close();
