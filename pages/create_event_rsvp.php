@@ -19,7 +19,7 @@ if (isset($_POST['save'])) {
         echo "NumQ: " . $numQuestions; //remove later
         for ($i = 1; $i <= $numQuestions; $i++) {
             //Handles each question
-            if (isset($_COOKIE['question'.$i])) {
+            if (isset($_POST['question'.$i])) {
                 $question = $_POST['question'.$i];
                 echo "Question#".$i." Value: ".$question;
             } else {
