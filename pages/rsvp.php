@@ -22,7 +22,7 @@
             require_once("../php/db.config.php");
             session_start();
 
-            if (isset($POST["name"]) && isset($_POST["email"])){
+            if (isset($_POST['name']) && isset($_POST['email'])){
 
                $GUEST = array(
                 $_POST['name'],
