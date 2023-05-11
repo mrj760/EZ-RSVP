@@ -41,7 +41,6 @@ class Question {
         this.text.type = "text";
         this.text.name = 'question' + questionNumber;
 
-        this.answerOptions = [new AnswerOption(questionNumber, 1)];
         this.select = document.createElement("select");
         this.offerQuestionType('text', 'Text');
         this.offerQuestionType('singlepick', 'Single Pick');
@@ -51,6 +50,7 @@ class Question {
         this.newOptionButton.type = 'button';
         this.newOptionButton.classList.add("secondaryButton");
         this.newOptionButton.innerHTML = "New Option";
+        this.answerOptions = [new AnswerOption(this.type, questionNumber, 1)];
         this.select.addEventListener("change", function (e) {
             me.type = e.currentTarget.value;
             me.fillOptions();
