@@ -13,7 +13,7 @@ pg_prepare($CONNECTION, 'get_event', $SQL);
 $result = pg_execute($CONNECTION, 'get_event', $params);
 $event = pg_fetch_all($result);
 
-$SQL = "SELECT * FROM guests WHERE id=$1";
+$SQL = "SELECT * FROM guests WHERE eventID=$1";
 pg_prepare($CONNECTION, 'get_guests', $SQL);
 $guestResult = pg_execute($CONNECTION, 'get_guests', $params);
 $guests = pg_fetch_all($guestResult);
