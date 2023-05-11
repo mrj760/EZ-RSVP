@@ -16,11 +16,21 @@ $event = pg_fetch_all($result);
 if (isset($_POST['save'])) {
     if (isset($_COOKIE['numQuestions'])) {
         $numQuestions = $_COOKIE['numQuestions'];
-        echo "NumQ: " . $numQuestions;
+        echo "NumQ: " . $numQuestions; //remove later
         for ($i = 1; $i <= $numQuestions; $i++) {
+            //Handles each question
+            if (isset($_COOKIE['question'.$i])) {
+                $question = $_POST['question'.$i];
+                echo "Question#".$i." Value: ".$question
+            } else {
+                echo "Question Cookie not set!";
+            }
             if (isset($_COOKIE['question'.$i.'-numOptions'])) {
                 $numOptions = $_COOKIE['question'.$i.'-numOptions'];
                 echo "NumO: " . $numOptions;
+                for ($i = 1; $i <= $numOptions; $i++) {
+                    //
+                }
             } else {
                 echo "Error: Number of options not set";
             }
