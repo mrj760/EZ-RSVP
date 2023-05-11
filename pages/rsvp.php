@@ -71,8 +71,7 @@
                 <button id="submitButton" class="secondaryButton" type="button">Submit Captcha</button>
                 <button id="refreshButton" class="secondaryButton" type="button">Refresh Captcha</button>
                 <br>
-                <button id="confirmButton" name="confirm" class="button" type="button">Confirm</button>
-
+                <input type="submit" value="Confirm" class="button">
             </div>
 
             <div id="captchaOutput"></div>
