@@ -39,7 +39,7 @@ function displayEvent() {
     photo.style = "max-width: 45%; height: auto;" 
     coverPhotoDiv.appendChild(photo);
     
-    appendElmtToDiv(detailsDiv, event.details);
+    appendElmtToDiv(detailsDiv, "Details: " + event.details);
     appendElmtToDiv(locationDiv, "Location: " + event.location);
     appendElmtToDiv(datetimeDiv, "Date: " + event.date + ' ' + event.time);
 }
