@@ -115,23 +115,23 @@ class AnswerOption {
         this.div = document.createElement('div');
         this.div.classList.add('optionDiv');
 
-        this.clickable = document.createElement('input');
-        this.clickable.name = 'question' + questionNumber + '-option' + optionNumber;
-        this.clickable.type = type;
+        // this.clickable = document.createElement('input');
+        // this.clickable.name = 'question' + questionNumber + '-option' + optionNumber;
+        // this.clickable.type = type;
 
         this.description = document.createElement('input');
-        this.description.name = 'question1' + questionNumber + '-desc' + optionNumber;
+        this.description.name = 'question1' + questionNumber + '-option' + optionNumber;
         this.description.type = 'text';
 
-        this.div.appendChild(this.clickable);
+        // this.div.appendChild(this.clickable);
         this.div.appendChild(this.description);
         
         setCookie('question' + questionNumber + '-numOptions', optionNumber);
     }
 
-    set type(type) {
-        this.clickable.type = type;
-    }
+    // set type(type) {
+    //     this.clickable.type = type;
+    // }
 
     set text(text) {
         this.description.value = text;
