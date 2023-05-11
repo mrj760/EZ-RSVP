@@ -27,7 +27,7 @@ function displayEvent() {
     for (let i = 0; i < guests.length; i++) {
         let guest = guests[i];
         let listElement = document.createElement('li');
-        listElement.innerHTML = guest.guestName;
+        listElement.innerHTML = guest.guestname;
         guestList.appendChild(listElement);
     }
     
