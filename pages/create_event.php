@@ -46,8 +46,6 @@
     
                 header("Location: user_dashboard.php");
                 exit();
-            } else {
-                $Event = array("","","","","","","");
             }
             ?>
             <div>

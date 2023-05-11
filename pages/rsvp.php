@@ -12,14 +12,46 @@
 <body>
 
     <div class="center">
-
-
         <!-- Add additional details here via JS.
             These are details laid out by the event creator. -->
-
         <div id="inputContainer" class="background">
 
             <h1>RSVP for: &ltEvent Name&gt </h1>
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+            <?php
+            require_once("../php/db.config.php");
+            session_start();
+
+           $eventid = 35;
+
+            if (isset($_POST['name']) && isset($_POST['email'])){
+
+               $GUEST = array(
+                $eventid,
+                $_POST['name'],
+                $_POST['email']
+               );
+
+
+                $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3)";
+
+                $result = pg_query_params($CONNECTION, $sql, $GUEST);
+
+                // error: fail to respond
+                if (!$result){
+                    http_reponse_code(400);
+                    echo json_encode(array("message" => "Response failed!"));
+                    exit;
+                }
+                
+                pg_close($CONNECTION);
+
+                // success: redirect to confirmation page
+                header("Location : rsvp_confirmation.php");
+                exit();
+            }
+
+            ?>
 
             <label for="name">Name</label><br>
             <input id="nameTextBox" class="textBox" type="text" name="name" title="name" placeholder="John Smith" />
@@ -41,14 +73,13 @@
                 <button id="submitButton" class="secondaryButton" type="button">Submit Captcha</button>
                 <button id="refreshButton" class="secondaryButton" type="button">Refresh Captcha</button>
                 <br>
-                <button id="confirmButton" class="button" type="button">Confirm</button>
-
+                <input type="submit" value="Confirm" class="button">
             </div>
 
             <div id="captchaOutput"></div>
 
         </div>
-
+    </form>
 
     </div>
 

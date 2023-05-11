@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
     refreshButton.addEventListener('click', refreshCaptcha);
 
     //
-    confirmButton.addEventListener('click', goToConfirm);
+    // confirmButton.addEventListener('click', goToConfirm);
 
     //
     function randomNumber(min, max) {
@@ -82,7 +82,7 @@ window.addEventListener("load", function () {
         if (userText.value === captcha) {
             captchaOutput.classList.add("correctCaptcha");
             captchaOutput.innerHTML = "<span id=\"correct\">Correct!</span>";
-            captchaCorrect = true;
+            // var captchaCorrect = true;
             document.getElementById("confirmButton").style.visibility = "visible";
 
         } else {
