@@ -22,9 +22,16 @@ window.addEventListener("load", function() {
 });
 
 function displayEvent() {
+    let guests = JSON.parse(localStorage.getItem('guests'));
+    let guestList = document.getElementById('guestList');
+    for (let i = 0; i < guests.length; i++) {
+        let guest = guests[i];
+        let listElement = document.createElement('li');
+        listElement.innerHTML = guest.guestName;
+    }
     
     let event = JSON.parse(localStorage.getItem('event'))[0];
-    
+  
     nameDiv = document.getElementById("eventName");
     coverPhotoDiv = document.getElementById("eventCoverPhoto");
     detailsDiv = document.getElementById("eventDetails");
