@@ -1,3 +1,14 @@
+<script>
+    let event = JSON.parse(localStorage.getItem('event'));
+    document.cookie = "selectedEvent" + event;
+</script>
+<?php
+require_once('../php/db.config.php');
+
+$event = $_COOKIE['selectedEvent'];
+echo "Event ID: " . $event.id;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- This page is a form that the event creator can customize 
