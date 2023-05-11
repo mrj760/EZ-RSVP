@@ -21,7 +21,7 @@ if (isset($_POST['save'])) {
             //Handles each question
             if (isset($_COOKIE['question'.$i])) {
                 $question = $_POST['question'.$i];
-                echo "Question#".$i." Value: ".$question
+                echo "Question#".$i." Value: ".$question;
             } else {
                 echo "Question Cookie not set!";
             }
