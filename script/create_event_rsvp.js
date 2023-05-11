@@ -121,7 +121,7 @@ class AnswerOption {
         // this.clickable.type = type;
 
         this.description = document.createElement('input');
-        this.description.name = 'question1' + questionNumber + '-option' + optionNumber;
+        this.description.name = 'question' + questionNumber + '-option' + optionNumber;
         this.description.type = 'text';
 
         // this.div.appendChild(this.clickable);
