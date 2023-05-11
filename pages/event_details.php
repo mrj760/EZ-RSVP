@@ -50,18 +50,39 @@ if (isset($_POST['delete'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="../style/_global.css?<?= filesize('../style/_global.css'); ?>" />
     <script src="../script/_global.js?<?= filesize('../script/_global.js'); ?>"></script>
-    <style>
-        #guest-list-popup {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 80%;
-          height: 80%;
-          background-color: white;
-          border: 1px solid black;
-          z-index: 9999;
-          padding: 20px;
+    <style>        
+        #popupBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #guestListPopup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            border: 1px solid black;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -80,8 +101,15 @@ if (isset($_POST['delete'])) {
                 <button type="submit" name="delete" class="secondaryButton">Delete Event</button>
             </form>
         </div>
+        <div id="popupBackground">
         <div id="guestListPopup" style="display: none;">
-            <p>test</p>
+            <button id="closeButton" onclick="closePopup()">&times;</button>
+            <h2>Guest List</h2>
+            <ul>
+                <li>Guest 1</li>
+                <li>Guest 2</li>
+                <li>Guest 3</li>
+            </ul>
         </div>
     </div>
 </body>
@@ -92,4 +120,8 @@ if (isset($_POST['delete'])) {
     function viewGuests() {
       guestListPopup.style.display = 'block';
     };
+    
+    function closePopup() {
+      guestListPopup.style.display = 'none';
+    }
 </script>
