@@ -30,6 +30,8 @@
                 // put name & email to array
                 $params = array($respondName, $respondEmail);
 
+                echo $params;
+
                 // Insert respondent name & email
                 $result = pg_prepare(
                     $CONNECTION,
