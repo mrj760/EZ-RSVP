@@ -75,7 +75,6 @@ if (isset($_POST['delete'])) {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
 
