@@ -12,6 +12,11 @@ $SQL = "SELECT * FROM events WHERE id=$1";
 pg_prepare($CONNECTION, 'get_event', $SQL);
 $result = pg_execute($CONNECTION, 'get_event', $params);
 $event = pg_fetch_all($result);
+
+$SQL = "SELECT * FROM guests WHERE id=$1";
+pg_prepare($CONNECTION, 'get_guests', $SQL);
+$guestResult = pg_execute($CONNECTION, 'get_guests', $params);
+$guests = pg_fetch_all($guestResult);
 ?>
 <script>
     function confirmSubmit() {
@@ -19,7 +24,9 @@ $event = pg_fetch_all($result);
     }
     
     let event = <?=json_encode($event)?>;
+    let guests = <?=json_encode($guests)?>;
     localStorage.setItem('event', JSON.stringify(event));
+    localStorage.setItem('guests', JSON.stringify(guests));
 </script>
 <?php
 if (isset($_POST['delete'])) {
@@ -110,10 +117,8 @@ if (isset($_POST['delete'])) {
           <div id="guestListPopup">
             <span id="closeButton">&times;</span>
             <h2 id="guestHeader">Guest List</h2>
-            <ul class="list-group">
-                 <li class="list-group-item">
-                     <p>test</p>
-                 </li>
+            <ul id="guestList" class="list-group">
+                 
             </ul>
           </div>
         </div>
