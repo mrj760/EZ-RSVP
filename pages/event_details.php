@@ -25,6 +25,7 @@ $guests = pg_fetch_all($guestResult);
     
     let event = <?=json_encode($event)?>;
     let guests = <?=json_encode($guests)?>;
+    console.log(guests);
     localStorage.setItem('event', JSON.stringify(event));
     localStorage.setItem('guests', JSON.stringify(guests));
 </script>
