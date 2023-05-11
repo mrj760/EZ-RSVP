@@ -73,6 +73,10 @@ if (isset($_POST['delete'])) {
             padding: 20px;
             overflow-y: auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         #closeButton {
@@ -107,8 +111,8 @@ if (isset($_POST['delete'])) {
           <div id="guestListPopup">
             <span id="closeButton">&times;</span>
             <h2 id="guestHeader">Guest List</h2>
-            <ul class="test-list-group">
-                 <li class="test-list-group-item">
+            <ul class="list-group">
+                 <li class="list-group-item">
                      <p>test</p>
                  </li>
             </ul>
