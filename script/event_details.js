@@ -1,3 +1,22 @@
+let popupBackground = document.getElementById('popupBackground');
+let guestListPopup = document.getElementById('guestListPopup');
+
+let guestButton = document.getElementById('guestListButton');
+guestButton.addEventListener('click', viewGuests);
+
+let closeButton = document.getElementById('closeButton');
+closeButton.addEventListener('click', closePopup);
+
+function viewGuests() {
+  popupBackground.style.display = 'flex';
+  guestListPopup.style.display = 'flex';
+};
+
+function closePopup() {
+  popupBackground.style.display = 'none';
+  guestListPopup.style.display = 'none';
+}
+
 window.addEventListener("load", function() {
     displayEvent();
 });
