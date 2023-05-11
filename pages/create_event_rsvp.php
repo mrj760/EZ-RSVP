@@ -1,5 +1,5 @@
 <script>
-    let event = JSON.parse(localStorage.getItem('event'));
+    let event = localStorage.getItem('event');
     console.log(event);
     document.cookie = "selectedEvent" + event;
 </script>
