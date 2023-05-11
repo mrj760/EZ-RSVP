@@ -59,7 +59,7 @@ if (isset($_POST['delete'])) {
         <div id="eventLocation" class="infoDiv"></div>
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="eventDetails" class="infoDiv"></div>
-        <div id="buttons">
+        <div id="buttons" style="text-align: center;">
             <button type="submit" name="edit" onclick="editEvent()">Edit Event</button>
             <form method="POST" action="" onsubmit="return confirmSubmit()">
                 <button type="submit" name="delete" class="secondaryButton">Delete Event</button>
