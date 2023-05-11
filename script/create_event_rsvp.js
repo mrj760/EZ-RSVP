@@ -48,6 +48,7 @@ class Question {
         this.offerQuestionType('multipick', 'Multi Pick');
         this.type = this.select.value;
         this.newOptionButton = document.createElement('button');
+        this.newOptionButton.type = 'button';
         this.newOptionButton.classList.add("secondaryButton");
         this.newOptionButton.innerHTML = "New Option";
         this.select.addEventListener("change", function (e) {
