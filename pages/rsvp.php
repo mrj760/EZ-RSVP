@@ -40,8 +40,6 @@
                 exit;
             }
             $events = pg_fetch_all($result);
-            pg_close($CONNECTION);
-
 
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
