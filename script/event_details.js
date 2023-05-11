@@ -6,6 +6,7 @@ function displayEvent() {
     
     let event = JSON.parse(localStorage.getItem('event'))[0];
     
+    console.log(event);
     nameDiv = document.getElementById("eventName");
     coverPhotoDiv = document.getElementById("eventCoverPhoto");
     detailsDiv = document.getElementById("eventDetails");
@@ -17,7 +18,6 @@ function displayEvent() {
     
     let photo = document.createElement('img');
     photo.src = event.photoURL;
-    photo.style = "max-width: 10%; height: auto;" 
     coverPhotoDiv.appendChild(photo);
     
     appendElmtToDiv(detailsDiv, event.details);
