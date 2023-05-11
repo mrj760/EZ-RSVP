@@ -95,7 +95,11 @@ if (isset($_POST['delete'])) {
         
         #guestHeader {
             width: 100%;
-        }    
+        }
+        
+        li {
+            width: 70%;
+        }
     </style>
 </head>
 
