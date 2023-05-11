@@ -18,10 +18,6 @@ $event = pg_fetch_all($result);
         return confirm("Are you sure you want to Delete this Event?");
     }
     
-    function editEvent() {
-        return "";
-    }
-    
     let event = <?=json_encode($event)?>;
     localStorage.setItem('event', JSON.stringify(event));
 </script>
@@ -104,28 +100,17 @@ if (isset($_POST['delete'])) {
         </div>
         <div id="popupBackground">
         <div id="guestListPopup" style="display: none;">
-            <button id="closeButton" onclick="closePopup()">&times;</button>
+            <span id="closeButton" onclick="closePopup()">&times;</span>
             <h2>Guest List</h2>
-            <ul>
-                <li>Guest 1</li>
-                <li>Guest 2</li>
-                <li>Guest 3</li>
+            <ul class="list-group">
+                 <li class="list-group-item">
+                     <p>test</p>
+                 </li>
             </ul>
         </div>
     </div>
 </body>
 </html>
 <script>
-    let popupBackground = document.getElementById('popupBackground');
-    let guestListPopup = document.getElementById('guestListPopup');
 
-    function viewGuests() {
-      popupBackground.style.display = 'flex';
-      guestListPopup.style.display = 'flex';
-    };
-    
-    function closePopup() {
-      popupBackground.style.display = 'none';
-      guestListPopup.style.display = 'none';
-    }
 </script>
