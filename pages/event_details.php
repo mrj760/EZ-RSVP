@@ -92,15 +92,15 @@ if (isset($_POST['delete'])) {
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="eventDetails" class="infoDiv"></div>
         <div id="buttons" style="text-align: center;">
-            <button type="submit" name="guests" onclick="viewGuests()">View Guest List</button>
-            <button type="submit" name="edit" onclick="editEvent()">Edit Event</button>
+            <button id="guestListButton" type="submit" name="guests">View Guest List</button>
+            <button type="submit" name="edit">Edit Event</button>
             <form method="POST" action="" onsubmit="return confirmSubmit()">
                 <button type="submit" name="delete" class="secondaryButton">Delete Event</button>
             </form>
         </div>
         <div id="popupBackground">
         <div id="guestListPopup" style="display: none;">
-            <span id="closeButton" onclick="closePopup()">&times;</span>
+            <span id="closeButton">&times;</span>
             <h2>Guest List</h2>
             <ul class="list-group">
                  <li class="list-group-item">
@@ -111,6 +111,3 @@ if (isset($_POST['delete'])) {
     </div>
 </body>
 </html>
-<script>
-
-</script>

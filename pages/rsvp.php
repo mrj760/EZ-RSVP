@@ -18,13 +18,14 @@
 
             <h1>RSVP for: &ltEvent Name&gt </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
-
             <?php
             require_once("../php/db.config.php");
-            
-            if (isset($POST["name"]) && isset($_POST["email"])){
+            session_start();
+
+            if (isset($_POST['name']) && isset($_POST['email'])){
 
                $GUEST = array(
+                $_GET['id'],
                 $_POST['name'],
                 $_POST['email']
                );
@@ -38,7 +39,7 @@
                 // $result = pg_execute($CONNECTION, "create_respondent", $params);
                 // pg_close();
 
-                $sql = "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)";
+                $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3)";
 
                 $result = pg_query_params($CONNECTION, $sql, $GUEST);
 
