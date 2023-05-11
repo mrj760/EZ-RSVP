@@ -15,11 +15,11 @@ $event = pg_fetch_all($result);
 <?php
 if (isset($_POST['save'])) {
     if (isset($_COOKIE['numQuestions'])) {
-        let $numQuestions = $_COOKIE['numQuestions'];
+        $numQuestions = $_COOKIE['numQuestions'];
         echo $numQuestions;
         for ($i = 0; $i < $numQuestions; $i++) {
             if (isset($_COOKIE['question'.$i.'numOptions'])) {
-                let $numOptions = $_COOKIE['question'.$i.'numOptions'];
+                $numOptions = $_COOKIE['question'.$i.'numOptions'];
                 echo $numOptions;
             } else {
                 echo "Error: Number of options not set";
