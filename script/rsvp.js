@@ -82,7 +82,7 @@ window.addEventListener("load", function () {
         if (userText.value === captcha) {
             captchaOutput.classList.add("correctCaptcha");
             captchaOutput.innerHTML = "<span id=\"correct\">Correct!</span>";
-            var captchaCorrect = true;
+            // var captchaCorrect = true;
             document.getElementById("confirmButton").style.visibility = "visible";
 
         } else {
