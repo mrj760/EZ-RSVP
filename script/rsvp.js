@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
     refreshButton.addEventListener('click', refreshCaptcha);
 
     //
-    confirmButton.addEventListener('click', goToConfirm);
+    // confirmButton.addEventListener('click', goToConfirm);
 
     //
     function randomNumber(min, max) {
