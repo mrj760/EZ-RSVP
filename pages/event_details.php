@@ -50,6 +50,20 @@ if (isset($_POST['delete'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="../style/_global.css?<?= filesize('../style/_global.css'); ?>" />
     <script src="../script/_global.js?<?= filesize('../script/_global.js'); ?>"></script>
+    <style>
+        #guest-list-popup {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80%;
+          height: 80%;
+          background-color: white;
+          border: 1px solid black;
+          z-index: 9999;
+          padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -60,12 +74,22 @@ if (isset($_POST['delete'])) {
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="eventDetails" class="infoDiv"></div>
         <div id="buttons" style="text-align: center;">
+            <button type="submit" name="guests" onclick="viewGuests()">View Guest List</button>
             <button type="submit" name="edit" onclick="editEvent()">Edit Event</button>
             <form method="POST" action="" onsubmit="return confirmSubmit()">
                 <button type="submit" name="delete" class="secondaryButton">Delete Event</button>
             </form>
         </div>
+        <div id="guestListPopup" style="display: none;">
+            <p>test</p>
+        </div>
     </div>
 </body>
-
 </html>
+<script>
+    var guestListPopup = document.getElementById('guestListPopup');
+
+    function viewGuests() {
+      guestListPopup.style.display = 'block';
+    };
+</script>
