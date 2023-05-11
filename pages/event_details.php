@@ -97,9 +97,10 @@ if (isset($_POST['delete'])) {
             width: 100%;
         }
         
-        list-group li {
+        #list-group {
             padding 10px;
             width: 90%;
+            margin: auto;
         }
     </style>
 </head>
