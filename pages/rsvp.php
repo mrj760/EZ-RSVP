@@ -25,6 +25,7 @@
             if (isset($_POST['name']) && isset($_POST['email'])){
 
                $GUEST = array(
+                $_GET['eventID'],
                 $_POST['name'],
                 $_POST['email']
                );
@@ -38,7 +39,7 @@
                 // $result = pg_execute($CONNECTION, "create_respondent", $params);
                 // pg_close();
 
-                $sql = "INSERT INTO guests (guestname, guestemail) VALUES ($1, $2)";
+                $sql = "INSERT INTO guests (eventid, uestname, guestemail) VALUES ($1, $2, $3)";
 
                 $result = pg_query_params($CONNECTION, $sql, $GUEST);
 
