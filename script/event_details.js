@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
 
 function displayEvent() {
     
-    let event = JSON.parse(localStorage.getItem('event'));
+    let event = JSON.parse(localStorage.getItem('event'))[0];
     
     console.log(event);
     nameDiv = document.getElementById("eventName");
