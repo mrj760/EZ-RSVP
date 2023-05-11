@@ -21,25 +21,31 @@
             <?php
             require_once("../php/db.config.php");
             
-            // retrieve the data from cookie 
-            $user = $_COOKIE['email']; // get user idd
+            // // retrieve the data from cookie 
+            // $user = $_COOKIE['email']; // get user idd
 
-            pg_prepare(
-                $CONNECTION,
-                "get_events",
-                "SELECT * FROM events WHERE owner=$1"
+            // pg_prepare(
+            //     $CONNECTION,
+            //     "get_events",
+            //     "SELECT * FROM events WHERE owner=$1"
 
-            );
+            // );
 
-            $params = array($user);
-            $result = pg_execute($CONNECTION, "get_events", $params);
-            // Check if the request was successful
-            if(!$result){
-                http_response_code(500);
-                echo json_encode(array("message" => "Error occured while retrieving events: "));
-                exit;
-            }
-            $events = pg_fetch_all($result);
+            // $params = array($user);
+            // $result = pg_execute($CONNECTION, "get_events", $params);
+            // // Check if the request was successful
+            // if(!$result){
+            //     http_response_code(500);
+            //     echo json_encode(array("message" => "Error occured while retrieving events: "));
+            //     exit;
+            // }
+            // $events = pg_fetch_all($result);
+
+            
+
+            // check data insert(test)
+            $events = 36;
+
 
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
