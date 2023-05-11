@@ -1,3 +1,22 @@
+<?php
+require_once('../php/db.config.php');
+
+$eventID = 30;
+$params = array($eventID);
+$SQL = "SELECT * FROM events WHERE id=$1";
+pg_prepare($CONNECTION, 'get_event', $SQL);
+$result = pg_execute($CONNECTION, 'get_event', $params);
+$event = pg_fetch_all($result);
+?>
+<script>
+    let event = <?=json_encode($event)?>;
+    localStorage.setItem('event', JSON.stringify(event));
+</script>
+<?php
+if (isset($_POST['save'])) {
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- This page is a form that the event creator can customize 
@@ -27,16 +46,18 @@
             <input type="name" name="name" placeholder="John Smith" disabled>
         </label>
         <br>
+        <form action="" method="POST">
+            <div id="customQuestionsDiv"></div>
 
-        <div id="customQuestionsDiv"></div>
-
-        <div id="buttons">
-            <br>
-            <button id="newQuestionButton" class="button" type="button">New Question</button>
-            <br>
-            <button id="saveButton" class="button" type="button">Save</button>
-            <button id="backButton" class="secondaryButton" type="button">Back</button>
-        </div>
+            <div id="buttons">
+                <br>
+                <button id="newQuestionButton" class="button" type="button">New Question</button>
+                <br>
+                <button id="saveButton" class="button" type="submit" name="save">Save</button>
+                <br>
+                <button id="backButton" class="secondaryButton" type="button">Back</button>
+            </div>
+        </form>
     </div>
 </body>
 

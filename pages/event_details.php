@@ -72,14 +72,13 @@ if (isset($_POST['delete'])) {
 
         #guestListPopup {
             position: absolute;
-            text-align: center;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 40%;
             height: 65%;
             background-color: white;
-            border: 1px solid red;
+            border: 2px solid orange;
             border-radius: 15px;
             padding: 20px;
             overflow-y: auto;
@@ -98,7 +97,7 @@ if (isset($_POST['delete'])) {
         }
         
         #guestHeader {
-            width: 100%;
+            text-align: center;
         }
         
     </style>
@@ -112,10 +111,10 @@ if (isset($_POST['delete'])) {
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="eventDetails" class="infoDiv"></div>
         <div id="buttons" style="text-align: center;">
-            <button id="guestListButton" type="submit" name="guests">View Guest List</button>
-            <button type="submit" name="edit">Edit Event</button>
+            <button id="guestListButton" class="button" type="button" name="guests">View Guest List</button>
+            <button id="editButton" class="button" type="button" name="edit">Edit Event</button>
             <form method="POST" action="" onsubmit="return confirmSubmit()">
-                <button type="submit" name="delete" class="secondaryButton">Delete Event</button>
+                <button id="deleteButton" class="secondaryButton" type="submit" name="delete">Delete Event</button>
             </form>
         </div>
         <div id="popupBackground">
