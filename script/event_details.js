@@ -28,6 +28,7 @@ function displayEvent() {
         let guest = guests[i];
         let listElement = document.createElement('li');
         listElement.innerHTML = guest.guestName;
+        guestList.appendChild(listElement);
     }
     
     let event = JSON.parse(localStorage.getItem('event'))[0];
