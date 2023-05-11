@@ -64,7 +64,7 @@ class Question {
         this.leftDiv.appendChild(document.createElement('br'));
         this.leftDiv.appendChild(this.text);
 
-        this.rightDiv.appendChild(this.deleteButton);
+        // this.rightDiv.appendChild(this.deleteButton);
         this.rightDiv.appendChild(document.createElement('br'));
         this.rightDiv.appendChild(this.select);
 
