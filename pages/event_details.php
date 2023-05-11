@@ -17,6 +17,7 @@ $SQL = "SELECT * FROM guests WHERE id=$1";
 pg_prepare($CONNECTION, 'get_guests', $SQL);
 $guestResult = pg_execute($CONNECTION, 'get_guests', $params);
 $guests = pg_fetch_all($guestResult);
+var_dump($guests);
 ?>
 <script>
     function confirmSubmit() {
