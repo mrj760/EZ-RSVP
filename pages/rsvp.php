@@ -16,7 +16,7 @@
             These are details laid out by the event creator. -->
         <div id="inputContainer" class="background">
 
-            <h1>RSVP for: &ltEvent Name&gt </h1>
+            <h1>RSVP for: <?= $eventname ?> </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php
             require_once("../php/db.config.php");
@@ -33,9 +33,11 @@
                 echo "Fail to get event id.";
                 exit;
             }
-            // fetch the only "id"
+            // fetch event id
             $event = pg_fetch_result($result, 0, 0);
 
+            // fetch event name
+            $eventname = pg_fetch_result($result, 0, 1);
 
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
@@ -70,7 +72,7 @@
             <label for="email">Email</label><br>
             <input id="emailTextBox" class="textBox" type="text" name="email" title="email" placeholder="JohnSmith@mail.com" />
 
-            <div id="additionalDetails"></div>
+            <div id="additionalQuestions"></div>
 
             <canvas id="captcha"></canvas>
             <br>

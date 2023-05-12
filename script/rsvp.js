@@ -91,15 +91,25 @@ window.addEventListener("load", function () {
         }
     }
 
+    // show the questions
+    let  addtionalQuestions = document.getElementById('addtionalQeustions');
 
-    function goToConfirm(){
-        if (captchaCorrect){
-            window.location.href="rsvp_confirmation.php";
-        }
-        else{
-            captchaOutput.classList.add("incorrectCaptcha");
-            captchaOutput.innerHTML = "<span id=\"incorrect\">Please submit captcha</span>";
-        }
-    }
+    // get questions from local storage
+    let questions = JSON.parse(localStorage.getItem('questions'));
 
+    // make questions on rsvp page
+    for (let i=0; i<questions.length; i++) {
+        
+        let label = document.createElement('label');
+        label.setAttribute('for', 'question');
+        
+        let linkToRSVPquestions = document.createElement('input');
+        linkToRSVPquestions.setAttribute('type', 'text');
+        linkToRSVPquestions.setAttribute('class', 'textbox');
+        linkToRSVPquestions.setAttribute('name', 'question${i}');
+        linkToRSVPquestions.setAttribute('title', 'question$[i]');
+
+        addtionalQuestions.appendChild(label);
+        addtionalQuestions.appendChild(linkToRSVPquestions);
+    } 
 })
