@@ -25,7 +25,7 @@ if (isset($_POST['save'])) {
                     //Create question
                     $qParams = array($question, $questionType, $eventID);
                     $qSQL = 'INSERT INTO questions (text, type, "eventID") VALUES ($1, $2, $3) RETURNING id';
-                    pg_prepare($CONNECTION, 'create_question', $qSQL);
+                    pg_prepare($CONNECTION, 'create_question'.$i, $qSQL);
                     $qresult = pg_execute($CONNECTION, 'create_question', $qParams);
                     $questionID = pg_fetch_all($qresult);
                     
@@ -42,7 +42,7 @@ if (isset($_POST['save'])) {
                                 //Create each option
                                 $oParams = array($questionID, $option);
                                 $oSQL = 'INSERT INTO options ("questionID", description) VALUES ($1, $2)';
-                                pg_prepare($CONNECTION, 'create_option', $oSQL);
+                                pg_prepare($CONNECTION, 'create_option'.$i.$j, $oSQL);
                                 $oresult = pg_execute($CONNECTION, 'create_option', $oParams);
                                 $results = pg_fetch_all($oresult);
 
