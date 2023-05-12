@@ -20,38 +20,24 @@
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php
             require_once("../php/db.config.php");
-            
-            // // retrieve the data from cookie 
-            // $user = $_COOKIE['email']; // get user idd
 
-            // pg_prepare(
-            //     $CONNECTION,
-            //     "get_events",
-            //     "SELECT * FROM events WHERE owner=$1"
+            // check data insert(just for test)
+            $eventid = 36;
 
-            // );
-
-            // $params = array($user);
-            // $result = pg_execute($CONNECTION, "get_events", $params);
-            // // Check if the request was successful
-            // if(!$result){
-            //     http_response_code(500);
-            //     echo json_encode(array("message" => "Error occured while retrieving events: "));
-            //     exit;
-            // }
-            // $events = pg_fetch_all($result);
+            $params = array($evetnid);
+            $sql = "SELECT * FROM evetns WHERE id=$1";
+            pg_prepare($CONNECTION, 'get_event', $sql);
+            $result = pg_execute($CONNECTION, 'get_event', $params);
+            // fetch the only "id"
+            $event = pg_fetch_result($result, 0, 0);
 
             
-
-            // check data insert(test)
-            $events = 36;
-
 
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
 
                $GUEST = array(
-                $events,
+                $event,
                 $_POST['name'],
                 $_POST['email']
                );
