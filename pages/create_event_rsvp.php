@@ -16,27 +16,49 @@ $event = pg_fetch_all($result);
 if (isset($_POST['save'])) {
     if (isset($_COOKIE['numQuestions'])) {
         $numQuestions = $_COOKIE['numQuestions'];
-        echo "NumQ: " . $numQuestions; //remove later
         for ($i = 1; $i <= $numQuestions; $i++) {
             //Handles each question
             if (isset($_POST['question'.$i])) {
                 $question = $_POST['question'.$i];
-                echo "Question#".$i." Value: ".$question;
                 if (isset($_COOKIE['question'.$i.'-type'])) {
                     $questionType = $_COOKIE['question'.$i.'-type'];
-                    echo "Question".$i."-type: ".$questionType;
-                }
-                if (isset($_COOKIE['question'.$i.'-numOptions'])) {
-                    $numOptions = $_COOKIE['question'.$i.'-numOptions'];
-                    echo "NumO: " . $numOptions;
-                    for ($j = 1; $j <= $numOptions; $j++) {
-                        if (isset($_POST['question'.$i.'-option'.$j])) {
-                            $option = $_POST['question'.$i.'-option'.$j];
-                            echo "Question".$i."-Option".$j." Value: ".$option;
+                    //Create question
+                    $qParams = array($question, $questionType, $eventID);
+                    $qSQL = 'INSERT INTO questions (text, type, eventID) VALUES ($1, $2, $3) RETURNING id';
+                    pg_prepare($CONNECTION, 'create_question', $qSQL);
+                    $qresult = pg_execute($CONNECTION, 'create_question', $qParams);
+                    $questionID = pg_fetch_all($qresult);
+                    
+                    if (!$questionID) {
+                        echo "Failed to create Question!";
+                        exit();
+                    }
+                    
+                    if (isset($_COOKIE['question'.$i.'-numOptions'])) {
+                        $numOptions = $_COOKIE['question'.$i.'-numOptions'];
+                        for ($j = 1; $j <= $numOptions; $j++) {
+                            if (isset($_POST['question'.$i.'-option'.$j])) {
+                                $option = $_POST['question'.$i.'-option'.$j];
+                                //Create each option
+                                $oParams = array($questionID, $option);
+                                $oSQL = 'INSERT INTO options (questionID, description) VALUES ($1, $2)';
+                                pg_prepare($CONNECTION, 'create_option', $oSQL);
+                                $oresult = pg_execute($CONNECTION, 'create_option', $oParams);
+                                $results = pg_fetch_all($oresult);
+
+                                if (!$results) {
+                                    echo "Failed to create Option!";
+                                    exit();
+                                }
+                            } else {
+                                echo "Error: Unable to pull option data";
+                            }
                         }
+                    } else {
+                        echo "Error: Number of options not set";
                     }
                 } else {
-                    echo "Error: Number of options not set";
+                    echo "Error: Question type not set";
                 }
             } else {
                 echo "Question#".$i." not posted in form!";
