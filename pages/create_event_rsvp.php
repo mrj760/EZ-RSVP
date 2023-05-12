@@ -1,7 +1,13 @@
 <?php
 require_once('../php/db.config.php');
 
-$eventID = 30;
+if (!isset($_GET['id'])) {
+    http_response_code(400);
+    echo json_encode(array("message" => "eventID not set!"));
+    exit;
+}
+
+$eventID = $_GET['id'];
 $params = array($eventID);
 $SQL = "SELECT * FROM events WHERE id=$1";
 pg_prepare($CONNECTION, 'get_event', $SQL);
