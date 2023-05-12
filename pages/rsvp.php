@@ -35,7 +35,7 @@
 
             <?php
             $params = array($eventid);
-            $sql = "SELECT * FROM questions WHERE eventID=$1";
+            $sql = "SELECT * FROM questions WHERE questions.eventID=$1";
             pg_prepare($CONNECTION, 'get_questions', $sql);
             $result = pg_execute($CONNECTION, 'get_questions', $params);
 
