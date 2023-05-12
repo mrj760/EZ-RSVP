@@ -24,8 +24,8 @@
             // check data insert(just for test)
             $eventid = 36;
 
-            $params = array($evetnid);
-            $sql = "SELECT * FROM evetns WHERE id=$1";
+            $params = array($eventid);
+            $sql = "SELECT * FROM events WHERE id=$1";
             pg_prepare($CONNECTION, 'get_event', $sql);
             $result = pg_execute($CONNECTION, 'get_event', $params);
             // fetch the only "id"
