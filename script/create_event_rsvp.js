@@ -57,8 +57,10 @@ class Question {
             me.fillOptions();
         });
         this.newOptionButton.addEventListener("click", function () {
-            let optionNum = me.answerOptions.length;
-            me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
+            let optionNum = me.answerOptions.length + 1;
+            if (!me.type == 'text') {
+                me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
+            }
             me.fillOptions();
         })
 
