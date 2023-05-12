@@ -13,6 +13,8 @@ class Question {
 
         const me = this; // important for event listeners
 
+        this.questionNumber = questionNumber;
+
         this.div = document.createElement("div");
         this.div.classList.add("questionDiv");
         // div.id set via `set number()`
@@ -46,6 +48,7 @@ class Question {
         this.offerQuestionType('multipick', 'Multi Pick');
         this.type = this.select.value;
         setCookie('question' + questionNumber + '-type', this.type);
+
         this.newOptionButton = document.createElement('button');
         this.newOptionButton.type = 'button';
         this.newOptionButton.classList.add("secondaryButton");
@@ -59,7 +62,7 @@ class Question {
         });
         this.newOptionButton.addEventListener("click", function () {
             let optionNum = me.answerOptions.length + 1;
-            me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
+            me.answerOptions.push(new AnswerOption(me.type, me.questionNumber, optionNum));
             me.fillOptions();
         });
 
@@ -92,12 +95,14 @@ class Question {
             this.newOptionButton.remove();
         }
         if (this.type == 'text') {
+            setCookie('question' + this.questionNumber + '-numOptions', 0);
             return;
         }
         for (let i = 0; i < this.answerOptions.length; i++) {
             this.answerOptions[i].type = this.type == 'singlepick' ? 'radio' : 'checkbox';
             this.leftDiv.appendChild(this.answerOptions[i].div);
         }
+        setCookie('question' + this.questionNumber + '-numOptions', this.answerOptions.length+1);
         this.leftDiv.appendChild(this.newOptionButton);
     }
 
