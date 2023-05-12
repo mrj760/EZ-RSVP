@@ -24,7 +24,7 @@ if (isset($_POST['save'])) {
                     $questionType = $_COOKIE['question'.$i.'-type'];
                     //Create question
                     $qParams = array($question, $questionType, $eventID);
-                    $qSQL = 'INSERT INTO questions (text, type, eventID) VALUES ($1, $2, $3) RETURNING id';
+                    $qSQL = 'INSERT INTO questions (text, type, \"eventID\") VALUES ($1, $2, $3) RETURNING id';
                     pg_prepare($CONNECTION, 'create_question', $qSQL);
                     $qresult = pg_execute($CONNECTION, 'create_question', $qParams);
                     $questionID = pg_fetch_all($qresult);
