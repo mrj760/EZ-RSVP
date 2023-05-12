@@ -28,7 +28,7 @@ if (isset($_POST['save'])) {
                     pg_prepare($CONNECTION, 'create_question'.$i, $qSQL);
                     $qresult = pg_execute($CONNECTION, 'create_question'.$i, $qParams);
                     $questionID = pg_fetch_all($qresult);
-                    $questionID = $questionID[0][0];
+                    $questionID = $questionID[0];
                     echo $questionID;
                     
                     if (!$questionID) {
