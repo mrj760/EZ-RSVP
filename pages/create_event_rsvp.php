@@ -40,8 +40,8 @@ if (isset($_POST['save'])) {
                             if (isset($_POST['question'.$i.'-option'.$j])) {
                                 $option = $_POST['question'.$i.'-option'.$j];
                                 //Create each option
-                                $oParams = array($questionID, $option);
-                                $oSQL = 'INSERT INTO options ("questionID", description) VALUES ($1, $2) RETURNING id';
+                                $oParams = array($option, $questionID);
+                                $oSQL = "INSERT INTO options (description, questionID) VALUES ($1, $2) RETURNING id";
                                 pg_prepare($CONNECTION, 'create_option'.$i.$j, $oSQL);
                                 $oresult = pg_execute($CONNECTION, 'create_option'.$i.$j, $oParams);
                                 $results = pg_fetch_all($oresult);
