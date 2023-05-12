@@ -65,7 +65,7 @@ class Question {
         this.qType = document.createElement('input');
         this.qType.type = "text";
         this.qType.name = 'question' + questionNumber + '-type';
-        this.qType.value = this.type;
+        this.qType.value = me.type;
         this.qType.hidden = true;
 
         this.leftDiv.appendChild(this.label);
