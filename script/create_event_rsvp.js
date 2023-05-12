@@ -36,15 +36,9 @@ class Question {
         // });
         // this.rightDiv.appendChild(this.deleteButton);
 
-
         this.text = document.createElement('input');
         this.text.type = "text";
         this.text.name = 'question' + questionNumber;
-
-        this.qType = document.createElement('input');
-        this.qType.type = 'text';
-        this.qType.name = 'question' + questionNumber + '-type';
-        this.qType.hidden = true;
         
         this.select = document.createElement("select");
         this.offerQuestionType('text', 'Text');
@@ -59,15 +53,19 @@ class Question {
         this.answerOptions = [];
         this.select.addEventListener("change", function (e) {
             me.type = e.currentTarget.value;
-            this.type = me.type;
-            this.qType.value = this.type;
             me.fillOptions();
         });
         this.newOptionButton.addEventListener("click", function () {
             let optionNum = me.answerOptions.length + 1;
             me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
             me.fillOptions();
-        })        
+        });
+        
+        this.qType = document.createElement('input');
+        this.qType.type = 'text';
+        this.qType.name = 'question' + questionNumber + '-type';
+        this.qType.value = this.select.value;
+        this.qType.hidden = true;
 
         this.leftDiv.appendChild(this.label);
         this.leftDiv.appendChild(document.createElement('br'));
