@@ -54,14 +54,12 @@ class Question {
         this.answerOptions = [];
         this.select.addEventListener("change", function (e) {
             me.type = e.currentTarget.value;
-            me.fillOptions();
+            //me.fillOptions();
         });
         this.newOptionButton.addEventListener("click", function () {
             let optionNum = me.answerOptions.length + 1;
-            if (!me.type == 'text') {
-                me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
-            }
-            me.fillOptions();
+            me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
+            //me.fillOptions();
         })
 
         this.leftDiv.appendChild(this.label);
