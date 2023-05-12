@@ -95,10 +95,10 @@ window.addEventListener("load", function () {
     let  addtionalQuestions = document.getElementById('addtionalQeustions');
 
     // get questions from local storage
-    let questions = JSON.parse(localStorage.getItem('questions'));
+    let questions = JSON.parse(localStorage.getItem('question'));
 
     // make questions on rsvp page
-    for (let i=0; i<questions.length; i++) {
+    for (let i=0; i<question.length; i++) {
         
         let label = document.createElement('label');
         label.setAttribute('for', 'question');
