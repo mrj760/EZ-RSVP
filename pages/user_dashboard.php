@@ -40,7 +40,7 @@
     <h1 id="greeting"><?= 'Hello ' . $_COOKIE['username'] . '!' ?></h1>
     <a href="./rsvp.php"><button type="button" class="button">RSVP</button></a>
     <a href="./create_event.php"><button type="button" class="button">Create Event</button></a>
-    <a href="./create_event_rsvp.php"><button type="button" class="button">Create Event RSVP</button></a>
+    <!-- <a href="./create_event_rsvp.php"><button type="button" class="button">Create Event RSVP</button></a> -->
 
     <div id="userEventsDiv"></div>
 
