@@ -15,14 +15,27 @@
         <!-- Add additional details here via JS.
             These are details laid out by the event creator. -->
         <div id="inputContainer" class="background">
+            <?php
+            $eventid = 36;
+
+            $params = array($eventid);
+            $sql = "SELECT * FROM events WHERE id=$1";
+            pg_prepare($CONNECTION, 'get_event', $sql);
+            $result = pg_execute($CONNECTION, 'get_event', $params);
+
+            if(!$result){
+                echo "Fail to get event id.";
+                exit;
+            }
+
+             // fetch event name
+             $eventname = pg_fetch_result($result, 0, 1);
+            ?>
 
             <h1>RSVP for: <?= $eventname ?> </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php
             require_once("../php/db.config.php");
-
-            // check data insert(just for test)
-            $eventid = 36;
 
             $params = array($eventid);
             $sql = "SELECT * FROM events WHERE id=$1";
@@ -36,8 +49,7 @@
             // fetch event id
             $event = pg_fetch_result($result, 0, 0);
 
-            // fetch event name
-            $eventname = pg_fetch_result($result, 0, 1);
+            
 
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
