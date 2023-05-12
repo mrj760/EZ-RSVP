@@ -41,7 +41,7 @@ if (isset($_POST['save'])) {
                                 pg_prepare($CONNECTION, 'create_option'.$i.$j, $oSQL);
                                 $oresult = pg_execute($CONNECTION, 'create_option'.$i.$j, $oParams);
                             } else {
-                                echo "Error: Unable to pull option data";
+                                echo "Error: Unable to pull option data, numOptions: " . $numOptions;
                             }
                         }
                     } else {
