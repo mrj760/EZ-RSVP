@@ -54,7 +54,7 @@ class Question {
         this.answerOptions = [];
         this.select.addEventListener("change", function (e) {
             me.type = e.currentTarget.value;
-            //me.fillOptions();
+            me.fillOptions();
         });
         this.newOptionButton.addEventListener("click", function () {
             let optionNum = me.answerOptions.length + 1;
