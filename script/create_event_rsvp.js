@@ -40,6 +40,7 @@ class Question {
 
         this.text = document.createElement('input');
         this.text.type = "text";
+        this.text.placeholder = 'Insert Question #' + questionNumber + 'Here'
         this.text.name = 'question' + questionNumber;
         
         this.select = document.createElement("select");
@@ -99,7 +100,7 @@ class Question {
             return;
         }
         for (let i = 0; i < this.answerOptions.length; i++) {
-            this.answerOptions[i].type = this.type == 'singlepick' ? 'radio' : 'checkbox';
+            // this.answerOptions[i].type = this.type == 'singlepick' ? 'radio' : 'checkbox';
             this.leftDiv.appendChild(this.answerOptions[i].div);
         }
         setCookie('question' + this.questionNumber + '-numOptions', this.answerOptions.length+1);
@@ -128,6 +129,7 @@ class AnswerOption {
 
         this.description = document.createElement('input');
         this.description.name = 'question' + questionNumber + '-option' + optionNumber;
+        this.description.placeholder = 'Option #' + optionNumber;
         this.description.type = 'text';
 
         // this.div.appendChild(this.clickable);
