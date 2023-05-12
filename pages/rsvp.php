@@ -16,6 +16,7 @@
             These are details laid out by the event creator. -->
         <div id="inputContainer" class="background">
             <?php
+            require_once("../php/db.config.php");
             $eventid = 36;
 
             $params = array($eventid);
@@ -35,7 +36,6 @@
             <h1>RSVP for: <?= $eventname ?> </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php
-            require_once("../php/db.config.php");
 
             $params = array($eventid);
             $sql = "SELECT * FROM events WHERE id=$1";
