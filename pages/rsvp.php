@@ -45,7 +45,7 @@
             }
 
             //fetch the question
-            $question = pg_fetch_result($result. 0, 1);
+            $question = pg_fetch_result($result, 0, 1);
             ?>
 
             <script type="text/javascript">
