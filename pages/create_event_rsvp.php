@@ -28,7 +28,7 @@ if (isset($_POST['save'])) {
                     pg_prepare($CONNECTION, 'create_question'.$i, $qSQL);
                     $qresult = pg_execute($CONNECTION, 'create_question'.$i, $qParams);
                     $questionID = pg_fetch_all($qresult);
-                    var_dump($questionID);
+                    var_dump($questionID[0]);
                     
                     if (!$questionID) {
                         echo "Failed to create Question!";
