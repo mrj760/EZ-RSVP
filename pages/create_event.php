@@ -11,7 +11,8 @@
 <body>
     <?php
     // exit user if they are not logged in
-    if (!isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == false){
+    if (!isset($_COOKIE['loggedin']) || $_COOKIE['loggedin'] == false){
+        header('Location: user_login.php');
         exit("You should log in to create event.");
     }
     ?>
