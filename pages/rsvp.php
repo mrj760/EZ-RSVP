@@ -46,10 +46,9 @@
                 $_POST['email']
                );
 
-
                 $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3)";
-
                 $result = pg_query_params($CONNECTION, $sql, $GUEST);
+                pg_close($CONNECTION);
 
                 // error: fail to respond
                 if (!$result){
@@ -57,11 +56,9 @@
                     echo json_encode(array("message" => "Response failed!"));
                     exit;
                 }
-                
-                pg_close($CONNECTION);
 
                 // success: redirect to confirmation page
-                header("Location : rsvp_confirmation.php");
+                header("Location: rsvp_confirmation.php");
                 exit();
             }
 
