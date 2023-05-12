@@ -57,7 +57,7 @@ class Question {
         this.select.addEventListener("change", function (e) {
             me.type = e.currentTarget.value;
             me.fillOptions();
-            console.log(me.type);
+            // console.log(me.type);
             setCookie('question' + questionNumber + '-type', me.type);
         });
         this.newOptionButton.addEventListener("click", function () {
@@ -92,10 +92,10 @@ class Question {
     fillOptions() {
         for (let i = 0; i < this.answerOptions.length; i++) {
             this.answerOptions[i].div.remove();
-            this.newOptionButton.remove();
         }
         if (this.type == 'text') {
             setCookie('question' + this.questionNumber + '-numOptions', 0);
+            this.newOptionButton.remove();
             return;
         }
         for (let i = 0; i < this.answerOptions.length; i++) {
