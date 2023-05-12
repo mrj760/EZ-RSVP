@@ -28,10 +28,14 @@
             $sql = "SELECT * FROM events WHERE id=$1";
             pg_prepare($CONNECTION, 'get_event', $sql);
             $result = pg_execute($CONNECTION, 'get_event', $params);
+
+            if(!result){
+                echo "Fail to get event id.";
+                exit;
+            }
             // fetch the only "id"
             $event = pg_fetch_result($result, 0, 0);
 
-            
 
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
