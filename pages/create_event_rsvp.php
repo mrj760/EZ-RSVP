@@ -30,8 +30,8 @@ if (isset($_POST['save'])) {
                     $questionID = pg_fetch_all($qresult);
                     $questionID = $questionID[0]['id'];
                                        
-                    if (isset($_COOKIE['question'.$i.'-numOptions'])) {
-                        $numOptions = $_COOKIE['question'.$i.'-numOptions'] - 1;
+                    if ($questionType != 'text' && isset($_COOKIE['question'.$i.'-numOptions'])) {
+                        $numOptions = $_COOKIE['question'.$i.'-numOptions'];
                         for ($j = 1; $j <= $numOptions; $j++) {
                             if (isset($_POST['question'.$i.'-option'.$j])) {
                                 $option = $_POST['question'.$i.'-option'.$j];
