@@ -44,7 +44,7 @@ if (isset($_POST['save'])) {
                                 $oSQL = 'INSERT INTO options (description, "questionID") VALUES ($1, $2) RETURNING id';
                                 pg_prepare($CONNECTION, 'create_option'.$i.$j, $oSQL);
                                 $oresult = pg_execute($CONNECTION, 'create_option'.$i.$j, $oParams);
-                                $results = pg_fetch_all($oresult);
+                                $results = pg_fetch_assoc($oresult);
 
                                 var_dump($results);
                             } else {
