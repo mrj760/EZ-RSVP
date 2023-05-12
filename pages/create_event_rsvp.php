@@ -41,15 +41,12 @@ if (isset($_POST['save'])) {
                                 $option = $_POST['question'.$i.'-option'.$j];
                                 //Create each option
                                 $oParams = array($option, $questionID);
-                                $oSQL = "INSERT INTO options (description, questionID) VALUES ($1, $2) RETURNING id";
+                                $oSQL = 'INSERT INTO options (description, "questionID") VALUES ($1, $2) RETURNING id';
                                 pg_prepare($CONNECTION, 'create_option'.$i.$j, $oSQL);
                                 $oresult = pg_execute($CONNECTION, 'create_option'.$i.$j, $oParams);
                                 $results = pg_fetch_all($oresult);
 
-                                if (!$results) {
-                                    echo "Failed to create Option!";
-                                    exit();
-                                }
+                                var_dump($results);
                             } else {
                                 echo "Error: Unable to pull option data";
                             }
