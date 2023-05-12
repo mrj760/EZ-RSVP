@@ -31,7 +31,7 @@ if (isset($_POST['save'])) {
                     $questionID = $questionID[0]['id'];
                                        
                     if (isset($_COOKIE['question'.$i.'-numOptions'])) {
-                        $numOptions = $_COOKIE['question'.$i.'-numOptions'];
+                        $numOptions = $_COOKIE['question'.$i.'-numOptions'] - 1;
                         for ($j = 1; $j <= $numOptions; $j++) {
                             if (isset($_POST['question'.$i.'-option'.$j])) {
                                 $option = $_POST['question'.$i.'-option'.$j];
