@@ -44,8 +44,8 @@
                 exit;
             }
 
-            //fetch the question
-            $question = pg_fetch_result($result, 0, 0);
+            // //fetch the question
+            // $question = pg_fetch_result($result, 0, 0);
             ?>
 
             <script type="text/javascript">
