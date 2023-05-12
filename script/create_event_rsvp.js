@@ -40,7 +40,7 @@ class Question {
 
         this.text = document.createElement('input');
         this.text.type = "text";
-        this.text.placeholder = 'Insert Question #' + questionNumber + 'Here'
+        this.text.placeholder = 'Insert Question #' + questionNumber + ' Here'
         this.text.name = 'question' + questionNumber;
         
         this.select = document.createElement("select");
