@@ -54,6 +54,7 @@ class Question {
         this.select.addEventListener("change", function (e) {
             me.type = e.currentTarget.value;
             me.fillOptions();
+            console.log(me.type);
             setCookie('question' + questionNumber + '-type', me.type);
         });
         this.newOptionButton.addEventListener("click", function () {
