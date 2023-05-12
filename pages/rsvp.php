@@ -21,8 +21,8 @@
 
             $params = array($eventid);
             $sql = "SELECT * FROM events WHERE id=$1";
-            pg_prepare($CONNECTION, 'get_event', $sql);
-            $result = pg_execute($CONNECTION, 'get_event', $params);
+            pg_prepare($CONNECTION, 'get_eventname', $sql);
+            $result = pg_execute($CONNECTION, 'get_eventname', $params);
 
             if(!$result){
                 echo "Fail to get event id.";
@@ -39,8 +39,8 @@
 
             $params = array($eventid);
             $sql = "SELECT * FROM events WHERE id=$1";
-            pg_prepare($CONNECTION, 'get_event', $sql);
-            $result = pg_execute($CONNECTION, 'get_event', $params);
+            pg_prepare($CONNECTION, 'get_eventid', $sql);
+            $result = pg_execute($CONNECTION, 'get_eventid', $params);
 
             if(!$result){
                 echo "Fail to get event id.";
