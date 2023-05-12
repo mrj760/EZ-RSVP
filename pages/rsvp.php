@@ -29,7 +29,7 @@
             pg_prepare($CONNECTION, 'get_event', $sql);
             $result = pg_execute($CONNECTION, 'get_event', $params);
 
-            if(!result){
+            if(!$result){
                 echo "Fail to get event id.";
                 exit;
             }
