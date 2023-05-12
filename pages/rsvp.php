@@ -33,6 +33,27 @@
              $eventname = pg_fetch_result($result, 0, 1);
             ?>
 
+            <?php
+            $params = array($eventid);
+            $sql = "SELECT * FROM questions WHERE id=$1";
+            pg_prepare($CONNECTION, 'get_questions', $sql);
+            $result = pg_execute($CONNECTION, 'get_questions', $params);
+
+            if(!$result){
+                echo "Fail to get event id.";
+                exit;
+            }
+
+            //fetch the question
+            $question = pg_fetch_result($result. 0, 1);
+            ?>
+
+            <script type="text/javascript">
+                // put the question in local storage
+                let questions = <?= json_encode($quesionts)?>;
+                localStorage.setItem('eventname')
+            </script>
+
             <h1>RSVP for: <?= $eventname ?> </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php
