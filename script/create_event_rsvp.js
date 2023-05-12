@@ -57,7 +57,7 @@ class Question {
             me.fillOptions();
         });
         this.newOptionButton.addEventListener("click", function () {
-            let optionNum = me.answerOptions.length + 1;
+            let optionNum = me.answerOptions.length;
             me.answerOptions.push(new AnswerOption(me.type, questionNumber, optionNum));
             me.fillOptions();
         })
@@ -112,7 +112,7 @@ class Question {
 
 class AnswerOption {
 
-    constructor(type = 'radio', questionNumber, optionNumber) {
+    constructor(type, questionNumber, optionNumber) {
         this.div = document.createElement('div');
         this.div.classList.add('optionDiv');
 
