@@ -29,13 +29,7 @@ if (isset($_POST['save'])) {
                     $qresult = pg_execute($CONNECTION, 'create_question'.$i, $qParams);
                     $questionID = pg_fetch_all($qresult);
                     $questionID = $questionID[0]['id'];
-                    var_dump($questionID);
-                    
-                    if (!$questionID) {
-                        echo "Failed to create Question!";
-                        exit();
-                    }
-                    
+                                       
                     if (isset($_COOKIE['question'.$i.'-numOptions'])) {
                         $numOptions = $_COOKIE['question'.$i.'-numOptions'];
                         for ($j = 1; $j <= $numOptions; $j++) {
@@ -46,9 +40,6 @@ if (isset($_POST['save'])) {
                                 $oSQL = 'INSERT INTO options (description, "questionID") VALUES ($1, $2) RETURNING id';
                                 pg_prepare($CONNECTION, 'create_option'.$i.$j, $oSQL);
                                 $oresult = pg_execute($CONNECTION, 'create_option'.$i.$j, $oParams);
-                                $results = pg_fetch_assoc($oresult);
-
-                                var_dump($results);
                             } else {
                                 echo "Error: Unable to pull option data";
                             }
