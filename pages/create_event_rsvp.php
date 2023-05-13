@@ -1,5 +1,10 @@
 <?php
 require_once('../php/db.config.php');
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header("Location: user_login.php");
+} 
 
 if (!isset($_GET['id'])) {
     http_response_code(400);
