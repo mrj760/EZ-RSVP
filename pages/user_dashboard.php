@@ -1,3 +1,8 @@
+<?php
+require_once('../php/db.config.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,19 +14,17 @@
 
 <body>
     <?php
-    if (!isset($_COOKIE['loggedin']) || $_COOKIE['loggedin'] == false)
+    if (!isset($_SESSION['email']))
     {
         header("Location: user_login.php");
     }
-
-    require_once('../php/db.config.php');
 
     pg_prepare(
         $CONNECTION,
         "get_events",
         "SELECT * FROM events WHERE owner=$1"
     );
-    $params = array($_COOKIE['email']);
+    $params = array($_SESSION['email']);
     $result = pg_execute($CONNECTION, "get_events", $params);
     // Check if the request was successful
     if (!$result) {
@@ -37,7 +40,7 @@
         localStorage.setItem('events', JSON.stringify(events));
     </script>
     <br>
-    <h1 id="greeting"><?= 'Hello ' . $_COOKIE['username'] . '!' ?></h1>
+    <h1 id="greeting"><?= 'Hello ' . $_SESSION['email'] . '!' ?></h1>
     <a href="./rsvp.php"><button type="button" class="button">RSVP</button></a>
     <a href="./create_event.php"><button type="button" class="button">Create Event</button></a>
     <!-- <a href="./create_event_rsvp.php"><button type="button" class="button">Create Event RSVP</button></a> -->
