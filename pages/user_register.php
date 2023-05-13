@@ -72,7 +72,7 @@ session_start();
                         echo json_encode(array("message" => "User creation failed!"));
                         exit;
                     }
-                    $_SESSION('email', $email);
+                    $_SESSION['email'] = $email;
                     header("Location: user_dashboard.php");
                 }
             } else {
