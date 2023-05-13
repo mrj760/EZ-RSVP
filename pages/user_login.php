@@ -19,6 +19,10 @@ session_start();
         <h1>Login</h1>
         <form action-="user_login.php?" method="POST">
             <?php
+            if (isset($_SESSION['email']))
+            {
+                header("Location: user_dashboard.php");
+            }
             
             if (isset($_POST['username']) && isset($_POST['password'])) {
                 $username = $_POST['username'];
