@@ -1,6 +1,12 @@
 <!-- This page will allow new users to create an account by providing 
 their name, email address, and a password. 
 Also contains a link to the login page. -->
+<?php
+require_once('../php/db.config.php');
+session_set_cookie_params(259200);
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +22,10 @@ Also contains a link to the login page. -->
 
             <?php
 
-            if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true)
+            if (isset($_SESSION['email']))
             {
                 header("Location: user_dashboard.php");
             }
-
-            require_once("../php/db.config.php");
-            session_start();
 
             if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
 
@@ -69,10 +72,7 @@ Also contains a link to the login page. -->
                         echo json_encode(array("message" => "User creation failed!"));
                         exit;
                     }
-                    $expirationIn30Days = time() + 86400 * 30;
-                    setcookie("loggedin", true, $expirationIn30Days);
-                    setcookie("username", $username, $expirationIn30Days);
-                    setcookie('email', $email, $expirationIn30Days);
+                    $_SESSION('email', $email);
                     header("Location: user_dashboard.php");
                 }
             } else {
