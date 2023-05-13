@@ -1,5 +1,11 @@
 <!-- This page will allow users to log in to their account. 
 Also contains a link to the registration page. -->
+<?php
+require_once('../php/db.config.php');
+session_set_cookie_params(259200);
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,24 +15,11 @@ Also contains a link to the registration page. -->
 </head>
 
 <body>
-    <?php
-    // Log user out if they are logged in
-    if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) {
-        unset($_COOKIE['loggedin']);
-        setcookie('loggedin', null, -1);
-        unset($_COOKIE['username']);
-        setcookie('username', null, -1);
-        unset($_COOKIE['email']);
-        setcookie('email', null, -1);
-    }
-    ?>
     <div class="background">
         <h1>Login</h1>
         <form action-="user_login.php?" method="POST">
             <?php
-            require_once('../php/db.config.php');
-            session_start();
-
+            
             if (isset($_POST['username']) && isset($_POST['password'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
@@ -56,10 +49,7 @@ Also contains a link to the registration page. -->
                     $passwordCorrect = password_verify($password, $row[2]);
 
                     if ($passwordCorrect) {
-                        $expirationIn30Days = time() + 86400 * 30;
-                        setcookie('username', $row[0], $expirationIn30Days);
-                        setcookie('email', $row[1], $expirationIn30Days);
-                        setcookie("loggedin", true, $expirationIn30Days);
+                        $_SESSION('email', $row[1]);
                         header("Location: user_dashboard.php");
                     } else {
                         $login_error = "There was an error with your login credentials.";
