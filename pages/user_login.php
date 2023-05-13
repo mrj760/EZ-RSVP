@@ -59,7 +59,7 @@ if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) {
                     $passwordCorrect = password_verify($password, $row[2]);
 
                     if ($passwordCorrect) {
-                        $_SESSION('email', $row[1]);
+                        $_SESSION['email'] = $row[1];
                         header("Location: user_dashboard.php");
                     } else {
                         $login_error = "There was an error with your login credentials.";
