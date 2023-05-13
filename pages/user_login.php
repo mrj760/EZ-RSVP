@@ -5,9 +5,11 @@ require_once('../php/db.config.php');
 session_set_cookie_params(259200);
 session_start();
 
-if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) {
-    unset($_COOKIE['loggedin']);
+if (isset($_COOKIE['username'])) {
     unset($_COOKIE['username']);
+}
+
+if (isset($_COOKIE['email'])) {
     unset($_COOKIE['email']);
 }
 ?>
