@@ -1,5 +1,3 @@
-<?php require_once('../php/db.config.php'); ?>
-
 <!DOCTYPE HTML>
 <html lang="en">
 <!-- This page will include a brief introduction to the site 
