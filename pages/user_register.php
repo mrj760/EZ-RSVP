@@ -72,6 +72,7 @@ session_start();
                         echo json_encode(array("message" => "User creation failed!"));
                         exit;
                     }
+                    setcookie("loggedin", true, time() + 259200);
                     $_SESSION['email'] = $email;
                     header("Location: user_dashboard.php");
                 }
