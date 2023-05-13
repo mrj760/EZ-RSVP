@@ -1,5 +1,10 @@
 <!-- This page will allow the user to create a new event by providing 
     the event details such as the date, time, venue, and event description. -->
+<?php
+require_once('../php/db.config.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,21 +16,20 @@
 <body>
     <?php
     // exit user if they are not logged in
-    if (!isset($_COOKIE['loggedin']) || $_COOKIE['loggedin'] == false){
-        header('Location: user_login.php');
-        exit("You should log in to create event.");
-    }
+    if (!isset($_SESSION['email']))
+    {
+        header("Location: user_login.php");
+    }    
+        
     ?>
     <div class="background">
         <h1>Create Event</h1>
         <form action="create_event.php?" method="POST">
             <?php
-            require_once("../php/db.config.php");
-            session_start();
 
-            if (isset($_COOKIE['email']) && isset($_POST['eventname']) && isset($_POST['eventphoto']) && isset($_POST['eventdetails']) && isset($_POST['eventdate']) && isset($_POST['eventtime']) && isset($_POST['eventlocation'])){
+            if (isset($_SESSION['email']) && isset($_POST['eventname']) && isset($_POST['eventphoto']) && isset($_POST['eventdetails']) && isset($_POST['eventdate']) && isset($_POST['eventtime']) && isset($_POST['eventlocation'])){
                 $EVENT = array(
-                    $_COOKIE['email'],
+                    $_SESSION['email'],
                     $_POST['eventname'],
                     $_POST['eventphoto'],
                     $_POST['eventdetails'],
