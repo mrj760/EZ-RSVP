@@ -5,12 +5,9 @@ require_once('../php/db.config.php');
 session_set_cookie_params(259200);
 session_start();
 
-if (isset($_COOKIE['username'])) {
-    unset($_COOKIE['username']);
-}
-
-if (isset($_COOKIE['email'])) {
-    unset($_COOKIE['email']);
+if (isset($_SESSION['email'])) {
+    unset($_SESSION['email']);
+    setcookie('loggedin', 0);
 }
 ?>
 
@@ -27,11 +24,11 @@ if (isset($_COOKIE['email'])) {
         <h1>Login</h1>
         <form action-="user_login.php?" method="POST">
             <?php
-            if (isset($_SESSION['email']))
-            {
-                header("Location: user_dashboard.php");
-            }
-            
+            // if (isset($_SESSION['email']))
+            // {
+            //     header("Location: user_dashboard.php");
+            // }
+
             if (isset($_POST['username']) && isset($_POST['password'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
@@ -61,7 +58,7 @@ if (isset($_COOKIE['email'])) {
                     $passwordCorrect = password_verify($password, $row[2]);
 
                     if ($passwordCorrect) {
-                        setcookie("loggedin", true, time() + 259200);
+                        setcookie("loggedin", 1, time() + 259200);
                         $_SESSION['email'] = $row[1];
                         header("Location: user_dashboard.php");
                     } else {
