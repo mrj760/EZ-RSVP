@@ -1,3 +1,48 @@
+<?php
+require_once("../php/db.config.php");
+
+if (!isset($_GET['id'])) {
+    http_response_code(400);
+    echo json_encode(array("message" => "eventID not set!"));
+    exit;
+}
+
+$eventID = $_GET['id'];
+$params = array($eventID);
+$SQL = "SELECT * FROM events WHERE id=$1";
+pg_prepare($CONNECTION, 'get_event', $SQL);
+$result = pg_execute($CONNECTION, 'get_event', $params);
+
+if(!$result){
+    echo "Failed to pull event from db with ID: " . $eventID;
+    exit;
+}
+
+$SQLquestions = "SELECT * FROM questions WHERE \"eventID\" = " . $eventID;
+$SQLoptions = "SELECT * FROM options WHERE \"questionID\" IN (SELECT id FROM questions WHERE \"eventID\" = " . $eventID . ")";
+$resultQuestions = pg_execute($CONNECTION, $SQLquestions);
+$resultOptions = pg_execute($CONNECTION, $SQLoptions);
+
+$event = pg_fetch_all($result);
+$questions = pg_fetch_all($resultQuestions);
+$options = pg_fetch_all($resultOptions);
+
+echo "\n";
+var_dump($event);
+echo "\n";
+var_dump($questions);
+echo "\n";
+var_dump($options);
+?>
+<script type="text/javascript">
+    // put the event, questions & options in local storage
+    let event = <?= json_encode($event)?>;
+    let questions = <?= json_encode($questions)?>;
+    let options = <?= json_encode($options)?>;
+    localStorage.setItem('event', JSON.stringfy(event))
+    localStorage.setItem('questions', JSON.stringfy(questions))
+    localStorage.setItem('options', JSON.stringfy(options))
+</script>
 <!DOCTYPE HTML>
 <!-- This page is a form created by the event creator 
     to collect information necessary for the event. 
@@ -15,57 +60,14 @@
         <!-- Add additional details here via JS.
             These are details laid out by the event creator. -->
         <div id="inputContainer" class="background">
-            <?php
-            require_once("../php/db.config.php");
-
-            if (!isset($_GET['id'])) {
-                http_response_code(400);
-                echo json_encode(array("message" => "eventID not set!"));
-                exit;
-            }
-            $eventID = $_GET['id'];
-
-            $params = array($eventid);
-            $sql = "SELECT * FROM events WHERE id=$1";
-            pg_prepare($CONNECTION, 'check_owner', $sql);
-            $result = pg_execute($CONNECTION, 'check_owner', $params);
-
-            if(!$result){
-                echo "Fail to get event id.";
-                exit();
-            }
-
-             // fetch event name
-             $eventid = pg_fetch_all($result);
-
-             if(count($result) < 1) {
-                echo("The given event ID does not exist");
-                exit();
-             }
-
-             $event = $result[0];
-             $owner = $event['owner'];
-             $isOwner = $_SESSION['email'] == $owner;
-             if (!isOwner) {
-                echo ("You are not the owner of this event");
-                exit();
-             }
-            ?>
-
-            <script type="text/javascript">
-            let event = <?= json_encode($events) ?>;
-            localStorage.setItem('event', JSON.stringify(event));
-            </script>
-
-            <h1>RSVP for: <?= $event['name']?> </h1>
+            <h1>RSVP for: <?= $eventname ?> </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php
-
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
 
                $GUEST = array(
-                $event,
+                $eventID,
                 $_POST['name'],
                 $_POST['email']
                );
@@ -82,10 +84,9 @@
                 }
 
                 // success: redirect to confirmation page
-                header("Location: rsvp_confirmation.php");
-                exit();
+                //header("Location: rsvp_confirmation.php");
+                //exit();
             }
-
             ?>
 
             <label for="name">Name</label><br>
