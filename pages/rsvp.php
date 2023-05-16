@@ -17,60 +17,47 @@
         <div id="inputContainer" class="background">
             <?php
             require_once("../php/db.config.php");
-            $eventid = 36;
 
             $params = array($eventid);
             $sql = "SELECT * FROM events WHERE id=$1";
-            pg_prepare($CONNECTION, 'get_eventname', $sql);
-            $result = pg_execute($CONNECTION, 'get_eventname', $params);
+            pg_prepare($CONNECTION, 'check_owner', $sql);
+            $result = pg_execute($CONNECTION, 'check_owner', $params);
 
             if(!$result){
                 echo "Fail to get event id.";
-                exit;
+                exit();
             }
 
              // fetch event name
-             $eventname = pg_fetch_result($result, 0, 1);
+             $eventid = pg_fetch_all($result);
+
+             if(count($result) < 1) {
+                echo("The given event ID does not exist");
+                exit();
+             }
+
+             $event = $result[0];
+             $owner = $event['owner'];
+             $isOwner = $_SESSION['email'] == $owner;
+             if (!isOwner) {
+                echo ("You are not the owner of this event");
+                exit();
+             }
             ?>
 
-            <?php
-            $params = array($eventid);
-            $sql = "SELECT * FROM questions WHERE id=$1";
-            pg_prepare($CONNECTION, 'get_questions', $sql);
-            $result = pg_execute($CONNECTION, 'get_questions', $params);
-
-            if(!$result){
-                echo "Fail to get event id.";
-                exit;
-            }
 
             // //fetch the question
             // $question = pg_fetch_result($result, 0, 0);
-            ?>
 
             <script type="text/javascript">
-                // put the question in local storage
-                let question = <?= json_encode($question)?>;
-                localStorage.setItem('question', JSON.stringfy(question))
+            // put the question in local storage
+            let question = <?= json_encode($question)?>;
+            localStorage.setItem('question', JSON.stringfy(question))
             </script>
 
-            <h1>RSVP for: <?= $eventname ?> </h1>
+            <h1>RSVP for: <?= $event['name']?> </h1>
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <?php
-
-            $params = array($eventid);
-            $sql = "SELECT * FROM events WHERE id=$1";
-            pg_prepare($CONNECTION, 'get_eventid', $sql);
-            $result = pg_execute($CONNECTION, 'get_eventid', $params);
-
-            if(!$result){
-                echo "Fail to get event id.";
-                exit;
-            }
-            // fetch event id
-            $event = pg_fetch_result($result, 0, 0);
-
-            
 
             // now we get the name and email from form
             if (isset($_POST['name']) && isset($_POST['email'])){
