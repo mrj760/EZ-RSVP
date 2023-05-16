@@ -53,9 +53,8 @@
             ?>
 
             <script type="text/javascript">
-            // put the question in local storage
-            let question = <?= json_encode($question)?>;
-            localStorage.setItem('question', JSON.stringfy(question))
+            let event = <?= json_encode($events) ?>;
+            localStorage.setItem('event', JSON.stringify(event));
             </script>
 
             <h1>RSVP for: <?= $event['name']?> </h1>
