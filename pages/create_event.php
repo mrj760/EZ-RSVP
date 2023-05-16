@@ -54,7 +54,7 @@ session_start();
     ?>
     <div class="background">
         <h1>Create Event</h1>
-        <form action="create_event.php?" method="POST">
+        <form action="create_event.php<?= isset($event)? '?id=' . $eventID : ''?>" method="POST">
             <?php
 
             if (
@@ -72,8 +72,7 @@ session_start();
                 );
 
                 // Insert new event
-                if ($event == null) {
-
+                if (!isset($event)) {
                     pg_prepare(
                         $CONNECTION,
                         'insert_event',
@@ -85,6 +84,7 @@ session_start();
                     if (!$result) {
                         http_response_code(500);
                         echo json_encode(array("message" => "Error occurred while creating event: " . pg_last_error($CONNECTION)));
+                        exit();
                     }
                     pg_close($CONNECTION);
                     header("Location: user_dashboard.php");
@@ -95,11 +95,16 @@ session_start();
                     pg_prepare(
                         $CONNECTION,
                         'update_event',
-                        "UPDATE events set (name, photoURL, details, date, time, location) = ($1,$2,$3,$4,$5,$6) WHERE id=$7"
+                        "UPDATE events SET (name, \"photoURL\", details, date, time, location) = ($1,$2,$3,$4,$5,$6) WHERE id=$7"
                     );
                     $params = array($EVENT[1], $EVENT[2], $EVENT[3], $EVENT[4], $EVENT[5], $EVENT[6], $eventID);
                     $result = pg_execute($CONNECTION, 'update_event', $params);
+                    if (!$result) {
+                        echo ("There was an issue executing the event update");
+                    }
                     pg_close($CONNECTION);
+                    header("Location: user_dashboard.php");
+                    exit();
                 }
             }
             ?>

@@ -23,7 +23,7 @@ session_start();
     pg_prepare(
         $CONNECTION,
         "get_events",
-        "SELECT * FROM events WHERE owner=$1"
+        "SELECT * FROM events WHERE owner=$1 ORDER BY id ASC"
     );
     $params = array($_SESSION['email']);
     $result = pg_execute($CONNECTION, "get_events", $params);
