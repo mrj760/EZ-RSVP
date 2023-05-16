@@ -48,7 +48,6 @@ session_start();
             echo ("You are not the owner of this event");
             exit();
         }
-        echo $event['name'];
     }
 
     ?>
