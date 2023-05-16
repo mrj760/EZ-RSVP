@@ -26,10 +26,11 @@ $resultQuestions = pg_execute($CONNECTION, 'get_questions', $params);
 $resultOptions = pg_execute($CONNECTION, 'get_options', $params);
 
 $event = pg_fetch_all($result);
+$event = $event[0];
 $questions = pg_fetch_all($resultQuestions);
 $options = pg_fetch_all($resultOptions);
 
-$eventname = $event[0]->name;
+$eventname = $event[0];
 var_dump($eventname);
 //var_dump($questions);
 //var_dump($options);
