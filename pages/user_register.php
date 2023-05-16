@@ -25,6 +25,7 @@ session_start();
             if (isset($_SESSION['email']))
             {
                 header("Location: user_dashboard.php");
+                exit();
             }
 
             if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
