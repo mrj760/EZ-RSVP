@@ -87,7 +87,7 @@
 
                 // error: fail to respond
                 if (!$result){
-                    http_reponse_code(400);
+                    http_response_code(400);
                     echo json_encode(array("message" => "Response failed!"));
                     exit;
                 }
