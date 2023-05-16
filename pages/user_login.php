@@ -24,9 +24,10 @@ if (isset($_SESSION['email'])) {
         <h1>Login</h1>
         <form action-="user_login.php?" method="POST">
             <?php
-            // if (isset($_SESSION['email']))
-            // {
+            // Check is unnecessary. If this condition is met above then email is unset.
+            // if (isset($_SESSION['email'])) {
             //     header("Location: user_dashboard.php");
+            //     exit();
             // }
 
             if (isset($_POST['username']) && isset($_POST['password'])) {
@@ -61,6 +62,7 @@ if (isset($_SESSION['email'])) {
                         setcookie("loggedin", 1, time() + 259200);
                         $_SESSION['email'] = $row[1];
                         header("Location: user_dashboard.php");
+                        exit();
                     } else {
                         $login_error = "There was an error with your login credentials.";
                     }
