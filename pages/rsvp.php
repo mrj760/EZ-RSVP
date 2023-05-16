@@ -18,10 +18,12 @@ if(!$result){
     exit;
 }
 
-$SQLquestions = "SELECT * FROM questions WHERE \"eventID\" = " . $eventID;
-$SQLoptions = "SELECT * FROM options WHERE \"questionID\" IN (SELECT id FROM questions WHERE \"eventID\" = " . $eventID . ")";
-$resultQuestions = pg_execute($CONNECTION, $SQLquestions);
-$resultOptions = pg_execute($CONNECTION, $SQLoptions);
+$SQLquestions = "SELECT * FROM questions WHERE \"eventID\" = $1";
+$SQLoptions = "SELECT * FROM options WHERE \"questionID\" IN (SELECT id FROM questions WHERE \"eventID\" = $1")";
+pg_prepare($CONNECTION, 'get_questions', $SQLquestions);
+pg_prepare($CONNECTION, 'get_options', $SQLoptions);
+$resultQuestions = pg_execute($CONNECTION, 'get_questions', $params);
+$resultOptions = pg_execute($CONNECTION, 'get_options', $params);
 
 $event = pg_fetch_all($result);
 $questions = pg_fetch_all($resultQuestions);
