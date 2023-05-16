@@ -29,12 +29,10 @@ $event = pg_fetch_all($result);
 $questions = pg_fetch_all($resultQuestions);
 $options = pg_fetch_all($resultOptions);
 
-echo "\n";
-var_dump($event);
-echo "\n";
-var_dump($questions);
-echo "\n";
-var_dump($options);
+$eventname = $event[0]->name;
+var_dump($eventname);
+//var_dump($questions);
+//var_dump($options);
 ?>
 <script type="text/javascript">
     // put the event, questions & options in local storage
