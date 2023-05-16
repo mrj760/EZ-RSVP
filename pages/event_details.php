@@ -94,6 +94,9 @@ if (isset($_POST['delete'])) {
                 <button id="guestListButton" class="button" type="button" name="guests">View Guest List</button>
                 <a href="./create_event_rsvp.php?id=<?= $eventID ?>"><button id="createRSVPButton" class="button" type="button" name="createRSVP">Create Event RSVP</button></a>
                 <button id="editButton" class="button" type="button" name="edit" onclick="edit(<?= $eventID ?>);">Edit Event</button>
+                <form method="GET" action"./rsvp.php?id=<?=$eventID?>">
+                    <button id="rsvpButton" class="button" type="button" name="rsvp">Temp RSVP</button>
+                </form>
                 <form method="POST" action="" onsubmit="return confirmSubmit()">
                     <button id="deleteButton" class="secondaryButton" type="submit" name="delete">Delete Event</button>
                 </form>
