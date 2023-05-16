@@ -31,6 +31,7 @@ a {
     margin: 5px;
     background-color: rgba($light-gray, .1);
     width: 300px;
+    height: 300px;
 }
 
 .photoDiv {
@@ -63,4 +64,5 @@ a {
     margin-left: 5%;
     margin-right: 5%;
     display: flex;
+    flex-wrap:wrap;
 }

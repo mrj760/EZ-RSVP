@@ -175,6 +175,7 @@ a:hover {
   margin: 5px;
   background-color: rgba(219, 222, 225, 0.1);
   width: 300px;
+  height: 300px;
 }
 
 .photoDiv {
@@ -206,4 +207,5 @@ a:hover {
   margin-left: 5%;
   margin-right: 5%;
   display: flex;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=user_dashboard.css.map */
