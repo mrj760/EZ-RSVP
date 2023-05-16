@@ -4,6 +4,7 @@ session_start();
 
 if (!isset($_SESSION['email'])) {
     header("Location: user_login.php");
+    exit();
 } 
 
 if (!isset($_GET['id'])) {
@@ -116,9 +117,17 @@ if (isset($_POST['delete'])) {
         <div id="eventDatetime" class="infoDiv"></div>
         <div id="eventDetails" class="infoDiv"></div>
         <div id="buttons" style="text-align: center;">
+            <!-- View Guests Button -->
             <button id="guestListButton" class="button" type="button" name="guests">View Guest List</button>
             <a href="./create_event_rsvp.php?id=<?=$eventID?>"><button id="createRSVPButton" class="button" type="button" name="createRSVP">Create Event RSVP</button></a>
-            <button id="editButton" class="button" type="button" name="edit">Edit Event</button>
+            <!-- Edit Button -->
+            <script>
+                function edit(eventID) {
+                    location.href = 'create_event.php?id=' + eventID;
+                }
+            </script>
+            <button id="editButton" class="button" type="button" name="edit" onclick="edit(<?=$eventID?>);">Edit Event</button>
+            <!-- Delete Button -->
             <form method="POST" action="" onsubmit="return confirmSubmit()">
                 <button id="deleteButton" class="secondaryButton" type="submit" name="delete">Delete Event</button>
             </form>
