@@ -19,7 +19,7 @@ if(!$result){
 }
 
 $SQLquestions = "SELECT * FROM questions WHERE \"eventID\" = $1";
-$SQLoptions = "SELECT * FROM options WHERE \"questionID\" IN (SELECT id FROM questions WHERE \"eventID\" = $1")";
+$SQLoptions = "SELECT * FROM options WHERE \"questionID\" IN (SELECT id FROM questions WHERE \"eventID\" = $1)";
 pg_prepare($CONNECTION, 'get_questions', $SQLquestions);
 pg_prepare($CONNECTION, 'get_options', $SQLoptions);
 $resultQuestions = pg_execute($CONNECTION, 'get_questions', $params);
