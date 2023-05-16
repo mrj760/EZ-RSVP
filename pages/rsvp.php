@@ -30,8 +30,8 @@ $event = $event[0];
 $questions = pg_fetch_all($resultQuestions);
 $options = pg_fetch_all($resultOptions);
 
-$eventname = $event[0];
-var_dump($eventname);
+//$eventname = $event[];
+var_dump($event);
 //var_dump($questions);
 //var_dump($options);
 ?>
