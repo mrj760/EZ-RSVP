@@ -18,6 +18,13 @@
             <?php
             require_once("../php/db.config.php");
 
+            if (!isset($_GET['id'])) {
+                http_response_code(400);
+                echo json_encode(array("message" => "eventID not set!"));
+                exit;
+            }
+            $eventID = $_GET['id'];
+
             $params = array($eventid);
             $sql = "SELECT * FROM events WHERE id=$1";
             pg_prepare($CONNECTION, 'check_owner', $sql);
@@ -44,10 +51,6 @@
                 exit();
              }
             ?>
-
-
-            // //fetch the question
-            // $question = pg_fetch_result($result, 0, 0);
 
             <script type="text/javascript">
             // put the question in local storage
