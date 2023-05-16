@@ -140,6 +140,13 @@ session_start();
             <div id="buttons">
                 <input type="submit" value="Save" class="button">
                 <input type="reset" value="Reset" class="secondaryButton">
+                <?php
+                if (isset($event)) {
+                ?>
+                <input class="secondaryButton" type="button" value="Back">
+                <?php
+                }
+                ?>
             </div>
         </form>
     </div>
