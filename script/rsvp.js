@@ -113,31 +113,31 @@ window.addEventListener("load", function () {
         questionslabel.innerHTML = questions[i].text;
         questionslabel.appendChild(br);
         
-        let linkToRSVPquestions = document.createElement('input');
-        linkToRSVPquestions.setAttribute('type', 'text');
-        linkToRSVPquestions.setAttribute('class', 'textBox');
-        linkToRSVPquestions.setAttribute('name', questions[i].id);
-        linkToRSVPquestions.setAttribute('title', questions[i].text);
+        // let linkToRSVPquestions = document.createElement('input');
+        // linkToRSVPquestions.setAttribute('type', 'text');
+        // linkToRSVPquestions.setAttribute('class', 'textBox');
+        // linkToRSVPquestions.setAttribute('name', questions[i].id);
+        // linkToRSVPquestions.setAttribute('title', questions[i].text);
         
         additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(questionslabel);
         additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(linkToRSVPquestions);
         additionalQuestions.appendChild(br);
+
+        for (let j=0; j<options.length; j++) {
+        
+            let linkToRSVPoptions = document.createElement('input');
+            linkToRSVPoptions.setAttribute('type', 'text');
+            linkToRSVPoptions.setAttribute('class', 'textBox');
+            linkToRSVPoptions.setAttribute('name', options[j].id);
+            linkToRSVPoptions.setAttribute('title', options[j].description);
+            
+            additionalQuestions.appendChild(optionslabel);
+            additionalQuestions.appendChild(linkToRSVPoptions);
+            additionalQuestions.appendChild(br);
+
+        } 
+        
     } 
-
-    // for (let i=0; i<options.length; i++) {
-        
-    //     let optionslabel = document.createElement('label');
-    //     optionslabel.setAttribute('for', 'options');
-        
-    //     let linkToRSVPoptions = document.createElement('input');
-    //     linkToRSVPoptions.setAttribute('type', 'text');
-    //     linkToRSVPoptions.setAttribute('class', 'textbox');
-    //     linkToRSVPoptions.setAttribute('name', options[i].id);
-    //     linkToRSVPoptions.setAttribute('title', options[i].description);
-
-    //     addtionalQuestions.appendChild(optionslabel);
-    //     addtionalQuestions.appendChild(linkToRSVPoptions);
-    // } 
 })
