@@ -30,15 +30,16 @@ $event = $event[0];
 $questions = pg_fetch_all($resultQuestions);
 $options = pg_fetch_all($resultOptions);
 
-$eventname = "Test"; //$event['name'];
-//var_dump($questions);
-//var_dump($options);
+$eventname = $event['name'];
 ?>
 <script type="text/javascript">
     // put the event, questions & options in local storage
     let event = <?= json_encode($event)?>;
     let questions = <?= json_encode($questions)?>;
     let options = <?= json_encode($options)?>;
+    console.log(event);
+    console.log(questions);
+    console.log(options);
     localStorage.setItem('event', JSON.stringfy(event));
     localStorage.setItem('questions', JSON.stringfy(questions));
     localStorage.setItem('options', JSON.stringfy(options));
