@@ -117,6 +117,9 @@ window.addEventListener("load", function () {
 
         for (let j=0; j<options.length; j++) {
                 if (options[j].questionID == questionID){
+                let paragraphOptions = document.createElement('p');
+                paragraphOptions.innerHTML = options[j].description;
+
                 let linkToRSVPoptions = document.createElement('input');
                 linkToRSVPoptions.setAttribute('value', options[j].description);        
                 linkToRSVPoptions.setAttribute('type', 'text');
@@ -124,7 +127,7 @@ window.addEventListener("load", function () {
                 linkToRSVPoptions.setAttribute('name', options[j].id);
                 linkToRSVPoptions.setAttribute('title', options[j].description);
             
-                additionalQuestions.appendChild(linkToRSVPoptions);
+                paragraphOptions.appendChild(linkToRSVPoptions);
                 additionalQuestions.appendChild(br);
                 }
         } 
