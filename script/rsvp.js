@@ -106,7 +106,7 @@ window.addEventListener("load", function () {
 
     // make questions on rsvp page
     for (let i=0; i<questions.length; i++) {
-        let br = createElement("br");
+        let br = document.createElement("br");
 
 
         let questionslabel = document.createElement('label');
