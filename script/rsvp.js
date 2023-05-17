@@ -108,7 +108,7 @@ window.addEventListener("load", function () {
     for (let i=0; i<questions.length; i++) {
         
         let questionslabel = document.createElement('label');
-        label.setAttribute('for', 'questions');
+        questionslabel.setAttribute('for', 'questions');
         
         let linkToRSVPquestions = document.createElement('input');
         linkToRSVPquestions.setAttribute('type', 'text');
@@ -122,8 +122,8 @@ window.addEventListener("load", function () {
 
     for (let i=0; i<options.length; i++) {
         
-        let questionslabel = document.createElement('label');
-        label.setAttribute('for', 'options');
+        let optionslabel = document.createElement('label');
+        optionslabel.setAttribute('for', 'options');
         
         let linkToRSVPoptions = document.createElement('input');
         linkToRSVPoptions.setAttribute('type', 'text');
