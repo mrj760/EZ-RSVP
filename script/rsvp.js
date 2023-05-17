@@ -120,8 +120,7 @@ window.addEventListener("load", function () {
                 let paragraphOptions = document.createElement('p');
                 paragraphOptions.innerHTML = options[j].description;
 
-                let linkToRSVPoptions = document.createElement('input');
-                linkToRSVPoptions.setAttribute('value', options[j].description);        
+                let linkToRSVPoptions = document.createElement('input');       
                 linkToRSVPoptions.setAttribute('type', 'text');
                 linkToRSVPoptions.setAttribute('class', 'textBox');
                 linkToRSVPoptions.setAttribute('name', options[j].id);
