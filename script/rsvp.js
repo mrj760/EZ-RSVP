@@ -106,7 +106,9 @@ window.addEventListener("load", function () {
 
     // make questions on rsvp page
     for (let i=0; i<questions.length; i++) {
-        
+        let br = createElement("br");
+
+
         let questionslabel = document.createElement('label');
         questionslabel.setAttribute('for', 'questions');
         
@@ -115,12 +117,14 @@ window.addEventListener("load", function () {
         linkToRSVPquestions.setAttribute('class', 'textBox');
         linkToRSVPquestions.setAttribute('name', questions[i].id);
         linkToRSVPquestions.setAttribute('title', questions[i].text);
-        questionslabel.innerHTML = questions[i].text + "<br>";
+        questionslabel.innerHTML = questions[i].text;
 
         console.log(questionslabel);
-
+        additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(questionslabel);
+        additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(linkToRSVPquestions);
+        additionalQuestions.appendChild(br);
     } 
 
     // for (let i=0; i<options.length; i++) {
