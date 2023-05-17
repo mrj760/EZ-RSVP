@@ -128,6 +128,7 @@ window.addEventListener("load", function () {
                 linkToRSVPoptions.setAttribute('title', options[j].description);
             
                 paragraphOptions.appendChild(linkToRSVPoptions);
+                additionalQuestions.appendChild(paragraphOptions);
                 additionalQuestions.appendChild(br);
                 }
         } 
