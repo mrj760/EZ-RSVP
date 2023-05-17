@@ -92,7 +92,7 @@ window.addEventListener("load", function () {
     }
 
     // show the questions
-    let  addtionalQuestions = document.getElementById('addtionalQeustions');
+    let  addtionalQuestions = document.getElementById('addtionalQuestions');
 
     // get questions from local storage
     let event = JSON.parse(localStorage.getItem('event'));
