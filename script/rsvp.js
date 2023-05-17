@@ -113,17 +113,19 @@ window.addEventListener("load", function () {
         additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(br);
 
-        for (let j=0; j<options.length; j++) {
-        
-            let linkToRSVPoptions = document.createElement('input');
-            linkToRSVPoptions.setAttribute('type', 'text');
-            linkToRSVPoptions.setAttribute('class', 'textBox');
-            linkToRSVPoptions.setAttribute('name', options[j].id);
-            linkToRSVPoptions.setAttribute('title', options[j].description);
-            
-            additionalQuestions.appendChild(linkToRSVPoptions);
-            additionalQuestions.appendChild(br);
+        var questionID = questions[i].id;
 
+        for (let j=0; j<options.length; j++) {
+                if (options[j].questionID == questionID){
+                let linkToRSVPoptions = document.createElement('input');
+                linkToRSVPoptions.setAttribute('type', 'text');
+                linkToRSVPoptions.setAttribute('class', 'textBox');
+                linkToRSVPoptions.setAttribute('name', options[j].id);
+                linkToRSVPoptions.setAttribute('title', options[j].description);
+            
+                additionalQuestions.appendChild(linkToRSVPoptions);
+                additionalQuestions.appendChild(br);
+                }
         } 
         
     } 
