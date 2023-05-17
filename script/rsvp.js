@@ -99,11 +99,6 @@ window.addEventListener("load", function () {
     let questions = JSON.parse(localStorage.getItem('questions'));
     let options = JSON.parse(localStorage.getItem('options'));
 
-    console.log(event);
-    console.log(questions);
-    console.log(options);
-
-
     // make questions on rsvp page
     for (let i=0; i<questions.length; i++) {
         let br = document.createElement("br");
@@ -113,16 +108,9 @@ window.addEventListener("load", function () {
         questionslabel.innerHTML = questions[i].text;
         questionslabel.appendChild(br);
         
-        // let linkToRSVPquestions = document.createElement('input');
-        // linkToRSVPquestions.setAttribute('type', 'text');
-        // linkToRSVPquestions.setAttribute('class', 'textBox');
-        // linkToRSVPquestions.setAttribute('name', questions[i].id);
-        // linkToRSVPquestions.setAttribute('title', questions[i].text);
-        
         additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(questionslabel);
         additionalQuestions.appendChild(br);
-        // additionalQuestions.appendChild(linkToRSVPquestions);
         additionalQuestions.appendChild(br);
 
         for (let j=0; j<options.length; j++) {
@@ -133,7 +121,6 @@ window.addEventListener("load", function () {
             linkToRSVPoptions.setAttribute('name', options[j].id);
             linkToRSVPoptions.setAttribute('title', options[j].description);
             
-            // additionalQuestions.appendChild(optionslabel);
             additionalQuestions.appendChild(linkToRSVPoptions);
             additionalQuestions.appendChild(br);
 
