@@ -97,7 +97,7 @@ window.addEventListener("load", function () {
     // get questions from local storage
     let event = JSON.parse(localStorage.getItem('event'));
     let questions = JSON.parse(localStorage.getItem('questions'));
-    let options = JSON.parse(localStroage.getItem('options'));
+    let options = JSON.parse(localStorage.getItem('options'));
 
 
     // make questions on rsvp page
