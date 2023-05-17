@@ -95,7 +95,7 @@ window.addEventListener("load", function () {
     let  addtionalQuestions = document.getElementById('addtionalQeustions');
 
     // get questions from local storage
-    let event = Json.parse(localStorage.getItem('event'));
+    let event = JSON.parse(localStorage.getItem('event'));
     let questions = JSON.parse(localStorage.getItem('questions'));
     let options = JSON.parse(localStroage.getItem('options'));
 
