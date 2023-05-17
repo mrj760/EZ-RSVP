@@ -118,7 +118,7 @@ window.addEventListener("load", function () {
         for (let j=0; j<options.length; j++) {
                 if (options[j].questionID == questionID){
                 let linkToRSVPoptions = document.createElement('input');
-                linkToRSVPoptions.innerHTML = options[j].description;
+                linkToRSVPoptions.setAttribute('value', options[j].description);        
                 linkToRSVPoptions.setAttribute('type', 'text');
                 linkToRSVPoptions.setAttribute('class', 'textBox');
                 linkToRSVPoptions.setAttribute('name', options[j].id);
