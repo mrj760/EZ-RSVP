@@ -99,6 +99,7 @@ window.addEventListener("load", function () {
     let questions = JSON.parse(localStorage.getItem('questions'));
     let options = JSON.parse(localStorage.getItem('options'));
 
+    console.log(event);
     console.log(questions);
     console.log(options);
 
