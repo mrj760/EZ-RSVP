@@ -32,7 +32,7 @@ $options = pg_fetch_all($resultOptions);
 
 $eventname = $event['name'];
 ?>
-<script type="text/javascript">
+<script>
     // put the event, questions & options in local storage
     let event = <?= json_encode($event)?>;
     let questions = <?= json_encode($questions)?>;
