@@ -119,6 +119,8 @@ window.addEventListener("load", function () {
         console.log(linkToRSVPquestions);
         
         questionslabel.appendChild(linkToRSVPquestions);
+
+        console.log(questionslabel);
         addtionalQuestions.appendChild(questionslabel);
     } 
 
