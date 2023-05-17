@@ -119,8 +119,8 @@ window.addEventListener("load", function () {
 
         console.log(questionslabel);
 
-        additionalQuestions.appendChild(linkToRSVPquestions);
         additionalQuestions.appendChild(questionslabel);
+        additionalQuestions.appendChild(linkToRSVPquestions);
     } 
 
     // for (let i=0; i<options.length; i++) {
