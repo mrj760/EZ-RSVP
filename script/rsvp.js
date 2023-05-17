@@ -95,21 +95,39 @@ window.addEventListener("load", function () {
     let  addtionalQuestions = document.getElementById('addtionalQeustions');
 
     // get questions from local storage
-    let questions = JSON.parse(localStorage.getItem('question'));
+    let event = Json.parse(localStorage.getItem('event'));
+    let questions = JSON.parse(localStorage.getItem('questions'));
+    let options = JSON.parse(localStroage.getItem('options'));
+
 
     // make questions on rsvp page
-    for (let i=0; i<question.length; i++) {
+    for (let i=0; i<questions.length; i++) {
         
-        let label = document.createElement('label');
-        label.setAttribute('for', 'question');
+        let questionslabel = document.createElement('label');
+        label.setAttribute('for', 'questions');
         
         let linkToRSVPquestions = document.createElement('input');
         linkToRSVPquestions.setAttribute('type', 'text');
         linkToRSVPquestions.setAttribute('class', 'textbox');
-        linkToRSVPquestions.setAttribute('name', 'question${i}');
-        linkToRSVPquestions.setAttribute('title', 'question$[i]');
+        linkToRSVPquestions.setAttribute('name', questions[i].id);
+        linkToRSVPquestions.setAttribute('title', questions[i].text);
 
-        addtionalQuestions.appendChild(label);
+        addtionalQuestions.appendChild(questionslabel);
         addtionalQuestions.appendChild(linkToRSVPquestions);
+    } 
+
+    for (let i=0; i<options.length; i++) {
+        
+        let questionslabel = document.createElement('label');
+        label.setAttribute('for', 'options');
+        
+        let linkToRSVPoptions = document.createElement('input');
+        linkToRSVPoptions.setAttribute('type', 'text');
+        linkToRSVPoptions.setAttribute('class', 'textbox');
+        linkToRSVPoptions.setAttribute('name', options[i].id);
+        linkToRSVPoptions.setAttribute('title', options[i].description);
+
+        addtionalQuestions.appendChild(optionslabel);
+        addtionalQuestions.appendChild(linkToRSVPoptions);
     } 
 })
