@@ -40,9 +40,9 @@ $eventname = $event['name'];
     console.log(event);
     console.log(questions);
     console.log(options);
-    localStorage.setItem('event', JSON.stringfy(event));
-    localStorage.setItem('questions', JSON.stringfy(questions));
-    localStorage.setItem('options', JSON.stringfy(options));
+    localStorage.setItem('event', JSON.stringify(event));
+    localStorage.setItem('questions', JSON.stringify(questions));
+    localStorage.setItem('options', JSON.stringify(options));
 </script>
 <!DOCTYPE HTML>
 <!-- This page is a form created by the event creator 
