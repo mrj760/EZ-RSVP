@@ -92,7 +92,7 @@ window.addEventListener("load", function () {
     }
 
     // show the questions
-    let  addtionalQuestions = document.getElementById('addtionalQuestions');
+    let  additionalQuestions = document.getElementById('additionalQuestions');
 
     // get questions from local storage
     let event = JSON.parse(localStorage.getItem('event'));
@@ -121,7 +121,7 @@ window.addEventListener("load", function () {
         questionslabel.appendChild(linkToRSVPquestions);
 
         console.log(questionslabel);
-        addtionalQuestions.appendChild(questionslabel);
+        additionalQuestions.appendChild(questionslabel);
     } 
 
     // for (let i=0; i<options.length; i++) {
