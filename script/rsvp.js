@@ -116,22 +116,23 @@ window.addEventListener("load", function () {
         linkToRSVPquestions.setAttribute('name', questions[i].id);
         linkToRSVPquestions.setAttribute('title', questions[i].text);
 
+        
+        questionslabel.appendChild(linkToRSVPquestions);
         addtionalQuestions.appendChild(questionslabel);
-        addtionalQuestions.appendChild(linkToRSVPquestions);
     } 
 
-    for (let i=0; i<options.length; i++) {
+    // for (let i=0; i<options.length; i++) {
         
-        let optionslabel = document.createElement('label');
-        optionslabel.setAttribute('for', 'options');
+    //     let optionslabel = document.createElement('label');
+    //     optionslabel.setAttribute('for', 'options');
         
-        let linkToRSVPoptions = document.createElement('input');
-        linkToRSVPoptions.setAttribute('type', 'text');
-        linkToRSVPoptions.setAttribute('class', 'textbox');
-        linkToRSVPoptions.setAttribute('name', options[i].id);
-        linkToRSVPoptions.setAttribute('title', options[i].description);
+    //     let linkToRSVPoptions = document.createElement('input');
+    //     linkToRSVPoptions.setAttribute('type', 'text');
+    //     linkToRSVPoptions.setAttribute('class', 'textbox');
+    //     linkToRSVPoptions.setAttribute('name', options[i].id);
+    //     linkToRSVPoptions.setAttribute('title', options[i].description);
 
-        addtionalQuestions.appendChild(optionslabel);
-        addtionalQuestions.appendChild(linkToRSVPoptions);
-    } 
+    //     addtionalQuestions.appendChild(optionslabel);
+    //     addtionalQuestions.appendChild(linkToRSVPoptions);
+    // } 
 })
