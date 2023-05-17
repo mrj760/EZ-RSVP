@@ -39,9 +39,9 @@ $eventname = "Test"; //$event['name'];
     let event = <?= json_encode($event)?>;
     let questions = <?= json_encode($questions)?>;
     let options = <?= json_encode($options)?>;
-    localStorage.setItem('event', JSON.stringfy(event))
-    localStorage.setItem('questions', JSON.stringfy(questions))
-    localStorage.setItem('options', JSON.stringfy(options))
+    localStorage.setItem('event', JSON.stringfy(event));
+    localStorage.setItem('questions', JSON.stringfy(questions));
+    localStorage.setItem('options', JSON.stringfy(options));
 </script>
 <!DOCTYPE HTML>
 <!-- This page is a form created by the event creator 
