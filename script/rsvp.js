@@ -122,7 +122,7 @@ window.addEventListener("load", function () {
         additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(questionslabel);
         additionalQuestions.appendChild(br);
-        additionalQuestions.appendChild(linkToRSVPquestions);
+        // additionalQuestions.appendChild(linkToRSVPquestions);
         additionalQuestions.appendChild(br);
 
         for (let j=0; j<options.length; j++) {
