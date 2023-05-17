@@ -117,11 +117,7 @@ window.addEventListener("load", function () {
         linkToRSVPquestions.setAttribute('title', questions[i].text);
         appendElmtToDiv(linkToRSVPquestions,questions[i].text);
 
-        console.log(linkToRSVPquestions);
-        
-        questionslabel.appendChild(linkToRSVPquestions);
-
-        console.log(questionslabel);
+        additionalQuestions.appendChild(linkToRSVPquestions);
         additionalQuestions.appendChild(questionslabel);
     } 
 
