@@ -108,18 +108,17 @@ window.addEventListener("load", function () {
     for (let i=0; i<questions.length; i++) {
         let br = document.createElement("br");
 
-
         let questionslabel = document.createElement('label');
         questionslabel.setAttribute('for', 'questions');
+        questionslabel.innerHTML = questions[i].text;
+        questionslabel.appendChild(br);
         
         let linkToRSVPquestions = document.createElement('input');
         linkToRSVPquestions.setAttribute('type', 'text');
         linkToRSVPquestions.setAttribute('class', 'textBox');
         linkToRSVPquestions.setAttribute('name', questions[i].id);
         linkToRSVPquestions.setAttribute('title', questions[i].text);
-        questionslabel.innerHTML = questions[i].text;
-
-        console.log(questionslabel);
+        
         additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(questionslabel);
         additionalQuestions.appendChild(br);
