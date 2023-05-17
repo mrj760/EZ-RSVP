@@ -115,7 +115,7 @@ window.addEventListener("load", function () {
         linkToRSVPquestions.setAttribute('class', 'textbox');
         linkToRSVPquestions.setAttribute('name', questions[i].id);
         linkToRSVPquestions.setAttribute('title', questions[i].text);
-        appendElmtToDiv(linkToRSVPquestions,questions[i].text);
+        linkToRSVPquestions.innerHTML = questions[i].text;
 
         additionalQuestions.appendChild(linkToRSVPquestions);
         additionalQuestions.appendChild(questionslabel);
