@@ -133,7 +133,7 @@ window.addEventListener("load", function () {
             linkToRSVPoptions.setAttribute('name', options[j].id);
             linkToRSVPoptions.setAttribute('title', options[j].description);
             
-            additionalQuestions.appendChild(optionslabel);
+            // additionalQuestions.appendChild(optionslabel);
             additionalQuestions.appendChild(linkToRSVPoptions);
             additionalQuestions.appendChild(br);
 
