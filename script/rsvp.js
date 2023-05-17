@@ -112,7 +112,7 @@ window.addEventListener("load", function () {
         
         let linkToRSVPquestions = document.createElement('input');
         linkToRSVPquestions.setAttribute('type', 'text');
-        linkToRSVPquestions.setAttribute('class', 'textbox');
+        linkToRSVPquestions.setAttribute('class', 'textBox');
         linkToRSVPquestions.setAttribute('name', questions[i].id);
         linkToRSVPquestions.setAttribute('title', questions[i].text);
         questionslabel.innerHTML = questions[i].text + "<br>";
