@@ -130,9 +130,7 @@ window.addEventListener("load", function () {
 
                     let linkToRSVPoptions = document.createElement('input');
                     linkToRSVPoptions.setAttribute('type', type);
-                    // You access the inputs via this name here
-                    // Note each option has the same name as long as they belong to the same question
-                    linkToRSVPoptions.setAttribute('name', 'question' + questions[i].id + 'input');
+                    linkToRSVPoptions.setAttribute('name', options[j].id);
                     linkToRSVPoptions.setAttribute('value', options[j].description);
 
                     paragraphOptions.appendChild(linkToRSVPoptions);
@@ -147,9 +145,7 @@ window.addEventListener("load", function () {
             let linkToRSVPoptions = document.createElement('input');
             linkToRSVPoptions.setAttribute('type', type);
             linkToRSVPoptions.setAttribute('class', 'textBox');
-            // You access the inputs via this name here
-            // Note they are named the same as if they were radio/checkbox
-            linkToRSVPoptions.setAttribute('name', 'question' + questions[i].id + 'input');
+            linkToRSVPoptions.setAttribute('name', questions[i].id);
             paragraphOptions.appendChild(linkToRSVPoptions);
             additionalQuestions.appendChild(paragraphOptions);
             additionalQuestions.appendChild(br);
