@@ -144,8 +144,10 @@ if (isset($_POST['name']) && isset($_POST['email'])){
             //Create Responses
             if (isset($_POST[$questionID])) { 
                 $optionID = $_POST[$questionID];
+                var_dump($optionID);
                 if ($questionType == 'singlepick') {
                     $responseParams = array($guestID, $questionID, $optionID);
+                    
                     $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid) VALUES ($1, $2, $3)";
                     $responseResult = pg_query_params($CONNECTION, $SQLresponse, $responseParams);
                 } else {
@@ -161,8 +163,8 @@ if (isset($_POST['name']) && isset($_POST['email'])){
 
     pg_close($CONNECTION);
     // success: redirect to confirmation page
-    header("Location: rsvp_confirmation.php");
-    exit();
+    //header("Location: rsvp_confirmation.php");
+    //exit();
 }
 }
 ?>
