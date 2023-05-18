@@ -32,8 +32,26 @@ $options = pg_fetch_all($resultOptions);
 
 $eventname = $event['name'];
 
-var_dump($questions);
-var_dump($options);
+//Check for text questions and create option
+foreach ($questions as $q) {
+    $questionID = $q['id'];
+    $questionType = $q['type'];
+    if ($questionType == 'text') {
+        //Create new option for response
+        $optionParams = array($questionID, "For text responses");
+        $SQLnewOption = "INSERT INTO options (questionID, description) VALUES ($1, $2) RETURNING id";
+        $optionResult = pg_query_params($CONNECTION, $SQLnewOption, $optionParams);
+
+        if (!$optionResult){
+            http_response_code(400);
+            echo json_encode(array("message" => "Failed to create Option!"));
+            exit;
+        } else {
+            $newOptionID = pg_fetch_assoc($result);
+            echo $newOptionID;
+        }
+    }
+}
 ?>
 <script>
     // put the event, questions & options in local storage
@@ -74,18 +92,27 @@ var_dump($options);
                );
                 
                 $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3) RETURNING id";
-                // $result = pg_query_params($CONNECTION, $sql, $GUEST);
+                $result = pg_query_params($CONNECTION, $sql, $GUEST);
 
                 // error: failed to create guest
-                //if (!$result){
-                //    http_response_code(400);
-                //    echo json_encode(array("message" => "Failed to create Guest!"));
-                //    exit;
-                //} else {
-                //    $guestID = pg_fetch_assoc($result);
-                //}
+                if (!$result){
+                    http_response_code(400);
+                    echo json_encode(array("message" => "Failed to create Guest!"));
+                    exit;
+                } else {
+                    $guestID = pg_fetch_assoc($result);
+                    echo $guestID;
+                }
                 
-                
+                //Create Responses
+                foreach ($options as $o) {
+                    $optionID = $o['id'];
+                    $questionID = $o['questionID'];
+                    if (isset($_POST['question' . $questionID . 'input'])) {
+                        $value = $_POST[$optionID];
+                        $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid)
+                    }
+                }
                 
                 
                 pg_close($CONNECTION);
