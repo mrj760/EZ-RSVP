@@ -110,7 +110,7 @@ foreach ($questions as $q) {
                     $questionID = $o['questionID'];
                     if (isset($_POST['question' . $questionID . 'input'])) {
                         $value = $_POST[$optionID];
-                        $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid)
+                        $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid)";
                     }
                 }
                 
