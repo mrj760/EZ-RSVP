@@ -31,6 +31,9 @@ $questions = pg_fetch_all($resultQuestions);
 $options = pg_fetch_all($resultOptions);
 
 $eventname = $event['name'];
+
+var_dump($questions);
+var_dump($options);
 ?>
 <script>
     // put the event, questions & options in local storage
@@ -69,8 +72,7 @@ $eventname = $event['name'];
                 $_POST['name'],
                 $_POST['email']
                );
-                var_dump($questions);
-                var_dump($options);
+                
                 $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3) RETURNING id";
                 // $result = pg_query_params($CONNECTION, $sql, $GUEST);
 
