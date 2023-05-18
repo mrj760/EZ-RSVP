@@ -92,7 +92,7 @@ window.addEventListener("load", function () {
     }
 
     // show the questions
-    let  additionalQuestions = document.getElementById('additionalQuestions');
+    let additionalQuestions = document.getElementById('additionalQuestions');
 
     // get questions from local storage
     let event = JSON.parse(localStorage.getItem('event'));
@@ -100,14 +100,18 @@ window.addEventListener("load", function () {
     let options = JSON.parse(localStorage.getItem('options'));
 
     // make questions on rsvp page
-    for (let i=0; i<questions.length; i++) {
+    for (let i = 0; i < questions.length; i++) {
+
+        console.log(questions[i]);
+
+
         let br = document.createElement("br");
 
         let questionslabel = document.createElement('label');
         questionslabel.setAttribute('for', 'questions');
         questionslabel.innerHTML = questions[i].text;
         questionslabel.appendChild(br);
-        
+
         additionalQuestions.appendChild(br);
         additionalQuestions.appendChild(questionslabel);
         additionalQuestions.appendChild(br);
@@ -115,22 +119,35 @@ window.addEventListener("load", function () {
 
         var questionID = questions[i].id;
 
-        for (let j=0; j<options.length; j++) {
-                if (options[j].questionID == questionID){
-                let paragraphOptions = document.createElement('p');
-                paragraphOptions.innerHTML = options[j].description;
+        var type = questions[i].type == 'singlepick' ? 'radio' : questions[i].type == 'multipick' ? 'checkbox' : 'text';
 
-                let linkToRSVPoptions = document.createElement('input');       
-                linkToRSVPoptions.setAttribute('type', 'text');
-                linkToRSVPoptions.setAttribute('class', 'textBox');
-                linkToRSVPoptions.setAttribute('name', options[j].id);
-                linkToRSVPoptions.setAttribute('title', options[j].description);
-            
-                paragraphOptions.appendChild(linkToRSVPoptions);
-                additionalQuestions.appendChild(paragraphOptions);
-                additionalQuestions.appendChild(br);
+        if (type != 'text') {
+            for (let j = 0; j < options.length; j++) {
+                if (options[j].questionID == questionID) {
+                    let paragraphOptions = document.createElement('p');
+                    paragraphOptions.innerHTML = options[j].description;
+
+                    let linkToRSVPoptions = document.createElement('input');
+                    linkToRSVPoptions.setAttribute('type', type);
+                    linkToRSVPoptions.setAttribute('name', 'question' + questions[i].id + 'input');
+                    linkToRSVPoptions.setAttribute('title', options[j].description + ' ');
+
+                    paragraphOptions.appendChild(linkToRSVPoptions);
+                    additionalQuestions.appendChild(paragraphOptions);
+                    additionalQuestions.appendChild(br);
                 }
-        } 
-        
-    } 
+            }
+        }
+        else {
+            let paragraphOptions = document.createElement('p');
+            let linkToRSVPoptions = document.createElement('input');
+            linkToRSVPoptions.setAttribute('type', type);
+            linkToRSVPoptions.setAttribute('class', 'textBox');
+            linkToRSVPoptions.setAttribute('name', 'question' + questions[i].id + 'input');
+            paragraphOptions.appendChild(linkToRSVPoptions);
+            additionalQuestions.appendChild(paragraphOptions);
+            additionalQuestions.appendChild(br);
+        }
+
+    }
 })
