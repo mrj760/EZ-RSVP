@@ -48,7 +48,7 @@ foreach ($questions as $q) {
             exit;
         } else {
             $newOptionID = pg_fetch_assoc($result);
-            echo $newOptionID;
+            var_dump($newOptionID);
         }
     }
 }
