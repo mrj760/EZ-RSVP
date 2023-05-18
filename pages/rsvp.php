@@ -36,6 +36,7 @@ $eventname = $event['name'];
 foreach ($questions as $q) {
     $questionID = $q['id'];
     $questionType = $q['type'];
+    $newOptions = array();
     if ($questionType == 'text') {
         //Create new option for response
         $optionParams = array($questionID, "For text responses");
@@ -49,7 +50,8 @@ foreach ($questions as $q) {
         } else {
             $newOption = pg_fetch_assoc($optionResult);
             $newOptionID = $newOption['id'];
-            echo $newOptionID;
+            $newOptions[] = $newOptionID;
+            var_dump($newOptions);
         }
     }
 }
@@ -104,6 +106,8 @@ foreach ($questions as $q) {
                     $guestID = pg_fetch_assoc($result);
                     echo $guestID;
                 }
+                
+                
                 
                 //Create Responses
                 foreach ($options as $o) {
