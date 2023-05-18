@@ -39,7 +39,7 @@ foreach ($questions as $q) {
     if ($questionType == 'text') {
         //Create new option for response
         $optionParams = array($questionID, "For text responses");
-        $SQLnewOption = 'INSERT INTO options (\"questionID\", description) VALUES ($1, $2) RETURNING id';
+        $SQLnewOption = "INSERT INTO options (\"questionID\", description) VALUES ($1, $2) RETURNING id";
         $optionResult = pg_query_params($CONNECTION, $SQLnewOption, $optionParams);
 
         if (!$optionResult){
