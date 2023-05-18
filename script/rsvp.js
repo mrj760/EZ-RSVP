@@ -122,7 +122,7 @@ window.addEventListener("load", function () {
         var type = questions[i].type == 'singlepick' ? 'radio' : questions[i].type == 'multipick' ? 'checkbox' : 'text';
 
         // This is for radio/checbox options
-        if (type != 'text') {
+        if (type == 'radio') {
             for (let j = 0; j < options.length; j++) {
                 if (options[j].questionID == questionID) {
                     let paragraphOptions = document.createElement('p');
@@ -130,8 +130,25 @@ window.addEventListener("load", function () {
 
                     let linkToRSVPoptions = document.createElement('input');
                     linkToRSVPoptions.setAttribute('type', type);
-                    linkToRSVPoptions.setAttribute('name', options[j].id);
-                    linkToRSVPoptions.setAttribute('value', options[j].description);
+                    linkToRSVPoptions.setAttribute('name', questions[i].id);
+                    linkToRSVPoptions.setAttribute('value', options[j].id);
+
+                    paragraphOptions.appendChild(linkToRSVPoptions);
+                    additionalQuestions.appendChild(paragraphOptions);
+                    additionalQuestions.appendChild(br);
+                }
+            }
+        }
+        else if (type == 'checkbox') {
+            for (let j = 0; j < options.length; j++) {
+                if (options[j].questionID == questionID) {
+                    let paragraphOptions = document.createElement('p');
+                    paragraphOptions.innerHTML = options[j].description;
+
+                    let linkToRSVPoptions = document.createElement('input');
+                    linkToRSVPoptions.setAttribute('type', type);
+                    linkToRSVPoptions.setAttribute('name', questions[i].id + '[]');
+                    linkToRSVPoptions.setAttribute('value', options[j].id);
 
                     paragraphOptions.appendChild(linkToRSVPoptions);
                     additionalQuestions.appendChild(paragraphOptions);
@@ -140,7 +157,7 @@ window.addEventListener("load", function () {
             }
         }
         // This is for questions of type `text`
-        else {
+        else if (type == 'text') {
             let paragraphOptions = document.createElement('p');
             let linkToRSVPoptions = document.createElement('input');
             linkToRSVPoptions.setAttribute('type', type);
