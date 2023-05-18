@@ -31,7 +31,6 @@ $questions = pg_fetch_all($resultQuestions);
 $options = pg_fetch_all($resultOptions);
 
 $eventname = $event['name'];
-var_dump($questions);
 ?>
 <script>
     // put the event, questions & options in local storage
@@ -144,17 +143,14 @@ if (isset($_POST['name']) && isset($_POST['email'])){
         } else { 
             //Create Responses
             if (isset($_POST[$questionID])) { 
-                $value = $_POST[$questionID];
-                $parts = explode('-', $value);
-                $optionID = $parts[0];
-                $optionType = $parts[1];
-                if ($optionType == 'radio') {
+                $optionID = $_POST[$questionID];
+                if ($questionType == 'singlepick') {
                     $responseParams = array($guestID, $questionID, $optionID);
                     $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid) VALUES ($1, $2, $3)";
                     $responseResult = pg_query_params($CONNECTION, $SQLresponse, $responseParams);
                 } else {
-                    foreach ($value as $v) {
-                        $responseParams = array($guestID, $questionID, );
+                    foreach ($optionID as $oID) {
+                        $responseParams = array($guestID, $questionID, $oID);
                         $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid) VALUES ($1, $2, $3)";
                         $responseResult = pg_query_params($CONNECTION, $SQLresponse, $responseParams);
                     }
