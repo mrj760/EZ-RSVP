@@ -121,6 +121,7 @@ window.addEventListener("load", function () {
 
         var type = questions[i].type == 'singlepick' ? 'radio' : questions[i].type == 'multipick' ? 'checkbox' : 'text';
 
+        // This is for radio/checbox options
         if (type != 'text') {
             for (let j = 0; j < options.length; j++) {
                 if (options[j].questionID == questionID) {
@@ -129,6 +130,8 @@ window.addEventListener("load", function () {
 
                     let linkToRSVPoptions = document.createElement('input');
                     linkToRSVPoptions.setAttribute('type', type);
+                    // You access the inputs via this name here
+                    // Note each option has the same name as long as they belong to the same question
                     linkToRSVPoptions.setAttribute('name', 'question' + questions[i].id + 'input');
                     linkToRSVPoptions.setAttribute('value', options[j].description);
 
@@ -138,11 +141,14 @@ window.addEventListener("load", function () {
                 }
             }
         }
+        // This is for questions of type `text`
         else {
             let paragraphOptions = document.createElement('p');
             let linkToRSVPoptions = document.createElement('input');
             linkToRSVPoptions.setAttribute('type', type);
             linkToRSVPoptions.setAttribute('class', 'textBox');
+            // You access the inputs via this name here
+            // Note they are named the same as if they were radio/checkbox
             linkToRSVPoptions.setAttribute('name', 'question' + questions[i].id + 'input');
             paragraphOptions.appendChild(linkToRSVPoptions);
             additionalQuestions.appendChild(paragraphOptions);
