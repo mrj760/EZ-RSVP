@@ -59,7 +59,7 @@ $eventname = $event['name'];
             These are details laid out by the event creator. -->
         <div id="inputContainer" class="background">
             <h1>RSVP for: <?= $eventname ?> </h1>
-            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="GET">
+            <form action="" method="POST">
 
             <label for="name">Name</label><br>
             <input id="nameTextBox" class="textBox" type="text" name="name" title="name" placeholder="John Smith" />
@@ -93,6 +93,7 @@ $eventname = $event['name'];
 
 </body>
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // now we get the name and email from form
 if (isset($_POST['name']) && isset($_POST['email'])){
 
@@ -157,5 +158,6 @@ if (isset($_POST['name']) && isset($_POST['email'])){
     // success: redirect to confirmation page
     header("Location: rsvp_confirmation.php");
     exit();
+}
 }
 ?>
