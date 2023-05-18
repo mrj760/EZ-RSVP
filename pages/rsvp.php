@@ -123,8 +123,8 @@ $eventname = $event['name'];
                 
                 pg_close($CONNECTION);
                 // success: redirect to confirmation page
-                //header("Location: rsvp_confirmation.php");
-                //exit();
+                header("Location: rsvp_confirmation.php");
+                exit();
             }
             ?>
 
