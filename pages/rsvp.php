@@ -47,8 +47,9 @@ foreach ($questions as $q) {
             echo json_encode(array("message" => "Failed to create Option!"));
             exit;
         } else {
-            $newOptionID = pg_fetch_assoc($result);
-            var_dump($newOptionID);
+            $newOption = pg_fetch_assoc($result);
+            $newOptionID = $newOption['id'];
+            echo $newOptionID;
         }
     }
 }
