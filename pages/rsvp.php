@@ -140,17 +140,17 @@ if (isset($_POST['name']) && isset($_POST['email'])){
                 $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid, text) VALUES ($1, $2, $3, $4)";
                 $responseResult = pg_query_params($CONNECTION, $SQLresponse, $responseParams);
             }
-        }
-    }
-
-    //Create Responses
-    foreach ($options as $o) {
-        $optionID = $o['id'];
-        $questionID = $o['questionID'];
-        if (isset($_POST[$optionID])) {
-            $responseParams = array($guestID, $questionID, $optionID);
-            $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid) VALUES ($1, $2, $3)";
-            $responseResult = pg_query_params($CONNECTION, $SQLresponse, $responseParams);
+        } else { 
+            //Create Responses
+            foreach ($options as $o) {
+                $optionID = $o['id'];
+                $questionID = $o['questionID'];
+                if (isset($_POST[$questionID])) {    
+                    $responseParams = array($guestID, $questionID, $_POST[$questionID]);
+                    $SQLresponse = "INSERT INTO responses (guestid, questionid, optionid) VALUES ($1, $2, $3)";
+                    $responseResult = pg_query_params($CONNECTION, $SQLresponse, $responseParams);
+                }
+            }
         }
     }
 
