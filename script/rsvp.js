@@ -148,7 +148,7 @@ window.addEventListener("load", function () {
                     let linkToRSVPoptions = document.createElement('input');
                     linkToRSVPoptions.setAttribute('type', type);
                     linkToRSVPoptions.setAttribute('name', questions[i].id + '[]');
-                    linkToRSVPoptions.setAttribute('value', options[j].id + '-' + type);
+                    linkToRSVPoptions.setAttribute('value', options[j].id);
 
                     paragraphOptions.appendChild(linkToRSVPoptions);
                     additionalQuestions.appendChild(paragraphOptions);
