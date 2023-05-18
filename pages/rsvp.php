@@ -69,18 +69,24 @@ $eventname = $event['name'];
                 $_POST['name'],
                 $_POST['email']
                );
+                var_dump($questions);
+                var_dump($options);
+                $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3) RETURNING id";
+                // $result = pg_query_params($CONNECTION, $sql, $GUEST);
 
-                $sql = "INSERT INTO guests (eventid, guestname, guestemail) VALUES ($1, $2, $3)";
-                $result = pg_query_params($CONNECTION, $sql, $GUEST);
+                // error: failed to create guest
+                //if (!$result){
+                //    http_response_code(400);
+                //    echo json_encode(array("message" => "Failed to create Guest!"));
+                //    exit;
+                //} else {
+                //    $guestID = pg_fetch_assoc($result);
+                //}
+                
+                
+                
+                
                 pg_close($CONNECTION);
-
-                // error: fail to respond
-                if (!$result){
-                    http_response_code(400);
-                    echo json_encode(array("message" => "Response failed!"));
-                    exit;
-                }
-
                 // success: redirect to confirmation page
                 //header("Location: rsvp_confirmation.php");
                 //exit();
